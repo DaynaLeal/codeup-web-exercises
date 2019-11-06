@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>HTML FORMS</title>
+</head>
+<body>
+	<h1>Welcome to HTML Forms, Europa!</h1>
+
+	<h4>Keyboard shortcut for a comment  -> command /</h4>
+
+	<hr>
+
+	<!-- TODO TOGETHER: Go to hookbin.com and click "create new endpoint". Copy and paste the new endpoint url in the action attribute of the form below	-->
+
+
+
+	<!--********************************
+	  	Structure , Method, Action
+	******************************** !-->
+
+	<!-- TODO TOGETHER: Review the following form - focus on the structure, method, and action	-->
+<!--	<form method="GET" action="https://hookb.in/r12B9JgMyVuQnP1o2jkB">-->
+
+<!--		<label for="username">Username</label>-->
+<!--		<input id="username" name="username" type="text">-->
+<!--		<br>-->
+
+<!--		<label for="password">Password</label>-->
+<!--		<input id="password" name="password" type="password">-->
+<!--		<br>-->
+
+<!--		<input type="submit">-->
+<!--	</form>-->
+
+
+	<!-- TODO: Practice submitting different values from the form. View the results on your hookbin dashboard.	-->
+
+
+<!--	<form action="https://hookb.in/r12B9JgMyVuQnP1o2jkB" method="POST">-->
+<!--		<label for="zipcode-input">Zipcode</label>-->
+<!--		<input type="text" name="Zipcode" id="zipcode-input" placeholder="what is your zipcode?">-->
+<!--		<button type="submit">Search for your zipcode</button>-->
+<!--	</form>-->
+
+
+	<!-- TODO TOGETHER: Build a form, using a GET request, with an input to enter and submit a zipcode	-->
+	<!-- TODO TOGETHER: What is the main difference we notice with a GET request vs POST request? *HINT - Check URL	-->
+
+
+
+
+
+
+	<!-- TODO: Practice submitting different zip codes and view the request in hookbin	-->
+	<!-- TODO: Change the placeholder value in the form. What do you notice?	-->
+
+	<!--********************************
+		  		QUERY STRINGS
+	******************************** !-->
+
+	<!-- TODO TOGETHER: Review the zipcode form and determine what the query string is	-->
+
+
+
+	<!--**************************************
+		TODO TOGETHER- Review the following:
+			Review an input with type=submit
+			Review a text input element
+			Review a text area
+			Review checkbox and radio elements
+			Review select elements
+			Review hidden inputs
+	************************************ !-->
+
+<!--	<form method="GET" action="https://hookb.in/r12B9JgMyVuQnP1o2jkB">-->
+<!--		<label for="screen-name-input">Screen Name</label>-->
+<!--		<input type="text" id="screen-name-input" name="Screen-Name" placeholder="enter your screen name">-->
+<!--		<br>-->
+<!--		<label for="Email-Input">Email</label>-->
+<!--		<input type="email" id="Email-Input" name="email" placeholder="enter your email">-->
+<!--		<br>-->
+<!--		<textarea name="textarea-input" id="" cols="30" rows="10" placeholder="enter your comment here"></textarea>-->
+<!--		<br>-->
+
+<!--		<h4>Favorite type of coffee brew:</h4>-->
+<!--		<select name="Coffee-Choice" id="coffee-input">-->
+<!--			<option value="light">Light Roast</option>-->
+<!--			<option value="medium">Medium Roast</option>-->
+<!--			<option value="dark">Dark Roast</option>-->
+<!--		</select>-->
+<!--		<br>-->
+
+<!--		<h4>Choose a Letter</h4>-->
+
+<!--		<input type="radio" id="radio-a" value="a" name="radio-group" checked>-->
+<!--		<label for="radio-a">A</label>-->
+<!--		<br>-->
+
+<!--		<input type="radio" id="radio-b" value="b" name="radio-group">-->
+<!--		<label for="radio-a">B</label>-->
+<!--		<br>-->
+
+<!--		<input type="radio" id="radio-c" value="c" name="radio-group">-->
+<!--		<label for="radio-a">C</label>-->
+<!--		<br>-->
+
+<!--		<input type="radio" id="radio-d" value="d" name="radio-group">-->
+<!--		<label for="radio-a">D</label>-->
+<!--		<br>-->
+
+<!--	<p>-->
+<!--		<input type="checkbox" name="newsletter" id="newsletter-input" checked>-->
+<!--		<label for="newsletter-input"> Sign me up for the Europa Newsletter!</label>-->
+<!--	</p>-->
+
+<!--		<input type="hidden" name="user-id" value="dynamic-user-id">-->
+<!--		<button type="submit">Submit</button>-->
+<!--	</form>-->
+
+
+	<!--************************************************************
+		TODO: Answer the following about the form listed below:
+			1. What key-value pair will be submitted?
+			2. Where will this form be submitted to?
+			3. What type of request will be made?
+			4. What would happen if we submitted this form using the POST method
+			5. What happens if a user fills out this input in the form
+	************************************************************ !-->
+
+<!--	<form>-->
+<!--		<input name="the_answer" value="42">-->
+<!--		<input type="submit">-->
+<!--	</form>-->
+
+<!--	1.key is name, value is value (the_answer=42)
+		2.there is no action noted
+		3.GET since it is the default
+		4.it would not be sent to the query string
+		5.the value would change to what the user fills out-->
+
+
+	<!--********************************
+				DISABLED
+	******************************** !-->
+	<!-- TODO TOGETHER: Review the disabled attribute	-->
+
+<!--		<input type="text" name="username" value="codeup" disabled>-->
+
+<!--		<select name="newsletter_signup">-->
+<!--			<option disabled value="n">No</option>-->
+<!--			<option selected value="y">Yes</option>-->
+<!--		</select>-->
+
+
+
+	<!-- TODO: What happens when a user tries to enter text into the first input?	-->
+	<!-- TODO: What happens when a user tries to select the "no" option in the select	-->
+
+
+	<!--********************************
+				LABELS
+	******************************** !-->
+	<!-- TODO TOGETHER: Review label elements	-->
+
+
+
+
+
+
+<!--
+	TODO: Create a series of labels and checkbox inputs for the following question:
+		What kind of phone do you own? (as an <h2> element)
+		- Android
+		- iOS
+		- Windows
+		- Other
+ -->
+
+<h2>What kind of phone do you own</h2>
+	<label for="phones"><input type="checkbox" name="android" id="phones">Android</label>
+	<br>
+	<label for="phones"><input type="checkbox" name="ios" id="phones">iOS</label>
+	<br>
+	<label for="phones"><input type="checkbox" name="windows" id="phones">Windows</label>
+	<br>
+	<label for="phones"><input type="checkbox" name="other" id="phones">Other</label>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
