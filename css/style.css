@@ -1,0 +1,8 @@
+.fancy-header {
+    color:purple;
+}
+/*  2. changed to blue so embedded stylesheet with class property must have precedence over style attribute
+    4. embedded stylesheet had precedence over external stylesheet
+    5. embedded stylesheet > style attribute > external stylesheet
+ */
+
