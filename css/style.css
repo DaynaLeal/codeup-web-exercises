@@ -1,8 +1,50 @@
-.fancy-header li {
-    color:purple;
-}
+/*.fancy-header li {*/
+/*    color:purple;*/
+/*}*/
 /*  2. changed to blue so embedded stylesheet with class property must have precedence over style attribute
     4. embedded stylesheet had precedence over external stylesheet
     5. embedded stylesheet > style attribute > external stylesheet
  */
+
+/*Selectors and Properties exercise Nov7*/
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+h1, h2 {
+    color:#29382c;
+    text-decoration: underline;
+}
+
+body {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 55px;
+    padding: 52px;
+    color:#29382c;
+    font-size: large
+}
+
+#photos {
+    align-items: center;
+}
+
+hr {
+    color: green
+}
+
+/*.succulents {*/
+/*    height: auto;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+
+
+html {
+    background-image: url("../images/pexels-succulents.jpg");
+    background-size: 100%;
+}
+
+
 
