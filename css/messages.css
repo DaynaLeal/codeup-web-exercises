@@ -1,3 +1,14 @@
+/*:root{*/
+/*    --blue-background: #cddeff;*/
+/*    --text-info: #372f93;*/
+/*}*/
+/*.message-info {*/
+/*    background-color: ();*/
+/*    color: #6b6bb8;*/
+/*}*/
+/*you can use this root variable to declare colors you use often*/
+
+
 body, html {
     height: 100%;
     width: 100%;
