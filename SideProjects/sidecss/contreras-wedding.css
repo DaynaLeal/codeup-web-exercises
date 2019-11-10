@@ -1,0 +1,21 @@
+:root{
+    --text-purple: #624867;
+}
+
+html {
+    background-image: url("../sideimages/pexels-wedding.jpg");
+    background-size: 100% 100%;
+}
+
+body {
+    background-color: rgba(185, 184, 184, 0.57);
+    margin: 10%;
+    padding: 52px;
+    color: var(--text-purple);
+    text-align: center;
+}
+
+hr {
+    border: solid var(--text-purple) 1px;
+}
+
