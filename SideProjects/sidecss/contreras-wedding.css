@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
 :root{
     --text-purple: #624867;
 }
@@ -5,6 +7,12 @@
 html {
     background-image: url("../sideimages/pexels-wedding.jpg");
     background-size: 100% 100%;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.3em;
+    box-sizing: border-box;
 }
 
 body {
