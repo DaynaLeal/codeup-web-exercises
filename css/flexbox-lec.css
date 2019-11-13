@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+/*  //* is for whole page*/
+
+body {
+    margin: 0;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.note-item{
+    font-weight: normal;
+}
+
+.flex-container {
+    width: 100%;
+    border: 3px solid goldenrod;
+    display: flex;
+    flex-direction: row;
+    height: 10em;
+}
+.flex-item {
+    background: #BFD45D;
+    border: 2px solid #F9EFD6;
+    padding: 1em;
+}
+
+.first-item {
+    flex-basis: 200px;
+    /*font-size: 15px;*/
+    /*order: 2;*/
+    /*align-self: flex-start;*/
+}
+.second-item {
+    flex-grow: 2;
+    /*align-self: center;*/
+    /*!*font-size: 30px;*!*/
+    /*order: 1;*/
+}
+.third-item {
+    flex-grow: 1;
+    /*align-self: flex-end;*/
+    /*font-size: 45px;*/
+}
