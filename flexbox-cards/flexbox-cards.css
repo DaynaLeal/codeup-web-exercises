@@ -74,5 +74,7 @@ a {
 
 .card {
     /* This is a flex item */
-    /*display: flex;*/
+    display: flex;
+    flex-basis: 300px;
+    flex-direction: column;
 }
