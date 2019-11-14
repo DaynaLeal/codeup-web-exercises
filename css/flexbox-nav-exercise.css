@@ -67,3 +67,6 @@ nav ul li:nth-child(6) {
     margin-left: auto;
 }
 
+li:not(.logo) {
+    z-index: 1;
+}

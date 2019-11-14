@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+main {
+    background: lightgreen;
+    margin-top: 2em;
+    display: grid;
+}
+main div {
+    font-size: 2em;
+    color: white;
+    background: grey;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .example-item {
+     background:lightgreen;
+     opacity: .7;
+ }
