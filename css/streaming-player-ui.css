@@ -9,6 +9,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(135deg, mediumpurple, lightblue);
 }
+/*note the linear gradient code above*/
 
 .wrapper {
     /* TODO: make the wrapper a grid container */
@@ -74,7 +75,7 @@ header a:hover {
 
 .header-background {
     background: purple;
-    /* TODO: define the grid area of this element to take up the entire first row of the .container grid  */
+    /* TODO: define the grid area of this element to take up the entire first row of the container grid  */
     grid-area: 1 / 1 / 2 / 6;
 }
 
