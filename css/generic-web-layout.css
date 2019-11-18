@@ -6,7 +6,7 @@ body {
 }
 main {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
@@ -14,13 +14,17 @@ main {
     height: 100vh;
 }
 div {
-    background-color: #ffd700;
-    color: black;
-    font-size: 40px;
-    padding: 30px;
+
 }
-#navheader { grid-area: 1 / 1 / 2 / 6; }
-#navcolumn { grid-area: 2 / 1 / 7 / 2; }
-#article { grid-area: 2 / 2 / 6 / 5; }
-#ads { grid-area: 2 / 5 / 6 / 6; }
-#footerbar { grid-area: 6 / 2 / 7 / 6; }
+#header { grid-area: 1 / 1 / 2 / 4; }
+#nav { grid-area: 2 / 1 / 7 / 2; }
+#article { grid-area: 2 / 2 / 5 / 3; }
+#ads {
+    grid-area: 2 / 3 / 5 / 4;
+}
+#numbernav { grid-area: 5 / 2 / 6 / 4; }
+#footer { grid-area: 6 / 2 / 7 / 4; }
+
+.advertisements p {
+    border: #848487 solid;
+}
