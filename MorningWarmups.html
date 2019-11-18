@@ -50,10 +50,16 @@
 
         //7. write a js function that takes in an array and returns the length of that array
         function arrayLength(array) {
-            var animals = ["bird", "dog", "cat"]
+            var animals = ["bird", "dog", "cat"];
             return animals.length;
         }
         console.log(arrayLength(0));
+
+        //8. write a js function that takes in an array and returns the last item
+        function lastItem(inputArray) {
+            return inputArray[inputArray.length-1]
+        }
+        console.log(lastItem(["bird", "dog", "cat"]));
     </script>
 </body>
 </html>

@@ -6,25 +6,117 @@ body {
 }
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     width: 100%;
     height: 100vh;
+}
+h1 {
+    color: #4f998f;
+}
+ul {
+    list-style-type: none;
 }
 div {
 
 }
-#header { grid-area: 1 / 1 / 2 / 4; }
-#nav { grid-area: 2 / 1 / 7 / 2; }
-#article { grid-area: 2 / 2 / 5 / 3; }
-#ads {
-    grid-area: 2 / 3 / 5 / 4;
+#header {
+    grid-area: 1 / 1 / 2 / 11;
+    background-color: black;
+    color: white;
+    padding-left: 15px;
 }
-#numbernav { grid-area: 5 / 2 / 6 / 4; }
-#footer { grid-area: 6 / 2 / 7 / 4; }
+#nav {
+    grid-area: 2 / 1 / 10 / 3;
+    background-color: #f0f0f0;
+}
+#article {
+    grid-area: 2 / 3 / 8 / 8;
+}
+#ads {
+    grid-area: 2 / 8 / 8 / 11;
+    display: grid;
+}
+#numbernav {
+    grid-area: 8 / 3 / 9 / 11;
+}
+#footer {
+    grid-area: 9 / 3 / 10 / 11;
+    display: flex;
+    flex-direction: column;
+}
+#footertop {
+    background-color: #666666;
+    color: white;
+    height: 70%;
+    width: 100%;
+    margin: 0;
+    padding-left: 15px;
+    /*align-self: center;*/
+}
+#footerbottom {
+    background-color: #333333;
+    color: white;
+    height: 30%;
+    width: 100%;
+    margin: 0;
+    padding-left: 15px;
+    /*align-self: center;*/
+}
 
 .advertisements p {
-    border: #848487 solid;
+    border: #e7e7e7 solid;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.firstads {
+    margin-bottom: 30px;
+}
+.firstads:nth-child(1) {
+    height: 30%;
+}
+.firstads:nth-child(2) {
+    height: 60%;
+}
+.numberlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 130px;
+    align-items: flex-end;
+}
+.numberlist li {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.numberlist li:hover {
+    background-color: black;
+    color: white;
+}
+
+#header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 10em;
+    justify-content: space-between;
+}
+.headerlist li {
+    width: 40px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#partners {
+    margin-right: auto;
+}
+#article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
