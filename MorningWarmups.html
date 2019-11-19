@@ -59,7 +59,13 @@
         function lastItem(inputArray) {
             return inputArray[inputArray.length-1]
         }
-        console.log(lastItem(["bird", "dog", "cat"]));
+        console.log(lastItem(["bird", "dog", "cat"])); //returns cat
+
+        //9. write a js function that takes in an array and and a number and returns the nth item of an array
+        var nthItem = function(inputArray, n) {
+            return inputArray[n-1]
+        }
+        console.log(nthItem(["bird", "dog", "cat"], 2)) //returns dog
     </script>
 </body>
 </html>
