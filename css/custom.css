@@ -1,0 +1,29 @@
+.jumbotron {
+    background-image: url("../images/pizza.png");
+}
+
+@media all and (max-width: 500px) {
+    .jumbotron {
+        display: none;
+    }
+}
+
+.jumbotron h1 {
+    background-color: #ededf1ba;
+    color: #000000ad;
+    text-align: center;
+}
+/*h1 {*/
+/*    background-color: #ededf1ba;*/
+/*    color: #000000ad;*/
+/*    text-align: center;*/
+/*}*/
+.card-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.innerCard {
+    background-color: #00000008;
+    color: black;
+}

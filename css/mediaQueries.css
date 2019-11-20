@@ -10,12 +10,12 @@
         color: #372f93;
     }
 }
-@media all and (max-width: 768px) {
-    body {
-        background-color: #372f93;
-        color: #b4d455;
-    }
-}
+/*@media all and (max-width: 768px) {*/
+/*    body {*/
+/*        background-color: #372f93;*/
+/*        color: #b4d455;*/
+/*    }*/
+/*}*/
 @media all and (max-width: 575px) {
     body {
         background-color: #b4d455;

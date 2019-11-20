@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order Now | Pizza World</title>
+<!--    css link goes here-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<!--    custom css styling goes here-->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+
+<!--navbar starts here-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Pizza World</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+            </ul>
+                <div class="mr-auto">
+                    <form class="form-inline my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+                    </form>
+                </div>
+            <a class="nav-link" href="#">Sign up</a>
+        </div>
+    </nav>
+<!--navbar ends here-->
+
+    <div class="container">
+<!--jumbotron starts here-->
+        <div class="jumbotron jumbotron-fluid d-none d-lg-block">
+            <div>
+                <h1 class="display-4">Welcome to Pizza World!</h1>
+            </div>
+        </div>
+<!--jumbotron ends here-->
+
+<!--navtabs begin here-->
+        <h2>Build your own pizza!</h2>
+<!--        <ul class="nav nav-tabs">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <!--card1 begins here        -->
+                <!-- main card start-->
+                <div class="card">
+                    <div class="card-header outerCard">
+                        Choose size and crust
+                    </div>
+                    <div class="card-body">
+                        <!--                inner top/hand tossed card start-->
+                        <div class="card">
+                            <div class="card-header innerCard">
+                                Hand Tossed
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Small (10")</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Medium (12")</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--                inner top/hand tossed card end-->
+                        <!--                inner bottom/crispy thin card start-->
+                        <div class="card">
+                            <div class="card-header innerCard">
+                                Crispy Thin
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Medium (12")</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Large (14")</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--                inner bottom/crispy thin card end-->
+
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="#" class="btn btn-primary">Next Step > </a>
+                    </div>
+                </div>
+                <!--        main card ends here-->
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <!--card1 begins here        -->
+                <!-- main card start-->
+                    <div class="card">
+                        <div class="card-header outerCard">
+                            Choose size and crust
+                        </div>
+                        <div class="card-body">
+                            <!--                inner top/hand tossed card start-->
+                            <div class="card">
+                                <div class="card-header innerCard">
+                                    Hand Tossed
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                    <li class="list-group-item">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Small (10")</label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Medium (12")</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--                inner top/hand tossed card end-->
+                            <!--                inner bottom/crispy thin card start-->
+                            <div class="card">
+                                <div class="card-header innerCard">
+                                    Crispy Thin
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                    <li class="list-group-item">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Medium (12")</label>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadio1">Large (14")</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--                inner bottom/crispy thin card end-->
+
+                        </div>
+                        <div class="card-footer text-right">
+                            <a href="#" class="btn btn-primary">Next Step > </a>
+                        </div>
+                    </div>
+                    <!--        main card ends here-->
+                    <!--cards end here        -->
+                </div>
+            </div>
+                <!--        main card ends here-->
+                <!--cards end here        -->
+            </div>
+        </div>
+<!--navtabs end here-->
+
+
+    </div>
+<!--js links go here-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!--custom js goes after this-->
+</body>
+</html>
