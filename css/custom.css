@@ -27,3 +27,11 @@
     background-color: #00000008;
     color: black;
 }
+btn {
+    background-color: #007bff;
+    color: white;
+}
+.btn-outline-success, .btn-sign-up {
+    color: #495057;
+    border-color: #495057;
+}
