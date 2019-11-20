@@ -66,6 +66,19 @@
             return inputArray[n-1]
         }
         console.log(nthItem(["bird", "dog", "cat"], 2)) //returns dog
+
+        //10. write a js function that takes in an input and returns the type of that input
+        function getType(input) {
+            return typeof input;
+        }
+        //OR
+        // var getType = function(input) {
+        //     return typeof input;
+        // }
+        console.log(getType("dan")); //returns string
+        console.log(getType(7)); //returns number
+        console.log(getType(true)); //returns boolean
+
     </script>
 </body>
 </html>

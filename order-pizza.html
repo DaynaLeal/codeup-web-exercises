@@ -65,13 +65,13 @@
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -136,53 +136,56 @@
                 <!--        main card ends here-->
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <!--card1 begins here        -->
+                <!--card2 begins here        -->
                 <!-- main card start-->
                     <div class="card">
                         <div class="card-header outerCard">
-                            Choose size and crust
+                            Choose Cheese and Sauce
                         </div>
                         <div class="card-body">
                             <!--                inner top/hand tossed card start-->
                             <div class="card">
                                 <div class="card-header innerCard">
-                                    Hand Tossed
+                                    Cheese
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                                    <li class="list-group-item">How Much?</li>
                                     <li class="list-group-item">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Small (10")</label>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Medium (12")</label>
-                                        </div>
+                                        <select class="form-control">
+                                            <option>Light</option>
+                                            <option>Normal</option>
+                                            <option>Extra</option>
+                                            <option>Double</option>
+                                        </select>
                                     </li>
                                 </ul>
                             </div>
+                            <br>
                             <!--                inner top/hand tossed card end-->
                             <!--                inner bottom/crispy thin card start-->
                             <div class="card">
                                 <div class="card-header innerCard">
-                                    Crispy Thin
+                                    Sauce
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                    <li class="list-group-item">What Type?</li>
                                     <li class="list-group-item">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Medium (12")</label>
-                                        </div>
+                                        <select class="form-control">
+                                            <option>Tomato Sauce</option>
+                                            <option>Marinara Sauce</option>
+                                            <option>BBQ Sauce</option>
+                                            <option>Alfredo Sauce</option>
+                                        </select>
                                     </li>
+                                </ul>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">How Much?</li>
                                     <li class="list-group-item">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio1">Large (14")</label>
-                                        </div>
+                                        <select class="form-control">
+                                            <option>Light</option>
+                                            <option>Normal</option>
+                                            <option>Extra</option>
+                                        </select>
                                     </li>
                                 </ul>
                             </div>
@@ -196,9 +199,87 @@
                     <!--        main card ends here-->
                     <!--cards end here        -->
                 </div>
-            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <!--card3 begins here        -->
+                <!-- main card start-->
+                <div class="card">
+                    <div class="card-header outerCard">
+                        Choose Toppings
+                    </div>
+                    <div class="card-body">
+                        <!--                inner top/hand tossed card start-->
+                        <div class="card">
+                            <div class="card-header innerCard">
+                                Choose Meats
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Beef</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Ham</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Philly Steak</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Bacon</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--                inner top/hand tossed card end-->
+                        <!--                inner bottom/crispy thin card start-->
+                        <div class="card">
+                            <div class="card-header innerCard">
+                                Choose Non-Meats
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Green Peppers</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Mushrooms</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Onions</label>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Jalepeno Peppers</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--                inner bottom/crispy thin card end-->
+
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="#" class="btn btn-primary">Next Step > </a>
+                    </div>
+                </div>
                 <!--        main card ends here-->
-                <!--cards end here        -->
             </div>
         </div>
 <!--navtabs end here-->
