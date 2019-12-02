@@ -18,7 +18,7 @@ var usersFavColor = prompt("What is your favorite color?");
 alert("Woah, " + usersFavColor + " is my favorite color too!");
 
 // if (usersFavColor === "blue") {
-//     alert("Blue used to be my favorite color, but I like pink more now.");
+    // alert("Blue used to be my favorite color, but I like pink more now.");
 // }
 //
 // if (usersFavColor === "pink") {
