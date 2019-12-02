@@ -115,7 +115,19 @@
         console.log(youMayEnter(12));
         console.log(youMayEnter(13));
 
-        //14. write a js function that
+        //14. write a JS function called seeYouLater that accepts a string and returns "See you later, alligator" if input is alligator, "After a while, crocodile" if input is a crocodile, and "so long" for everything else.
+        function seeYouLater(inputstr) {
+            if (inputstr === "alligator") {
+                return "See you later, alligator!";
+            } else if (inputstr === "crocodile") {
+                return "After a while, crocodile!";
+            } else {
+                return "So long!";
+            }
+        }
+        console.log(seeYouLater("alligator")); //returned See you later, alligator!
+        console.log(seeYouLater("crocodile")); //returned After a while, crocodile!
+        console.log(seeYouLater("cat")); //returned So long!
 
 
     </script>
