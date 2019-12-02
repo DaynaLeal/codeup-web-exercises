@@ -6,7 +6,6 @@
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Javascript with HTML</title>
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -62,19 +61,21 @@
 
 	</div>
 
-
+<!--I did JavaScript with HTML exercises over break and these can be found in files as named by exercises-->
 
 
 	<script>
 		//This is an inline example
 		//TODO: Console.log "Hello, World! From inline" from an inline JS script
+		console.log("Hello, World! From inline")
 	</script>
 
 
 
 	<script>
 		//This is a use strict example
-		myAge = 25
+		"use strict";
+		var myAge = 25;
 
 		//TODO: add "use strict"; above myAge. What do you notice in the console?
 
@@ -94,6 +95,8 @@
 
 		//TODO TOGETHER: Write an alert ---> alert("Message goes here.");
 
+		// alert("Welcome back to Codeup!");
+		// alert("Now we are ready for JavaScript!!");
 
 		//TODO: Write an alert with an alert message
 
@@ -107,6 +110,12 @@
 		//TODO TOGETHER: Write a confirm interaction and console.log the result
 		// the following line will show the OK/CANCEL confirm dialog
 
+		// var confirmSure = confirm("Are you sure you want to exit?");
+		// console.log(confirmSure);
+
+		// var amSure = confirm("Please confirm if you are ready for JavaScript?");
+		// console.log(amSure);
+
 		// TODO: Select the OK option. View the result. Select the confirm option. View the result.
 
 
@@ -115,7 +124,13 @@
 		* ********************/
 		// TODO TOGETHER: Write a prompt interaction. Console.log the result
 
+		var userInput = prompt("Please enter your name.");
+		console.log(userInput);
+
 		// TODO: Write an additional prompt. Console.log the result
+
+		var userAnswer = prompt("What is your favorite christmas activity?");
+		console.log(userAnswer);
 
 
 
