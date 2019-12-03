@@ -80,10 +80,14 @@ console.log(isTwo(random));
  */
 
 function calculateTip(tipPercentage, totalBill) {
-    // var tipNumber = Number(tipPercentage);
-    // var totalNumber = Number(totalBill);
-    // return (Number(tipPercentage) * Number(totalBill));  //these can be used when giving tip as a decimal
-    return (Number(tipPercentage) / 100) * Number(totalBill);
+    if (tipPercentage > 1) {
+        var newTipPercentage = parseFloat(tipPercentage) / 100;
+        var newTip = Number(newTipPercentage) * Number(totalBill);
+        return (Number(newTip));
+    } else {
+        var discount = Number(tipPercentage) * Number(totalBill);
+        return (Number(newTip));
+    }
 }
 console.log(calculateTip(20, 20));
 console.log(calculateTip(25, 25.50));
@@ -102,9 +106,21 @@ console.log(calculateTip(15, 33.42));
  */
 
 alert("Let's calculate your tip!");
-var inputBillTotal = prompt("What was your bill total?");
-var inputTipPercentage = prompt("What percentage would you like to tip? Recommended amounts are 15%, 20%, or 25% tip.");
-var totalTip = calculateTip(inputTipPercentage, inputBillTotal);
+var inputBillTotal = Number(prompt("What was your bill total?"));
+var inputTipPercentage = Number(prompt("What percentage would you like to tip? Recommended amounts are 15%, 20%, or 25% tip."));
+
+// function inputCalculateTip(originalPrice, tipPercentage) {
+//     if (discountPercentage > 1) {
+//         var newDiscountPercentage = parseFloat(discountPercentage) / 100;
+//         var newDiscount = Number(newDiscountPercentage) * Number(originalPrice);
+//         return (Number(originalPrice) - newDiscount);
+//     } else {
+//         var discount = Number(discountPercentage) * Number(originalPrice);
+//         return (Number(originalPrice) - discount);
+//     }
+// }
+
+var totalTip = Number(calculateTip(inputTipPercentage, inputBillTotal));
 alert("You have chosen to tip " + inputTipPercentage + "% of $" + inputBillTotal + ", for a total of $" + totalTip + ".");
 var totalCost = Number(inputBillTotal) + Number(totalTip);
 var totalTotal = Number(totalCost).toFixed(2);
