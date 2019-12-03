@@ -52,6 +52,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+
 function isTwo(random) {
     if (random === 2) {
         return true;
@@ -61,6 +62,10 @@ function isTwo(random) {
 }
 console.log(random);
 console.log(isTwo(random));
+
+
+
+
 
 /**
  * TODO:
@@ -73,7 +78,21 @@ console.log(isTwo(random));
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip()
+
+function calculateTip(tipPercentage, totalBill) {
+    // var tipNumber = Number(tipPercentage);
+    // var totalNumber = Number(totalBill);
+    // return (Number(tipPercentage) * Number(totalBill));  //these can be used when giving tip as a decimal
+    return (Number(tipPercentage) / 100) * Number(totalBill);
+}
+console.log(calculateTip(20, 20));
+console.log(calculateTip(25, 25.50));
+console.log(calculateTip(15, 33.42));
+
+
+
+
+
 
 /**
  * TODO:
@@ -81,6 +100,17 @@ function calculateTip()
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+alert("Let's calculate your tip!");
+var inputBillTotal = prompt("What was your bill total?");
+var inputTipPercentage = prompt("What percentage would you like to tip? Recommended amounts are 15%, 20%, or 25% tip.");
+var totalTip = calculateTip(inputTipPercentage, inputBillTotal);
+alert("You have chosen to tip " + inputTipPercentage + "% of $" + inputBillTotal + ", for a total of $" + totalTip + ".");
+var totalCost = Number(inputBillTotal) + Number(totalTip);
+var totalTotal = Number(totalCost).toFixed(2);
+alert("Your total bill is $" + totalTotal + ". Thank you, have a nice day!");
+
+
 
 /**
  * TODO:
@@ -91,8 +121,14 @@ function calculateTip()
  *
  * Example:
  * > var originalPrice = 100;
- * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > var discountPercent = .2; // 20%
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(originalPrice, discountPercentage) {
+    var discount = Number(discountPercentage) * Number(originalPrice);
+    return (Number(originalPrice) - discount);
+}
+console.log(applyDiscount(45.99, 0.12));
