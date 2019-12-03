@@ -128,7 +128,14 @@ alert("Your total bill is $" + totalTotal + ". Thank you, have a nice day!");
  */
 
 function applyDiscount(originalPrice, discountPercentage) {
-    var discount = Number(discountPercentage) * Number(originalPrice);
-    return (Number(originalPrice) - discount);
+    if (discountPercentage > 1) {
+        var newDiscountPercentage = parseFloat(discountPercentage) / 100;
+        var newDiscount = Number(newDiscountPercentage) * Number(originalPrice);
+        return (Number(originalPrice) - newDiscount);
+    } else {
+        var discount = Number(discountPercentage) * Number(originalPrice);
+        return (Number(originalPrice) - discount);
+    }
 }
 console.log(applyDiscount(45.99, 0.12));
+console.log(applyDiscount(45.99, 12));
