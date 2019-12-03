@@ -53,8 +53,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(random) {
-    if (random === 2) {
+function isTwo(randomNumber) {
+    if (randomNumber === 2) {
         return true;
     } else {
         return false;
@@ -89,9 +89,9 @@ function calculateTip(tipPercentage, totalBill) {
         return (Number(newTipDecimal));
     }
 }
-console.log(calculateTip(20, 20));
-console.log(calculateTip(25, 25.50));
-console.log(calculateTip(15, 33.42));
+console.log(calculateTip(20, 20)); // returns 4
+console.log(calculateTip(25, 25.50)); // returns 6.375
+console.log(calculateTip(15, 33.42)); // returns 5.013
 
 
 
@@ -153,5 +153,5 @@ function applyDiscount(originalPrice, discountPercentage) {
         return (Number(originalPrice) - discount);
     }
 }
-console.log(applyDiscount(45.99, 0.12));
-console.log(applyDiscount(45.99, 12));
+console.log(applyDiscount(45.99, 0.12)); // 40.4712
+console.log(applyDiscount(45.99, 12)); // 40.4712
