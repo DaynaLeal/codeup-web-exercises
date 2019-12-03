@@ -82,11 +82,11 @@ console.log(isTwo(random));
 function calculateTip(tipPercentage, totalBill) {
     if (tipPercentage > 1) {
         var newTipPercentage = parseFloat(tipPercentage) / 100;
-        var newTip = Number(newTipPercentage) * Number(totalBill);
-        return (Number(newTip));
+        var newTipWholeNumber = Number(newTipPercentage) * Number(totalBill);
+        return (Number(newTipWholeNumber));
     } else {
-        var discount = Number(tipPercentage) * Number(totalBill);
-        return (Number(newTip));
+        var newTipDecimal = Number(tipPercentage) * Number(totalBill);
+        return (Number(newTipDecimal));
     }
 }
 console.log(calculateTip(20, 20));
@@ -109,19 +109,19 @@ alert("Let's calculate your tip!");
 var inputBillTotal = Number(prompt("What was your bill total?"));
 var inputTipPercentage = Number(prompt("What percentage would you like to tip? Recommended amounts are 15%, 20%, or 25% tip."));
 
-// function inputCalculateTip(originalPrice, tipPercentage) {
-//     if (discountPercentage > 1) {
-//         var newDiscountPercentage = parseFloat(discountPercentage) / 100;
-//         var newDiscount = Number(newDiscountPercentage) * Number(originalPrice);
-//         return (Number(originalPrice) - newDiscount);
-//     } else {
-//         var discount = Number(discountPercentage) * Number(originalPrice);
-//         return (Number(originalPrice) - discount);
-//     }
-// }
+function inputCalculateTip(inputTipPercentage, inputBill) {
+    if (inputTipPercentage > 1) {
+        var newTipWhole = parseFloat(inputTipPercentage) / 100;
+        var newTipTotal = Number(newTipWhole) * Number(inputBill);
+        return (Number(newTipTotal));
+    } else {
+        var newTipDecimal = Number(inputTipPercentage) * Number(inputBill);
+        return (Number(newTipDecimal));
+    }
+}
 
-var totalTip = Number(calculateTip(inputTipPercentage, inputBillTotal));
-alert("You have chosen to tip " + inputTipPercentage + "% of $" + inputBillTotal + ", for a total of $" + totalTip + ".");
+var totalTip = Number(inputCalculateTip(inputTipPercentage, inputBillTotal));
+alert("You have chosen to tip a total of $" + totalTip + ".");
 var totalCost = Number(inputBillTotal) + Number(totalTip);
 var totalTotal = Number(totalCost).toFixed(2);
 alert("Your total bill is $" + totalTotal + ". Thank you, have a nice day!");
