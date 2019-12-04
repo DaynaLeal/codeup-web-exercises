@@ -292,17 +292,3 @@ var discountedPrice = calculateTotal(luckyNumber, inputBillTotal);
 alert("Your lucky number is " + luckyNumber + ".");
 alert("Your price before discount was $" + inputBillTotal.toFixed(2) + ".");
 alert("Your price is now $" + discountedPrice.toFixed(2) + " with your discount!");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
