@@ -15,6 +15,31 @@
  *
  * Can you refactor your code to use functions?
  */
+confirm("Would you like to enter a number? Confirm 'OK' to enter a number, or confirm 'Cancel' to cancel.");
+var inputNumber = prompt("Please enter a number below.");
+
+
+    if(isNaN(inputNumber)) {
+        alert("'" + inputNumber + "' is not a number.");
+        // var inputNumber = prompt("Please enter a number below.");
+    } else {
+            if (inputNumber % 2 === 0) {
+                alert(inputNumber + " is an even number.");
+            } else {
+                alert(inputNumber + " is an odd number.");
+            }
+
+            var plus100 = (Number(inputNumber) + 100);
+            alert(inputNumber + " plus 100 is " + plus100 + ".");
+
+            if(inputNumber > 0) {
+                alert(inputNumber + " is a positive number.");
+            } else if(inputNumber < 0) {
+                alert(inputNumber + " is a negative number.");
+            } else {
+                alert(inputNumber + " is zero.")
+            }
+    }
 
 /* ########################################################################## */
 
