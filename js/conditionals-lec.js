@@ -259,22 +259,22 @@ console.log("hello from conditionals lec.js!");
 // ================ NESTED STATEMENTS ===============
 //TODO Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license.
 
-var userAge = 15;
-var hasPermit = true;
-
-if(userAge < 15) {
-    alert("Sorry! You're not old enough!");
-} else {
-    if(userAge === 15) {
-        alert("You're old enough for a permit!");
-    } else if(userAge >= 16 && hasPermit) {
-        alert("You are eligible for a license!");
-    } else if(userAge >= 16 && !hasPermit) {
-        alert("You are eligible for a permit but not for a license. You need a permit before you are eligible for a license");
-    } else {
-        alert("Please see front desk!");
-    }
-}
+// var userAge = 15;
+// var hasPermit = true;
+//
+// if(userAge < 15) {
+//     alert("Sorry! You're not old enough!");
+// } else {
+//     if(userAge === 15) {
+//         alert("You're old enough for a permit!");
+//     } else if(userAge >= 16 && hasPermit) {
+//         alert("You are eligible for a license!");
+//     } else if(userAge >= 16 && !hasPermit) {
+//         alert("You are eligible for a permit but not for a license. You need a permit before you are eligible for a license");
+//     } else {
+//         alert("Please see front desk!");
+//     }
+// }
 
 
 
@@ -312,6 +312,9 @@ if(userAge < 15) {
 // }
 
 //WRITE YOUR TERNARY STATEMENT HERE!
+// var weather = "sunny";
+// var weatherMessage = (weather === "raining") ? "It's raining!" : "Have a nice day!";
+// console.log(weatherMessage);
 
 
 
@@ -335,9 +338,100 @@ if(userAge < 15) {
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var weather = "rainy";
+//
+// switch(weather) {
+//     case "rainy":
+//         alert("It's raining!");
+//         break;
+//     case "sunny":
+//         alert("It's sunny!");
+//         break;
+//     case "snow":
+//         alert("It's snowing!");
+//         break;
+//     default:
+//         alert("Have a nice day!");
+//         break;
+// }
+
+// function checkWeather(weather) {
+//     var weatherMessage;
+//
+//     switch(weather) {
+//         case "rainy":
+//             weatherMessage = "It's raining!";
+//             break;
+//         case "sunny":
+//             weatherMessage = "It's sunny!";
+//             break;
+//         case "snow":
+//             weatherMessage = "It's snowing!";
+//             break;
+//         default:
+//             weatherMessage = "Have a nice day!";
+//             break;
+//     }
+//
+//     return weatherMessage;
+// }
+//
+// console.log(checkWeather("sunny"));
+
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
 
+// function trafficLight(lightColor){
+//     if(lightColor.toLowerCase() === "red") {
+//         alert("Stop, the light is red.");
+//     } else if(lightColor.toLowerCase() === "yellow") {
+//         alert("Slow down, the light is yellow.");
+//     } else if(lightColor.toLowerCase() === "green") {
+//         alert("The light is green, you may continue driving.");
+//     } else {
+//         alert("Proceed with caution");
+//     }
+// }
+// console.log(trafficLight("red"));
+// console.log(trafficLight("yellow"));
+// console.log(trafficLight("green"));
+
+var lightColor = "green";
+switch(lightColor) {
+    case "red":
+        alert("Stop, the light is red.");
+        break;
+    case "yellow":
+        alert("Slow down, the light is yellow.");
+        break;
+    case "green":
+        alert("The light is green, you may continue driving.");
+        break;
+    default:
+        alert("Proceed with caution");
+}
+
+function checkLight(lightColor) {
+    var trafficLight;
+
+    switch(lightColor) {
+        case "red":
+            trafficLight = "Stop, the light is red.";
+            break;
+        case "yellow":
+            trafficLight = "Slow down, the light is yellow.";
+            break;
+        case "green":
+            trafficLight = "The light is green, you may continue driving.";
+            break;
+        default:
+            trafficLight = "Proceed with caution";
+    }
+
+    return trafficLight;
+}
+
+console.log(checkLight("red"));
 
 
 // ================ REVERSE ENGINEERING =================
@@ -345,6 +439,7 @@ if(userAge < 15) {
 
 
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
+
 
 
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
