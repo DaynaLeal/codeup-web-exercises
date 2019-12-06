@@ -129,6 +129,13 @@
         console.log(seeYouLater("crocodile")); //returned After a while, crocodile!
         console.log(seeYouLater("cat")); //returned So long!
 
+        //15. write a js function that recieves another function as a parameter and executes it then call the fuction and pass in an anonymous function as an argument
+        function functionA(callbackFunction) {
+            callbackFunction();
+        }
+        functionA(function(message) {
+            alert("It works!")
+        });
 
     </script>
 </body>
