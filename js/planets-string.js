@@ -41,6 +41,10 @@
         planetsUL += "<li>" + planet + "</li>";
     });
     planetsUL += "</ul>";
-    console.log(planetsUL)
+    console.log(planetsUL);
 
+
+    // var planets = document.getElementById("enter");
+    // document.getElementById("planets").innerHTML = planetsUL;
+    // console.log(planetsUL);
 })();
