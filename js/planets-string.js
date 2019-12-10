@@ -29,5 +29,11 @@
      // * string, and <li> tags around each planet.
 
 
+    // planetsArray = planetsArray.join();
+    // planetsArray = planetsArray.replace(",", "</li>");
+    // var planetsArray1 = planetsArray.shift("<ul>", "<li>");
+    // var planetsArray2 = planetsArray1.push("</li>", "</ul>");
+    // planetsString = planetsArray2.join();
+    // console.log(planetsArray1);
 
 })();
