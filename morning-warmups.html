@@ -137,6 +137,34 @@
             alert("It works!")
         });
 
+        //16. write a js function called contains that receives an array and another input and returns true if the other input is found in the array
+        //refactor your code with a loop
+
+        //without loops
+        // function contains(inputArray, otherParameter){
+        //     return (inputArray.includes(otherParameter));
+        // }
+        // console.log(contains(["5", "6", "7"], "6"));
+        // console.log(contains(["5", "6", "7"], "8"));
+
+        //with a loop
+        function contains(inputArray, otherParameter){
+            for(var i = 0; i < inputArray.length; i++){
+                if(inputArray[i] === otherParameter){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        console.log(contains(["5", "6", "7"], "6"));
+        console.log(contains(["5", "6", "7"], "8"));
+
+
+
+
+
+
     </script>
 </body>
 </html>
