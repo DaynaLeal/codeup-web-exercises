@@ -36,4 +36,11 @@
     // planetsString = planetsArray2.join();
     // console.log(planetsArray1);
 
+    var planetsUL = "<ul>";
+    planetsArray.forEach(function(planet) {
+        planetsUL += "<li>" + planet + "</li>";
+    });
+    planetsUL += "</ul>";
+    console.log(planetsUL)
+
 })();
