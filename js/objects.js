@@ -12,12 +12,12 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    // var person = {
-    //     firstName: "Dayna",
-    //     lastName: "Leal",
-    // };
-    // console.log(person.firstName);
-    // console.log(person.lastName);
+    var person = {
+        firstName: "Dayna",
+        lastName: "Leal",
+    };
+    console.log(person.firstName);
+    console.log(person.lastName);
 
     /**
      * TODO:
@@ -71,7 +71,6 @@
             console.log(shopper.name + " spent $" + (shopper.amount).toFixed(2) + " and was not offered a discount for spending less than $200.");
         }
     }
-
 
     shoppers.forEach(function (shopper) {
         console.log(shopper);
@@ -175,7 +174,11 @@
      *      ...
      */
 
-
+    books.forEach(function (book) {
+        // console.log("Book # " + i);
+        console.log("Title: " + books.title);
+        console.log("Author: " + books.firstName + " " + books.lastName);
+    });
 
 
     /**
