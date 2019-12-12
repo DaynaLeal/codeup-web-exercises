@@ -45,6 +45,8 @@
 
 
     // var planets = document.getElementById("enter");
-    // document.getElementById("planets").innerHTML = planetsUL;
+
+    document.getElementById("planets").innerHTML = planetsUL;
+master
     // console.log(planetsUL);
 })();
