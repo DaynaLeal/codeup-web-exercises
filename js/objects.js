@@ -174,11 +174,9 @@
      *      ...
      */
 
-    books.forEach(function (book) {
-        // console.log("Book # " + i);
-        console.log("Title: " + books.title);
-        console.log("Author: " + books.firstName + " " + books.lastName);
-    });
+    for(i = 0; i <= books.length; i++){
+
+    }
 
 
     /**
