@@ -1,18 +1,22 @@
-(function () {
-    "use strict";
+
+(function(){
+  master    "use strict";
 
     /**
      * TODO:
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
+objects
     var names = ["Briana", "Chris", "Charlie", "Hung"];
+
 
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
+ objects
     console.log(names.length);
 
     /**
@@ -20,10 +24,12 @@
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+objects
     console.log(names[0]);
     console.log(names[1]);
     console.log(names[2]);
     console.log(names[3]);
+
 
     /**
      * TODO:
@@ -31,6 +37,7 @@
      * array.
      */
 
+objects
     for (var i = 0; i < names.length; i++) {
         console.log(names[i]);
     }
@@ -40,6 +47,7 @@
      * Refactor your above code to use a `forEach` loop
      */
 
+objects
     names.forEach(function (name) {
         console.log("here is a name: " + name);
     });
@@ -67,6 +75,7 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+objects
     function first(array){
         return "here is the first name: " + array[0];
     }
