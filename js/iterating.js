@@ -1,3 +1,4 @@
+arrays
 (function () {
     "use strict";
 
@@ -6,24 +7,30 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
+ arrays
     var names = ["Briana", "Chris", "Charlie", "Hung"];
+
 
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
+arrays
     console.log(names.length);
+
 
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+arrays
     console.log(names[0]);
     console.log(names[1]);
     console.log(names[2]);
     console.log(names[3]);
+
 
     /**
      * TODO:
@@ -31,6 +38,7 @@
      * array.
      */
 
+  arrays
     for (var i = 0; i < names.length; i++) {
         console.log(names[i]);
     }
@@ -40,6 +48,7 @@
      * Refactor your above code to use a `forEach` loop
      */
 
+arrays
     names.forEach(function (name) {
         console.log("here is a name: " + name);
     });
@@ -51,6 +60,7 @@
 //     shapes.forEach(function(shape) {
 //         console.log('Here is a lovely shape: ' + shape + '.');
 //     });
+
 
 
     /**
@@ -67,6 +77,7 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+arrays
     function first(array){
         return "here is the first name: " + array[0];
     }
@@ -79,5 +90,6 @@
     console.log(first(names));
     console.log(second(names));
     console.log(last(names));
+
 
 })();
