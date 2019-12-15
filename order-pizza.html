@@ -6,294 +6,317 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Now | Pizza World</title>
-<!--    css link goes here-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-<!--    custom css styling goes here-->
+    <!--    css link goes here-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--    custom css styling goes here-->
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
 </head>
 <body>
 
 <!--navbar starts here-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Pizza World</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pizza World</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Menu</a>
-                </li>
-            </ul>
-                <div class="mr-auto">
-                    <form class="form-inline my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
-                    </form>
-                </div>
-            <a class="nav-link btn-sign-up" href="#"><i class="fas fa-user"></i> Sign up</a>
-        </div>
-    </nav>
-<!--navbar ends here-->
-
-    <div class="container">
-<!--jumbotron starts here-->
-        <div class="jumbotron jumbotron-fluid d-none d-lg-block">
-            <div>
-                <h1 class="display-4">Welcome to Pizza World!</h1>
-            </div>
-        </div>
-<!--jumbotron ends here-->
-
-<!--navtabs begin here-->
-        <h2>Build your own pizza!</h2>
-<!--        <ul class="nav nav-tabs">-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>-->
-<!--            </li>-->
-<!--        </ul>-->
-
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Order Online <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+                <a class="nav-link" href="#">Menu</a>
             </li>
         </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <!--card1 begins here        -->
-                <!-- main card start-->
-                <div class="card">
-                    <div class="card-header outerCard">
-                        Choose size and crust
-                    </div>
-                    <div class="card-body">
-                        <!--                inner top/hand tossed card start-->
-                        <div class="card mb-3">
-                            <div class="card-header innerCard">
-                                Hand Tossed
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadioS" name="customRadio1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioS">Small (10")</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadioMed" name="customRadio1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioMed">Medium (12")</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--                inner top/hand tossed card end-->
-                        <!--                inner bottom/crispy thin card start-->
-                        <div class="card">
-                            <div class="card-header innerCard">
-                                Crispy Thin
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadioM" name="customRadio2" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioM">Medium (12")</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadioL" name="customRadio2" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioL">Large (14")</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--                inner bottom/crispy thin card end-->
+        <div class="mr-auto">
+            <form class="form-inline my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Zip code" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search stores near you!</button>
+            </form>
+        </div>
+        <a class="nav-link btn-sign-up" href="#"><i class="fas fa-user"></i> Sign up</a>
+    </div>
+</nav>
+<!--navbar ends here-->
 
-                    </div>
-                    <div class="card-footer text-right">
-                        <a href="#" class="btn btn-primary">Next Step > </a>
-                    </div>
+<div class="container">
+    <!--jumbotron starts here-->
+    <div class="jumbotron jumbotron-fluid d-none d-lg-block">
+        <div>
+            <h1 class="display-4">Welcome to Pizza World!</h1>
+        </div>
+    </div>
+    <!--jumbotron ends here-->
+
+    <!--navtabs begin here-->
+    <h2>Build your own pizza!</h2>
+    <!--        <ul class="nav nav-tabs">-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>-->
+    <!--            </li>-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>-->
+    <!--            </li>-->
+    <!--            <li class="nav-item">-->
+    <!--                <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>-->
+    <!--            </li>-->
+    <!--        </ul>-->
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="true"><span class="badge badge-pill badge-secondary">1</span> Size and Crust</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">2</span> Cheese and Sauce</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+               aria-selected="false"><span class="badge badge-pill badge-secondary">3</span> Toppings</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!--card1 begins here        -->
+            <!-- main card start-->
+            <div class="card">
+                <div class="card-header outerCard">
+                    Choose size and crust
                 </div>
-                <!--        main card ends here-->
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <!--card2 begins here        -->
-                <!-- main card start-->
+                <div class="card-body">
+                    <!--                inner top/hand tossed card start-->
+                    <div class="card mb-3">
+                        <div class="card-header innerCard">
+                            Hand Tossed
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadioS" name="customRadio1"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioS">Small (10")</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadioMed" name="customRadio1"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioMed">Medium (12")</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                inner top/hand tossed card end-->
+                    <!--                inner bottom/crispy thin card start-->
                     <div class="card">
-                        <div class="card-header outerCard">
-                            Choose Cheese and Sauce
+                        <div class="card-header innerCard">
+                            Crispy Thin
                         </div>
-                        <div class="card-body">
-                            <!--                inner top/hand tossed card start-->
-                            <div class="card">
-                                <div class="card-header innerCard">
-                                    Cheese
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadioM" name="customRadio2"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioM">Medium (12")</label>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <p>How Much?</p>
-                                        <select class="form-control">
-                                            <option>Light</option>
-                                            <option>Normal</option>
-                                            <option>Extra</option>
-                                            <option>Double</option>
-                                        </select>
-                                    </li>
-                                </ul>
-                            </div>
-                            <br>
-                            <!--                inner top/hand tossed card end-->
-                            <!--                inner bottom/crispy thin card start-->
-                            <div class="card">
-                                <div class="card-header innerCard">
-                                    Sauce
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadioL" name="customRadio2"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioL">Large (14")</label>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <p>What Type?</p>
-                                        <select class="form-control">
-                                            <option>Tomato Sauce</option>
-                                            <option>Marinara Sauce</option>
-                                            <option>BBQ Sauce</option>
-                                            <option>Alfredo Sauce</option>
-                                        </select>
-                                    </li>
-                                </ul>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <p>How Much?</p>
-                                        <select class="form-control">
-                                            <option>Light</option>
-                                            <option>Normal</option>
-                                            <option>Extra</option>
-                                        </select>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--                inner bottom/crispy thin card end-->
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                inner bottom/crispy thin card end-->
 
+                </div>
+                <div class="card-footer text-right">
+                    <a href="#" class="btn btn-primary">Next Step > </a>
+                </div>
+            </div>
+            <!--        main card ends here-->
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <!--card2 begins here        -->
+            <!-- main card start-->
+            <div class="card">
+                <div class="card-header outerCard">
+                    Choose Cheese and Sauce
+                </div>
+                <div class="card-body">
+                    <!--                inner top/hand tossed card start-->
+                    <div class="card">
+                        <div class="card-header innerCard">
+                            Cheese
                         </div>
-                        <div class="card-footer text-right">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-primary">< Previous Step</button>
-                                <button type="button" class="btn btn-primary">Next Step ></button>
-                            </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p>How Much?</p>
+                                <select class="form-control">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                    <option>Double</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <!--                inner top/hand tossed card end-->
+                    <!--                inner bottom/crispy thin card start-->
+                    <div class="card">
+                        <div class="card-header innerCard">
+                            Sauce
                         </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p>What Type?</p>
+                                <select class="form-control">
+                                    <option>Tomato Sauce</option>
+                                    <option>Marinara Sauce</option>
+                                    <option>BBQ Sauce</option>
+                                    <option>Alfredo Sauce</option>
+                                </select>
+                            </li>
+                        </ul>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <p>How Much?</p>
+                                <select class="form-control">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                inner bottom/crispy thin card end-->
+
+                </div>
+                <div class="card-footer text-right">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary">< Previous Step</button>
+                        <button type="button" class="btn btn-primary">Next Step ></button>
                     </div>
                 </div>
-            <!--card2 ends here-->
-
-
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <!--card3 begins here        -->
-                <div class="card">
-                    <div class="card-header outerCard">
-                        Choose Toppings
-                    </div>
-                    <div class="card-body">
-                        <!--                inner top/hand tossed card start-->
-                        <div class="card mb-3">
-                            <div class="card-header innerCard">
-                                Choose Meats
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBeef" name="custom-check1">
-                                        <label class="custom-control-label" for="customCheckBeef">Beef</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckHam" name="custom-check1">
-                                        <label class="custom-control-label" for="customCheckHam">Ham</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckPS" name="custom-check1">
-                                        <label class="custom-control-label" for="customCheckPS">Philly Steak</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBacon" name="custom-check1">
-                                        <label class="custom-control-label" for="customCheckBacon">Bacon</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--                inner top/hand tossed card end-->
-                        <!--                inner bottom/crispy thin card start-->
-                        <div class="card">
-                            <div class="card-header innerCard">
-                                Choose Non-Meats
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckPeppers" name="custom-check2">
-                                        <label class="custom-control-label" for="customCheckPeppers">Green Peppers</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckMushrooms" name="custom-check2">
-                                        <label class="custom-control-label" for="customCheckMushrooms">Mushrooms</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckOnions" name="custom-check2">
-                                        <label class="custom-control-label" for="customCheckOnions">Onions</label>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckJP" name="custom-check2">
-                                        <label class="custom-control-label" for="customCheckJP">Jalepeño Peppers</label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--                inner bottom/crispy thin card end-->
-
-                    </div>
-                    <div class="card-footer text-right">
-                        <a href="#" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i> </a>
-                    </div>
-                </div>
-                <!--        main card ends here-->
             </div>
         </div>
-<!--navtabs end here-->
+        <!--card2 ends here-->
 
 
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <!--card3 begins here        -->
+            <div class="card">
+                <div class="card-header outerCard">
+                    Choose Toppings
+                </div>
+                <div class="card-body">
+                    <!--                inner top/hand tossed card start-->
+                    <div class="card mb-3">
+                        <div class="card-header innerCard">
+                            Choose Meats
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckBeef"
+                                           name="custom-check1">
+                                    <label class="custom-control-label" for="customCheckBeef">Beef</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckHam"
+                                           name="custom-check1">
+                                    <label class="custom-control-label" for="customCheckHam">Ham</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckPS"
+                                           name="custom-check1">
+                                    <label class="custom-control-label" for="customCheckPS">Philly Steak</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckBacon"
+                                           name="custom-check1">
+                                    <label class="custom-control-label" for="customCheckBacon">Bacon</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                inner top/hand tossed card end-->
+                    <!--                inner bottom/crispy thin card start-->
+                    <div class="card">
+                        <div class="card-header innerCard">
+                            Choose Non-Meats
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckPeppers"
+                                           name="custom-check2">
+                                    <label class="custom-control-label" for="customCheckPeppers">Green Peppers</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckMushrooms"
+                                           name="custom-check2">
+                                    <label class="custom-control-label" for="customCheckMushrooms">Mushrooms</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckOnions"
+                                           name="custom-check2">
+                                    <label class="custom-control-label" for="customCheckOnions">Onions</label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckJP"
+                                           name="custom-check2">
+                                    <label class="custom-control-label" for="customCheckJP">Jalepeño Peppers</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--                inner bottom/crispy thin card end-->
+
+                </div>
+                <div class="card-footer text-right">
+                    <a href="#" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i> </a>
+                </div>
+            </div>
+            <!--        main card ends here-->
+        </div>
     </div>
+    <!--navtabs end here-->
+
+
+</div>
 <!--js links go here-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 <!--custom js goes after this-->
 </body>
 </html>
