@@ -28,6 +28,8 @@
         <li class="parent">Dad</li>
     </ul>
 
+    <button id="button">Click me!</button>
+
     <script>
         "use strict";
         console.log(document); //documents HTML representation of js in the console
@@ -63,9 +65,18 @@
         var siblingGift = document.getElementsByClassName("sibling");
         console.log(siblingGift);
         for (var i = 0; i < kidGift.length; i++){
+
             console.log(kidGift[i]);
         }
 
+        //dom events lecture below
+        var clicks = 0;
+        var button = document.getElementById('button');
+        // button.addEventListener("click", function(){alert("button was clicked")});
+        button.addEventListener("click", function(){
+            clicks++;
+            console.log("button was clicked " + clicks + " times.")
+        });
     </script>
 
 </body>
