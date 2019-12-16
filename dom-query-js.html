@@ -102,6 +102,8 @@
             //dom events exercise
             var listColors = document.getElementById("buttonListColors");
             listColors.addEventListener("click", function(){
+
+
                 for (var i = 0; i < listItems.length; i++){
                     if(i % 2 === 0){
                         listItems[i].style['color'] = '#44555d';
@@ -112,6 +114,8 @@
                         listItems[i].style['color'] = '#2196f3';
                     }
                 }
+
+
             });
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
@@ -123,11 +127,45 @@
         //dom 1 exercise
         // subParagraphs[0].innerText = "Mission Accomplished!"; //do it this way because sub-paragraphs is a list/array
 
+        //dom events exercise
+        // var changePara = document.getElementById("buttonSubPara");
+        // changePara.addEventListener("click", function(){
+        //     var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        //     subParagraphs[0].innerText = "Mission Accomplished!";
+        // });
+
+        //testing remover
+
+
+
+        // if(subParagraphs[0].innerText == lorem) {
+        //     subParagraphs[0].innerText = accomplished;
+        // } else {
+        //     subParagraphs[0].innerText = lorem;
+        // }
+
+        //this changes from lorem to accomplished when clicked once and changes back to lorem when clicked again
         var changePara = document.getElementById("buttonSubPara");
+        var lorem = document.getElementsByClassName("sub-paragraph")[0].innerText;
+        var accomplished = "Mission Accomplished!";
+
         changePara.addEventListener("click", function(){
             var subParagraphs = document.getElementsByClassName('sub-paragraph');
-            subParagraphs[0].innerText = "Mission Accomplished!";
+            if(subParagraphs[0].innerText == lorem) {
+                subParagraphs[0].innerText = accomplished;
+            } else {
+                subParagraphs[0].innerText = lorem;
+            }
         });
+
+
+        // var clicks = 0;
+        // var button = document.getElementById('button');
+        // // button.addEventListener("click", function(){alert("button was clicked")});
+        // button.addEventListener("click", function(){
+        //     clicks++;
+        //     console.log("button was clicked " + clicks + " times.")
+        // });
 
     })();
 </script>
