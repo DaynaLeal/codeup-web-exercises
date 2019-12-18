@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays and Objects Review</title>
+</head>
+<body>
+<h1>Arrays and Objects Review</h1>
+<h3>See console for results</h3>
+
+<script>
+
+    //TODO 1.  Write a function, `filterNumbers()` that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
+    //filterNumbers(["fred", true, 5, 3]) //[3, 5]
+
+    //first is the forEach version
+    // function filterNumbers(inputArray){
+    //     var numberBucket = [];
+    //
+    //     inputArray.forEach(function(arrNumber){
+    //         if(typeof arrNumber === "number"){
+    //             numberBucket.push(arrNumber);
+    //         }
+    //     });
+    //
+    //     return numberBucket;
+    // }
+    // console.log(filterNumbers(["fred", true, 5, 3]));
+
+    //below is the for loop version
+    function filterNumbers(inputArray){
+        var numberBucket = [];
+
+        for(var i = 0; i < inputArray.length; i++){
+            // console.log(inputArray[i]); //to show that we are looping through all elements
+            if(typeof inputArray[i] === "number"){
+                numberBucket.push(inputArray[i]);
+            }
+        }
+
+        return numberBucket;
+    }
+    console.log(filterNumbers(["fred", true, 5, 3]));
+
+    //TODO 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
+
+    var dogsArray =
+       [
+        {
+             name: "Chompers",
+             breed: "Pug",
+             age: 7
+         },
+         {
+             name: "Freddy",
+             breed: "Lab",
+             age: 4
+         },
+         {
+             name: "Mr. Pig",
+             breed: "Mastif",
+             age: 10
+         }
+     ];
+
+    //below is technically the output we want but now that I have assigned it to a variable, we can also use it as another input
+    var dogsArray2 =
+     [
+        {
+             name: "Chompers",
+             breed: "Pug",
+             age: 8
+         },
+         {
+             name: "Freddy",
+             breed: "Lab",
+             age: 5
+         },
+         {
+             name: "Mr. Pig",
+             breed: "Mastif",
+             age: 11
+         }
+     ];
+
+    function getOlder(inputArray){
+        for(var i = 0; i < inputArray.length; i++){
+            inputArray[i].age = Number(inputArray[i].age) + 1;
+        }
+        return inputArray;
+    }
+    console.log(getOlder(dogsArray));
+    console.log(getOlder(dogsArray2));
+
+
+
+
+</script>
+</body>
+</html>
