@@ -31,7 +31,7 @@ geocode("600 Navarro St. San Antonio TX, 78205", mapboxToken).then(function(resu
     map.setCenter(result);
     //set a marker
 });
-geocode("445 Martinez Ln, Poteet TX, 78065", mapboxToken).then(function(result){
+geocode("home address", mapboxToken).then(function(result){
     console.log(result);
 })
 
@@ -62,7 +62,7 @@ var markerCodeup = new mapboxgl.Marker(markerOptions)
     .addTo(map)
 
 var markerHome = new mapboxgl.Marker(markerOptions)
-    .setLngLat([-98.6467574, 29.0773323])
+    .setLngLat()
     .addTo(map)
 
 markerCodeup.setPopup(popupCodeup);
