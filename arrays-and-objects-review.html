@@ -95,7 +95,76 @@
     console.log(getOlder(dogsArray));
     console.log(getOlder(dogsArray2));
 
+//TODO 3. Write a function, `washCars()` that takes in a array of car objects and sets the boolean properties of isDirty to false
 
+
+            // Example input
+           var exampleInput = [
+                 {
+                     make: 'Volvo',
+                     color: 'red',
+                     year: 1996,
+                     isDirty: true
+                 },
+                 {
+                     make: 'Toyota',
+                     color: 'black',
+                     year: 2004,
+                     isDirty: false
+                 },
+                 {
+                     make: 'Ford',
+                     color: 'white',
+                     year: 2007,
+                     isDirty: true
+                 }
+            ];
+
+    // function washCars(inputArray){
+    //
+    //     inputArray.forEach(function(){
+    //
+    //             inputArray.isDirty = false;
+    //
+    //
+    //     });
+    //
+    //     return inputArray;
+    // }
+    // console.log(washCars(exampleInput));
+
+
+    function washCars(inputArray){
+        for(var i = 0; i < inputArray.length; i++){
+                if(inputArray.isDirty !== false){
+                    inputArray.isDirty = false;
+                }
+        }
+    }
+
+    console.log(washCars(exampleInput));
+
+            // Example output:
+             var exampleOutput = [
+                 {
+                     make: 'Volvo',
+                     color: 'red',
+                     year: 1996,
+                     isDirty: false // changed to false
+                 },
+                 {
+                     make: 'Toyota',
+                     color: 'black',
+                     year: 2004,
+                     isDirty: false // stays the same
+                 },
+                 {
+                     make: 'Ford',
+                     color: 'white',
+                     year: 2007,
+                     isDirty: false // changed to false
+                 }
+             ];
 
 
 </script>
