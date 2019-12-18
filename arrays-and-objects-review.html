@@ -120,51 +120,186 @@
                  }
             ];
 
-    // function washCars(inputArray){
-    //
-    //     inputArray.forEach(function(){
-    //
-    //             inputArray.isDirty = false;
-    //
-    //
-    //     });
-    //
-    //     return inputArray;
-    // }
-    // console.log(washCars(exampleInput));
-
-
     function washCars(inputArray){
         for(var i = 0; i < inputArray.length; i++){
-                if(inputArray.isDirty !== false){
-                    inputArray.isDirty = false;
-                }
+            inputArray[i].isDirty = false;
         }
+        return inputArray;
     }
-
     console.log(washCars(exampleInput));
 
+
+    // function washCars(inputArray){
+    //     for(var i = 0; i < inputArray.length; i++){
+    //             if(inputArray.isDirty !== false){
+    //                 inputArray.isDirty = false;
+    //             }
+    //     }
+    // }
+
+
             // Example output:
-             var exampleOutput = [
-                 {
-                     make: 'Volvo',
-                     color: 'red',
-                     year: 1996,
-                     isDirty: false // changed to false
-                 },
-                 {
-                     make: 'Toyota',
-                     color: 'black',
-                     year: 2004,
-                     isDirty: false // stays the same
-                 },
-                 {
-                     make: 'Ford',
-                     color: 'white',
-                     year: 2007,
-                     isDirty: false // changed to false
-                 }
-             ];
+            //  var exampleOutput = [
+            //      {
+            //          make: 'Volvo',
+            //          color: 'red',
+            //          year: 1996,
+            //          isDirty: false // changed to false, correct
+            //      },
+            //      {
+            //          make: 'Toyota',
+            //          color: 'black',
+            //          year: 2004,
+            //          isDirty: false // stays the same, correct
+            //      },
+            //      {
+            //          make: 'Ford',
+            //          color: 'white',
+            //          year: 2007,
+            //          isDirty: false // changed to false, correct
+            //      }
+            //  ];
+
+
+//TODO 4. Write a function, `adminList()` that takes in an array of user objects and returns a count of all admins based on the isAdmin property.
+
+         //Example Input:
+          var inputAdminList = [
+             {
+                 isAdmin: true,
+                 email: 'user1@email.com'
+             },
+             {
+                 isAdmin: true,
+                 email: 'user2@email.com'
+             },
+             {
+                 isAdmin: false,
+                 email: 'user3@email.com'
+             }
+         ];
+
+    // function adminList(inputArray){
+    //     var numberBucket = [];
+    //
+    //     for(var i = 0; i < inputArray.length; i++){
+    //         // console.log(inputArray[i]); //to show that we are looping through all elements
+    //         if(inputArray[i].isAdmin === true){
+    //             numberBucket.push(inputArray[i]);
+    //         }
+    //     }
+    //     return numberBucket.length;
+    // }
+    // // Example Output (before refactor): 2
+    // console.log(adminList(inputAdminList)); // output: 2
+
+
+    // TODO Refactor to return an array of admin-only user emails.
+
+    //first refactor below
+
+    // function adminList(inputArray){
+    //     var numberBucket = [];
+    //
+    //     for(var i = 0; i < inputArray.length; i++){
+    //         // console.log(inputArray[i]); //to show that we are looping through all elements
+    //         if(inputArray[i].isAdmin === true){
+    //             numberBucket.push(inputArray[i].email);
+    //         }
+    //     }
+    //     return numberBucket;
+    // }
+    // console.log(adminList(inputAdminList)); //output ["user1@email.com", "user2@email.com"]
+
+        // Example Output (after 1st refactor): correct
+        // var refactorOutput1 = [
+        //     'user1@email.com',
+        //     'user2@email.com'
+        // ];
+
+    //  TODO Refactor again to return an array of user objects that are admins.
+
+    //second refactor below
+
+    function adminList(inputArray){
+        var userObjectsBucket = [];
+
+        for(var i = 0; i < inputArray.length; i++){
+            // console.log(inputArray[i]); //to show that we are looping through all elements
+            if(inputArray[i].isAdmin === true){
+                userObjectsBucket.push(inputArray[i]);
+            }
+        }
+        return userObjectsBucket;
+    }
+    console.log(adminList(inputAdminList)); //output matches below
+
+        // Example Output (after 2nd refactor):
+        // var refactorOutput2 = [
+        //      {
+        //          isAdmin: true,
+        //          email: 'user1@email.com'
+        //      },
+        //      {
+        //          isAdmin: true,
+        //          email: 'user2@email.com'
+        //      }
+        //  ];
+
+//TODO 5. Create a function, `makeSandwichObjects()` that takes in two array of strings, breads and fillings and returns an array of sandwichObjects that contain properties for bread and filling and values correspond to the same order of the two passed in arrays. Assume the two array inputs are the same length.
+
+
+        //     Example Input:
+
+         var breads  = [
+             "white",
+             "wheat",
+             "rhy",
+             "white"
+         ];
+
+         var fillings = [
+             "pb&j",
+             "ham",
+             "cheese steak",
+             "tuna"
+         ];
+
+    function adminList(inputArray){
+        var userObjectsBucket = [];
+
+        for(var i = 0; i < inputArray.length; i++){
+            // console.log(inputArray[i]); //to show that we are looping through all elements
+            if(inputArray[i].isAdmin === true){
+                userObjectsBucket.push(inputArray[i]);
+            }
+        }
+        return userObjectsBucket;
+    }
+
+         console.log(makeSandwichObjects(breads, fillings)); // example call to the function
+
+
+        // Example Output:
+        //    var exampleOutputSandwich = [
+        //      {
+        //          bread: "white",
+        //          filling: "pb&j"
+        //      },
+        //      {
+        //          bread: "wheat",
+        //          filling: "ham"
+        //      },
+        //      {
+        //          bread: "rhy",
+        //          filling: "cheese steak"
+        //      },
+        //      {
+        //          bread: "white",
+        //          filling: "tuna"
+        //      }
+        //  ];
+
 
 
 </script>
