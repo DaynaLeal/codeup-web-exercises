@@ -265,19 +265,15 @@
              "tuna"
          ];
 
-    function adminList(inputArray){
-        var userObjectsBucket = [];
+    function makeSandwichObjects(inputBreads, inputFillings){
+        var sandwichObjects = [];
 
-        for(var i = 0; i < inputArray.length; i++){
-            // console.log(inputArray[i]); //to show that we are looping through all elements
-            if(inputArray[i].isAdmin === true){
-                userObjectsBucket.push(inputArray[i]);
-            }
-        }
-        return userObjectsBucket;
+
+        return sandwichObjects;
     }
 
          console.log(makeSandwichObjects(breads, fillings)); // example call to the function
+
 
 
         // Example Output:
