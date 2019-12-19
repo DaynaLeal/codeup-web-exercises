@@ -100,7 +100,7 @@
 
 
             // Example input
-           var exampleInput = [
+           var carList = [
                  {
                      make: 'Volvo',
                      color: 'red',
@@ -122,13 +122,13 @@
             ];
 
     //my code
-    // function washCars(inputArray){
-    //     for(var i = 0; i < inputArray.length; i++){
-    //         inputArray[i].isDirty = false;
-    //     }
-    //     return inputArray;
-    // }
-    // console.log(washCars(exampleInput));
+    function washCars(inputArray){
+        for(var i = 0; i < inputArray.length; i++){
+            inputArray[i].isDirty = false;
+        }
+        return inputArray;
+    }
+    console.log(washCars(exampleInput));
 
 
 
