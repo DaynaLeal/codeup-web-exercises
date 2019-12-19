@@ -288,11 +288,17 @@
         var sandwichBucket = [];
 
         for(var i = 0; i < breads.length; i++){
-            var sandwichObject = {
+
+            // var sandwichObject = {
+            //     bread: breads[i],
+            //     filling: fillings[i]
+            // }
+            // sandwichBucket.push(sandwichObject); //OR below for alternate version
+
+            sandwichBucket.push({
                 bread: breads[i],
                 filling: fillings[i]
-            }
-            sandwichBucket.push(sandwichObject);
+            });
         }
         return sandwichBucket;
     }
