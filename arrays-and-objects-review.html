@@ -16,7 +16,7 @@
     //TODO 1.  Write a function, `filterNumbers()` that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
     //filterNumbers(["fred", true, 5, 3]) //[3, 5]
 
-    //first is the forEach version
+    //first is MY forEach version
     // function filterNumbers(inputArray){
     //     var numberBucket = [];
     //
@@ -26,24 +26,24 @@
     //         }
     //     });
     //
-    //     return numberBucket;
+    //     return numberBucket.sort();
     // }
     // console.log(filterNumbers(["fred", true, 5, 3]));
 
-    //below is the for loop version
-    function filterNumbers(inputArray){
-        var numberBucket = [];
-
-        for(var i = 0; i < inputArray.length; i++){
-            // console.log(inputArray[i]); //to show that we are looping through all elements
-            if(typeof inputArray[i] === "number"){
-                numberBucket.push(inputArray[i]);
-            }
-        }
-
-        return numberBucket;
-    }
-    console.log(filterNumbers(["fred", true, 5, 3]));
+    //below is MY for loop version
+    // function filterNumbers(inputArray){
+    //     var numberBucket = [];
+    //
+    //     for(var i = 0; i < inputArray.length; i++){
+    //         // console.log(inputArray[i]); //to show that we are looping through all elements
+    //         if(typeof inputArray[i] === "number"){
+    //             numberBucket.push(inputArray[i]);
+    //         }
+    //     }
+    //
+    //     return numberBucket.sort();
+    // }
+    // console.log(filterNumbers(["fred", true, 5, 3]));
 
     //TODO 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
 
@@ -86,14 +86,15 @@
          }
      ];
 
-    function getOlder(inputArray){
-        for(var i = 0; i < inputArray.length; i++){
-            inputArray[i].age = Number(inputArray[i].age) + 1;
-        }
-        return inputArray;
-    }
-    console.log(getOlder(dogsArray));
-    console.log(getOlder(dogsArray2));
+    //my code
+    // function getOlder(inputArray){
+    //     for(var i = 0; i < inputArray.length; i++){
+    //         inputArray[i].age = Number(inputArray[i].age) + 1;
+    //     }
+    //     return inputArray;
+    // }
+    // console.log(getOlder(dogsArray));
+    // console.log(getOlder(dogsArray2));
 
 //TODO 3. Write a function, `washCars()` that takes in a array of car objects and sets the boolean properties of isDirty to false
 
@@ -120,22 +121,15 @@
                  }
             ];
 
-    function washCars(inputArray){
-        for(var i = 0; i < inputArray.length; i++){
-            inputArray[i].isDirty = false;
-        }
-        return inputArray;
-    }
-    console.log(washCars(exampleInput));
-
-
+    //my code
     // function washCars(inputArray){
     //     for(var i = 0; i < inputArray.length; i++){
-    //             if(inputArray.isDirty !== false){
-    //                 inputArray.isDirty = false;
-    //             }
+    //         inputArray[i].isDirty = false;
     //     }
+    //     return inputArray;
     // }
+    // console.log(washCars(exampleInput));
+
 
 
             // Example output:
@@ -179,6 +173,7 @@
              }
          ];
 
+       //my code first function
     // function adminList(inputArray){
     //     var numberBucket = [];
     //
@@ -196,7 +191,7 @@
 
     // TODO Refactor to return an array of admin-only user emails.
 
-    //first refactor below
+    //MY first refactor below
 
     // function adminList(inputArray){
     //     var numberBucket = [];
@@ -219,20 +214,20 @@
 
     //  TODO Refactor again to return an array of user objects that are admins.
 
-    //second refactor below
+    //MY second refactor below
 
-    function adminList(inputArray){
-        var userObjectsBucket = [];
-
-        for(var i = 0; i < inputArray.length; i++){
-            // console.log(inputArray[i]); //to show that we are looping through all elements
-            if(inputArray[i].isAdmin === true){
-                userObjectsBucket.push(inputArray[i]);
-            }
-        }
-        return userObjectsBucket;
-    }
-    console.log(adminList(inputAdminList)); //output matches below
+    // function adminList(inputArray){
+    //     var userObjectsBucket = [];
+    //
+    //     for(var i = 0; i < inputArray.length; i++){
+    //         // console.log(inputArray[i]); //to show that we are looping through all elements
+    //         if(inputArray[i].isAdmin === true){
+    //             userObjectsBucket.push(inputArray[i]);
+    //         }
+    //     }
+    //     return userObjectsBucket;
+    // }
+    // console.log(adminList(inputAdminList)); //output matches below
 
         // Example Output (after 2nd refactor):
         // var refactorOutput2 = [
