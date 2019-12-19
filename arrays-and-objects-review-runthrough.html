@@ -329,6 +329,40 @@
     //  ];
 
 
+    //TODO (EXTRA QUESTION) write a function named keepYellow that accepts an array of strings and returns an array with all the strings that are equal to yellow
+
+    //mine
+    // function keepYellow(arrStrings){
+    //     var yellowBucket = [];
+    //
+    //     for(var i = 0; i < arrStrings.length; i++){
+    //         if(arrStrings[i] === "yellow"){
+    //             yellowBucket.push(arrStrings[i]);
+    //         }
+    //     }
+    //     return yellowBucket;
+    // }
+    // console.log(keepYellow(["yellow", "red", 5, "yellow", "blue", "yellow"]))
+
+    //run-through
+
+    //1.write a function keepYellow()
+    //2. var yellowBucket = []
+    //3. for each/loop through strings array --> forEach string, check to see if its === "yellow"
+    //4. if it is equal to "yellow" push that string to the bucket
+    //5. return yellowBucket
+
+    function keepYellow(strings){
+        var yellowBucket = [];
+
+        strings.forEach(function (str){
+            if(str === "yellow"){
+                yellowBucket.push(str);
+            }
+        })
+        return yellowBucket;
+    }
+    console.log(keepYellow(["yellow", "red", "blue", "yellow", "black", "brown", "yellow"]));
 
 </script>
 </body>
