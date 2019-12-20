@@ -306,8 +306,17 @@
     //write a function that accepts a string and returns an object with the original string, the length of the string, as well as the number of a's and b's
 
     function stringToObject(str){
-        var
+        var newObject = {
+            original: str,
+            length: stringLength(str),
+            count: AsAndBs(str)
+        };
+
+        return newObject;
     }
+    console.log(stringToObject("dog"));
+    console.log(stringToObject("banana"));
+    console.log(stringToObject("mississippi"));
 
 
 //BRYANS CODE
@@ -318,22 +327,49 @@
 //         word.numbofAsAndBs = AsAndBs(str);
 //         return word;
 //     }
-    // console.log(analyzeWord("dog"));
-    // console.log(analyzeWord("banana"));
-    // console.log(analyzeWord("mississippi"));
+//     console.log(analyzeWord("dog"));
+//     console.log(analyzeWord("banana"));
+//     console.log(analyzeWord("mississippi"));
 
 
     //##############################################################################################################
-    // Write a function that accepts an array of strings and returns an array of those words analyze similarly
-    //
-    // function analyzeAllWords(arr){
-    //     for (var i = 0; i < arr.length; i++){
-    //         analyzeWords.push(analyzeWord(arr[i]));
-    //     }
-    //     return analyzeWords;
-    // }
-    //
-    // console.log(analyzeWord('dog', 'banana', 'mississippi'));
+    // Write a function that accepts an array of strings and returns an array of those words analyzed similarly
+
+    //for loop version
+    function multipleWords(arrayOfStrings){
+        var arrayOfObjects = [];
+
+        for(var i = 0; i < arrayOfStrings.length; i++){
+            arrayOfObjects.push(stringToObject(arrayOfStrings[i]));
+        }
+        return arrayOfObjects;
+    }
+        console.log(multipleWords(['dog', 'banana', 'mississippi']));
+
+
+    //forEach version
+    function moreWords(arrayOfStrings){
+        var arrayOfObjects = [];
+
+        arrayOfStrings.forEach(function (str){
+            arrayOfObjects.push(stringToObject(str));
+        });
+
+        return arrayOfObjects;
+    }
+    console.log(moreWords(['dog', 'banana', 'mississippi']));
+
+
+
+//BRYANS CODE
+//     function analyzeAllWords(arr){
+//         for (var i = 0; i < arr.length; i++){
+//             analyzeWords.push(analyzeWord(arr[i]));
+//         }
+//         return analyzeWords;
+//     }
+//
+//     console.log(analyzeAllWords(['dog', 'banana', 'mississippi']));
 
 
 
