@@ -9,19 +9,74 @@
 </head>
 <body>
 
-<h1>jQuery Intro</h1>
+<!-- below is for the jquery selector exercises-->
+<!--h1, p, ul, li, div-->
+
+<h1 class="codeup">jQuery Selector Exercises</h1>
+
+<p id="paragraph_id">Below is the html for jQuery DOM manipulation with selectors.</p>
+
+<div id="div_id">
+    <h3 class="codeup">Some Types of jQuery selectors include:</h3>
+    <ul>
+        <li>id selectors $('#id_name').</li>
+        <li>class selectors $('.class_name').</li>
+        <li>element selectors $('element_name).</li>
+        <li>all selector $('*').</li>
+    </ul>
+</div>
+
+<div>
+    <h3 class="codeup">jQuery makes html manipulation much easier.</h3>
+</div>
+
+
+<!-- below is the jquery intro exercise-->
+<!--<h1>jQuery Intro</h1>-->
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
 
-    window.onload = function() {
-        alert('The page has finished loading!');
-    };
+    // -------------------below are the jquery MULTIPLE selector exercises--------------------------------------------
+    $('li, p, h1').css('background-color', 'yellow');
 
-    console.log("jquery");
+    // -------------------below are the jquery ELEMENT selector exercises---------------------------------------------
+    $('li').css('font-size', '20px');
 
-    $(document).ready(function() {
-        alert( 'The DOM has finished loading!' ); //this alerted before the window.onload alert. This is because of the ".ready()" with anonymous function which loads first
-    });
+    // $('h1').css('background-color', 'yellow');
+    // $('p').css('background-color', 'yellow');
+    // $('li').css('background-color', 'yellow');
+
+
+    // var headingAlert = $('h1').html();
+    // alert(headingAlert);
+    alert($('h1').html()); //this also works apparently
+
+
+    // -------------------below are the jquery CLASS selector exercises-----------------------------------------------
+    // $('.codeup').css('border', 'red solid 1px');
+
+
+
+    //-------------------below are the jquery ID selector exercises---------------------------------------------------
+    // var alertContent = $('#paragraph_id').html();
+    // alert(alertContent);
+    //
+    // var secondAlert = $('#div_id').html();
+    // alert(secondAlert); //giving this id to two elements allows only the first element with id to work
+
+
+
+    //-------------------below is the jquery intro exercise--------------------------------------------------------
+    // window.onload = function() {
+    //     alert('The page has finished loading!');
+    // };
+    //
+    // console.log("jquery");
+    //
+    // $(document).ready(function() {
+    //     alert( 'The DOM has finished loading!' ); //this alerted before the window.onload alert. This is because of the ".ready()" with anonymous function which loads first
+    // });
 
 </script>
 </body>
