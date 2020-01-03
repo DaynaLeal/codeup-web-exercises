@@ -18,15 +18,40 @@
     <p>This is an important message!</p>
 </div>
 <div class="not-important">
-    <h2>Lorem Ipsum</h2>
+    <h2 id="my-element">Lorem Ipsum</h2>
     <p>
         Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
     </p>
 </div>
 <p class="important">This is also very important.</p>
 
+<h1 id="codeup">Hello Codeup</h1>
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
+
+    //----------------below is following along with curriculum from jQuery Mouse Events--------------------------------
+    //this does the same as the named function below, both work
+    // var ele = document.getElementById('my-element');
+    // ele.addEventListener('click', function(e) {
+    //     alert('My element was clicked!');
+    // });
+
+    //this is equivalent to the anonymous function above, both work
+    function clickHandler(e) {
+        alert('My element was clicked!');
+    }
+    var ele = document.getElementById('my-element');
+    ele.addEventListener('click', clickHandler);
+
+    // $('#codeup').click(function() {
+    //     alert('h1 with id "codeup" was clicked');
+    // }); //this looks like a much easier way of writing the above two functions, and it does the same thing
+
+    $('#codeup').dblclick(function(){
+        alert('h1 with id "codeup" was double clicked!')
+    });
+
 
     //----------------below is following along with curriculum from jQuery Selectors-----------------------------------
     // var contents = $('#codeup').html();
@@ -35,8 +60,8 @@
     // $('.important').css('background-color', 'yellow');
     // $('p').css('font-size', '14px');
 
-    $('.important, p').css('background-color', '#FF0');
-    $('*').css('border', '1px solid #F00');
+    // $('.important, p').css('background-color', '#FF0');
+    // $('*').css('border', '1px solid #F00');
 
 
     //---------------below is following along with curriculum from jQuery intro----------------------------------------
