@@ -12,23 +12,50 @@
 <!--<h1>jQuery Intro</h1>-->
 <!--<h1 id="codeup">Hello Codeup</h1>-->
 
-<h1>Example Page</h1>
-<div class="important">
-    <h3>NOTICE</h3>
-    <p>This is an important message!</p>
-</div>
-<div class="not-important">
-    <h2 id="my-element">Lorem Ipsum</h2>
-    <p>
-        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.
-    </p>
-</div>
-<p class="important">This is also very important.</p>
+<!--<h1>Example Page</h1>-->
+<!--<div class="important">-->
+<!--    <h3>NOTICE</h3>-->
+<!--    <p>This is an important message!</p>-->
+<!--</div>-->
+<!--<div class="not-important">-->
+<!--    <h2 id="my-element">Lorem Ipsum</h2>-->
+<!--    <p>-->
+<!--        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.-->
+<!--    </p>-->
+<!--</div>-->
+<!--<p class="important">This is also very important.</p>-->
 
-<h1 id="codeup">Hello Codeup</h1>
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+
+
+
+<!--below is material for the keyboard events section-->
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
+</form>
+
+
+
+
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
+
+    //----------------below is following along with curriculum from jQuery Keyboard Events-----------------------------
+
+    // $('#textfield').keydown(function() {
+    //     alert('A key was pushed down!');
+    // });
+
+    // $('#textfield').keypress(function() {
+    //     alert('a key was pressed!');
+    // });
+
+    // $('#textfield').keyup(function() {
+    //     alert('a key was released!');
+    // });
+
 
     //----------------below is following along with curriculum from jQuery Mouse Events--------------------------------
     //this does the same as the named function below, both work
@@ -52,14 +79,14 @@
     //     alert('h1 with id "codeup" was double clicked!')
     // });
 
-    $('#codeup').hover(
-        function() {
-            $(this).css('background-color', '#FF0');
-        },
-        function() { //this function turns it off, when commented out, the background color stays yellow
-            $(this).css('background-color', '#FFF');
-        }
-    );
+    // $('#codeup').hover(
+    //     function() {
+    //         $(this).css('background-color', '#FF0');
+    //     },
+    //     function() { //this function turns it off, when commented out, the background color stays yellow
+    //         $(this).css('background-color', '#FFF');
+    //     }
+    // );
     //----------------below is following along with curriculum from jQuery Selectors-----------------------------------
     // var contents = $('#codeup').html();
     // alert(contents);
