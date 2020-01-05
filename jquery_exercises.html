@@ -37,11 +37,33 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script>
 
+    // -------------------below are the jquery MOUSE EVENTS exercises-------------------------------------------------
+    $(' h1 ').click(function() {
+        $(this).css('background-color', '#FF0');
+    });
+
+    $(' p ').dblclick(function() {
+       $(this).css('font-size', '18px');
+    });
+
+    $(' li ').hover(
+        function(){
+            $(this).css('color', 'red');
+        },
+        function(){
+            $(this).css('color', 'black');
+        }
+    );
+
+
+
+
+
     // -------------------below are the jquery MULTIPLE selector exercises--------------------------------------------
-    $('li, p, h1').css('background-color', 'yellow');
+    // $('li, p, h1').css('background-color', 'yellow');
 
     // -------------------below are the jquery ELEMENT selector exercises---------------------------------------------
-    $('li').css('font-size', '20px');
+    // $('li').css('font-size', '20px');
 
     // $('h1').css('background-color', 'yellow');
     // $('p').css('background-color', 'yellow');
@@ -50,7 +72,7 @@
 
     // var headingAlert = $('h1').html();
     // alert(headingAlert);
-    alert($('h1').html()); //this also works apparently
+    // alert($('h1').html()); //this also works apparently
 
 
     // -------------------below are the jquery CLASS selector exercises-----------------------------------------------
