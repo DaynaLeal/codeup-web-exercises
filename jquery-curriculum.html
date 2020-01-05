@@ -38,21 +38,28 @@
     // });
 
     //this is equivalent to the anonymous function above, both work
-    function clickHandler(e) {
-        alert('My element was clicked!');
-    }
-    var ele = document.getElementById('my-element');
-    ele.addEventListener('click', clickHandler);
+    // function clickHandler(e) {
+    //     alert('My element was clicked!');
+    // }
+    // var ele = document.getElementById('my-element');
+    // ele.addEventListener('click', clickHandler);
 
     // $('#codeup').click(function() {
     //     alert('h1 with id "codeup" was clicked');
     // }); //this looks like a much easier way of writing the above two functions, and it does the same thing
 
-    $('#codeup').dblclick(function(){
-        alert('h1 with id "codeup" was double clicked!')
-    });
+    // $('#codeup').dblclick(function(){
+    //     alert('h1 with id "codeup" was double clicked!')
+    // });
 
-
+    $('#codeup').hover(
+        function() {
+            $(this).css('background-color', '#FF0');
+        },
+        function() { //this function turns it off, when commented out, the background color stays yellow
+            $(this).css('background-color', '#FFF');
+        }
+    );
     //----------------below is following along with curriculum from jQuery Selectors-----------------------------------
     // var contents = $('#codeup').html();
     // alert(contents);
