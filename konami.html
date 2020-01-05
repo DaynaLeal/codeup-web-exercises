@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p>Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter"</p>
+<p>Konami Code: "up up down down left right left right b a enter"</p>
+<p>Konami Code: "38 38 40 40 37 39 37 39 66 65 13"</p>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+        "use strict";
+
+        var userInput = " ";
+        var konami = "3838404037393739666513";
+
+
+        function reset() {
+            userInput = " ";
+        }
+
+        $(document).keyup(function (event) {
+            // console.log(event.which);
+            userInput += (event.which);
+            console.log(event.which);
+            console.log(userInput);
+            if (userInput === konami) {
+                // console.log("konami");
+                reset();
+                alert("You have added 30 lives!");
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
