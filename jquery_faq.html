@@ -17,6 +17,7 @@
     </style>
 </head>
 <body>
+<h2>Fun Facts About National Parks:</h2>
 <dl>
     <dt>Mackinac National Park</dt>
     <dd>
@@ -71,12 +72,35 @@
 
 <a href="#" id="visibilty-toggle">Click here to hide the fun facts!</a>
 
+<h3>Yosemite National Park</h3>
+<ul>
+    <li>Located in California</li>
+    <li>Three of the 10 highest waterfalls in the world are located in Yosemite National Park.</li>
+    <li>Ribbon Falls in Yosemite is nine times taller than Niagara Falls.</li>
+    <li>Yosemite is one of the few places in the U.S. where you can see a rainbow at night.</li>
+</ul>
+<h3>Yellowstone National Park</h3>
+<ul>
+    <li>Located in Wyoming, Idaho, and Montana.</li>
+    <li>Yellowstone is just 10 miles away from Grand Teton National Park in northern Wyoming.</li>
+    <li>Home to the Yellowstone Caldera, which is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. </li>
+    <li>The oldest U.S. national park, founded in 1872.</li>
+</ul>
+<h3>Denali National Park</h3>
+<ul>
+    <li>Located in Alaska</li>
+    <li>Has the widest range of elevations, from 200 feet in Yentna River to 20,302 feet at the summit of Mount McKinley.</li>
+    <li>Mount McKinley is the highest point in the national parks at 20,302 feet.</li>
+    <li>Home to the wood frog wood, which freezes itself into a cryogenic state in wintertime. The frog’s heart stops beating, and lungs cease pumping until the frog thaws in the spring. Afterward, they continue along as if winter never existed.</li>
+</ul>
 
+<a href="#" id="lastHighlight">Click this to highlight the last list items</a>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function(){
 
+        //below are for the attributes and css exercises
         // $(' dd ').addClass('invisible'); //to auto add the class without an event
 
 
@@ -95,10 +119,18 @@
             $(this).toggleClass('highlight');
         });
 
-        // $(' dt ').click(function(event) {
-        //     event.preventDefault();
-        //     $(' dt ').toggleClass('highlight');
-        // });
+        //below is for the transversing exercises
+        $(' ul ').addClass('highlight-last');
+
+        $('#lastHighlight').click(function(event) {
+            event.preventDefault();
+            $(' ul li:last-child').css('background-color', 'yellow');
+        });
+
+        $(' h3 ').click(function(event){
+
+        });
+
     });
 </script>
 </body>
