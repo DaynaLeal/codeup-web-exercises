@@ -5,20 +5,21 @@
 </head>
 <body>
 <h1>Konami Code</h1>
-<p>Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter"</p>
+<!--<p>Konami Code: "^ ^ ↓ ↓ < > < > b a enter"</p>-->
 <p>Konami Code: "up up down down left right left right b a enter"</p>
-<p>Konami Code: "38 38 40 40 37 39 37 39 66 65 13"</p>
+<p>Konami Code: "3838404037393739666513"</p>
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function() {
         "use strict";
 
-        var userInput = " ";
+        var userInput = "";
         var konami = "3838404037393739666513";
+        // var konami = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter"; //use this with event.key instead of .which
 
 
         function reset() {
-            userInput = " ";
+            userInput = "";
         }
 
         $(document).keyup(function (event) {
@@ -26,8 +27,8 @@
             userInput += (event.which);
             console.log(event.which);
             console.log(userInput);
+            console.log(konami);
             if (userInput === konami) {
-                // console.log("konami");
                 reset();
                 alert("You have added 30 lives!");
             }
