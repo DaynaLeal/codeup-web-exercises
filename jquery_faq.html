@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+            /*color: red;*/
+        }
+        .highlight {
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dt>Mackinac National Park</dt>
+    <dd>
+        This national park was established in 1875, as the second national park, and was returned to the state in 1895. It is now one of Michigan's State Parks.
+    </dd>
+
+    <dt>Yosemite National Park</dt>
+    <dd>
+        Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.
+    </dd>
+
+    <dt>Wrangell-St. Elias National Park</dt>
+    <dd>
+        Located in Alaska, Wrangell-St. Elias National Park is the largest national park, covering 13,000 square miles or 13.2 million acres.
+    </dd>
+
+    <dt>Hot Springs National Park</dt>
+    <dd>
+        Located in Arkansas, coming in at about 5,500 acres. This was actually the first federally protected piece of land in 1832. It was not named a national park until 1921.
+    </dd>
+
+    <dt>Great Smoky Mountains National Park</dt>
+    <dd>
+        This national park is the most visited national park with more than 9 million guests per year, followed by Grand Canyon National Park, which gets more than 4 million visits per year.
+    </dd>
+
+    <dt>Denali National Park</dt>
+    <dd>
+        This national park has the widest range of elevations, from 200 feet in Yentna River to 20,302 feet at the summit of Mount McKinley. The summit of Mount McKinley is also the highest point in any national park.
+    </dd>
+
+    <dt>Arches National Park</dt>
+    <dd>
+        This park is famous for having the largest concentration of stone arches in the world.
+    </dd>
+
+    <dt>Dry Tortugas National Park</dt>
+    <dd>
+        Located in Florida, this national park is known for its world-renowned concentration of turtles.
+    </dd>
+
+    <dt>Mesa Verde National Park</dt>
+    <dd>
+        This national park was the first to be recognized for “works of man,” an acknowledgement of the incredible cliff dwellings left behind by the Pueblo Indians.
+    </dd>
+
+    <dt>Mammoth Cave National Park</dt>
+    <dd>
+        Located in Kentucky, this national park has the longest cave system in the world with more than 3,454 mapped miles.
+    </dd>
+</dl>
+
+<a href="#" id="visibilty-toggle">Click here to hide the fun facts!</a>
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function(){
+
+        // $(' dd ').addClass('invisible'); //to auto add the class without an event
+
+
+        // $('.invisible').css({
+        //     'visibility': 'hidden'
+        // });
+
+        $('#visibilty-toggle').click(function(event){
+            event.preventDefault();
+            $(' dd ').toggleClass('invisible');
+        });
+
+        //bonus
+        $(' dt ').click(function(event) {
+            event.preventDefault();
+            $(this).toggleClass('highlight');
+        });
+
+        // $(' dt ').click(function(event) {
+        //     event.preventDefault();
+        //     $(' dt ').toggleClass('highlight');
+        // });
+    });
+</script>
+</body>
+</html>
