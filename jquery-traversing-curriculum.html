@@ -17,7 +17,7 @@
 <!--        <li>Javascript</li>-->
 <!--    </ul>-->
 
-    <h3>National Parks</h3>
+    <h3 id="national-parks-heading">National Parks</h3>
     <ul id="national-parks">
         <li>Arches</li>
         <li>Badlands</li>
@@ -40,18 +40,27 @@
 
     $(document).ready(function(){
 
+        // $('li').each(function(index) {
+        //     if (index % 2 !== 0) {
+        //         $(this).css('background-color', '#FF0');
+        //     }
+        // });
+        //
+        // $('li').first().css('background-color', 'green');
+        // $('li').last().css('background-color', 'pink');
 
+        //to make all li elements bold
+        // $('li').css('font-weight', 'bold');
 
-        $('li').each(function(index) {
-            if (index % 2 !== 0) {
-                $(this).css('background-color', '#FF0');
-            }
-        });
+        //to make all child elements of element with id="national-parks"
+        // $('#national-parks').children().css('font-weight', 'bold');
 
-        $('li').first().css('background-color', 'green');
-        $('li').last().css('background-color', 'pink');
+        //to highlight parent element v the li elements
+        // $('li').css('background-color', '#FF0');
+        // $('li').parent().css('background-color', '#0F0'); //given to the bullet-points since the parent is ul element
 
-
+        //to act on the following (non-child) element, here this affected the entire ul
+        $('#national-parks-heading').next().css('background-color', 'salmon');
     });
 
 
