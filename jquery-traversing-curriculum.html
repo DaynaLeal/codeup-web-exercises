@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Traversing Curriculum</title>
+</head>
+<body>
+<!--    <h3>List of Languages</h3>-->
+<!--    <ul>-->
+<!--        <li>Linux</li>-->
+<!--        <li>Apache</li>-->
+<!--        <li>MySQL</li>-->
+<!--        <li>PHP</li>-->
+<!--        <li>Javascript</li>-->
+<!--    </ul>-->
+
+    <h3>National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+    $(document).ready(function(){
+
+
+
+        $('li').each(function(index) {
+            if (index % 2 !== 0) {
+                $(this).css('background-color', '#FF0');
+            }
+        });
+
+        $('li').first().css('background-color', 'green');
+        $('li').last().css('background-color', 'pink');
+
+
+    });
+
+
+</script>
+</body>
+</html>
