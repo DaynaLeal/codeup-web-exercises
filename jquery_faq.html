@@ -99,7 +99,7 @@
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function(){
-
+        "use strict";
         //below are for the attributes and css exercises
         // $(' dd ').addClass('invisible'); //to auto add the class without an event
 
@@ -124,11 +124,23 @@
 
         $('#lastHighlight').click(function(event) {
             event.preventDefault();
-            $(' ul li:last-child').css('background-color', 'yellow');
+            $(' ul li:last-child').css({
+                'background-color': 'yellow',
+                // 'font-weight': 'bold'
+            });
         });
 
         $(' h3 ').click(function(event){
+            event.preventDefault();
+            $(this).next().children().css('font-weight', 'bold');
+        });
 
+        //this needs "this"
+        $(' li ').click(function(event) {
+            event.preventDefault();
+            $(this).closest(" ul ").children(' li:first-of-type ').css('color', 'blue');
+            // $(this).closest(" li ").css('color', 'blue');
+            // $(' ulParent li:first-of-type ').css('color', 'blue');
         });
 
     });
