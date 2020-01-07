@@ -184,11 +184,31 @@
 
         $('#frameButton').click(function(event){
            event.preventDefault();
-           $('#frameOne').html("<img src=\"images/the-witcher.jpg\" alt=\"Netflix Original, The Witcher\">");
-           $('#frameTwo').html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">')
-           $('#frameTwo').delay(800).html('<img src="images/netflix-you.jpg" alt="Netflix Original, You">')
+
+           $('#frameOne').delay(200).queue(function(n){
+               $(this).html('<img src="images/the-witcher.jpg" alt="Netflix Original, The Witcher">');
+               n();
+           }).fadeIn(200);
+
+           $('#frameTwo').delay(200).queue(function(n){
+               $(this).html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">');
+               n();
+           }).fadeIn(200);
+
+
+
+            $('#frameThree').delay(800).queue(function(n){
+                $(this).html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">').animate('ease');
+                n();
+            })
+
+            $('#frameTwo').delay(800).queue(function(n){
+                $(this).html('<img src="images/netflix-you.jpg" alt="Netflix Original, You">');
+                n();
+            })
 
         });
+
     });
 </script>
 </body>
