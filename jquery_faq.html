@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>jQuery Essential Methods</title>
     <style>
         .invisible {
             visibility: hidden;
@@ -13,6 +13,38 @@
         }
         .highlight {
             background-color: darkseagreen;
+        }
+
+        img {
+            height: 400px;
+            width: 500px;
+        }
+        .divFrame {
+            border: #a58861 solid 10px;
+        }
+        #frameOne {
+            height: 400px;
+            width: 500px;
+            /*background-image: url("images/mrs-maisel.jpg");*/
+        }
+        #frameTwo {
+            height: 400px;
+            width: 500px;
+        }
+        #frameThree {
+            height: 400px;
+            width: 500px;
+        }
+        #parentDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        a {
+            border: solid #d4d4d4 1px;
+            border-radius: 4px;
+            padding: 5px;
         }
     </style>
 </head>
@@ -96,6 +128,16 @@
 
 <a href="#" id="lastHighlight">Click this to highlight the last list items</a>
 
+<h1>BONUS</h1>
+<h3>The last 3 shows I binge-watched were: </h3>
+<div id="parentDiv">
+    <div id="frameOne" class="divFrame"><img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel"></div>
+    <div id="frameTwo" class="divFrame"><img src="images/the-witcher.jpg" alt="Netflix Original, The Witcher"></div>
+    <div id="frameThree" class="divFrame"><img src="images/netflix-you.jpg" alt="Netflix Original, You"></div>
+</div>
+
+<a href="#" id="frameButton">Click here!</a>
+
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function(){
@@ -125,7 +167,7 @@
         $('#lastHighlight').click(function(event) {
             event.preventDefault();
             $(' ul li:last-child').css({
-                'background-color': 'yellow',
+                'background-color': 'yellow'
                 // 'font-weight': 'bold'
             });
         });
@@ -135,14 +177,18 @@
             $(this).next().children().css('font-weight', 'bold');
         });
 
-        //this needs "this"
         $(' li ').click(function(event) {
             event.preventDefault();
             $(this).closest(" ul ").children(' li:first-of-type ').css('color', 'blue');
-            // $(this).closest(" li ").css('color', 'blue');
-            // $(' ulParent li:first-of-type ').css('color', 'blue');
         });
 
+        $('#frameButton').click(function(event){
+           event.preventDefault();
+           $('#frameOne').html("<img src=\"images/the-witcher.jpg\" alt=\"Netflix Original, The Witcher\">");
+           $('#frameTwo').html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">')
+           $('#frameTwo').delay(800).html('<img src="images/netflix-you.jpg" alt="Netflix Original, You">')
+
+        });
     });
 </script>
 </body>
