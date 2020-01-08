@@ -41,14 +41,25 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
-        a {
+        a, #borderID {
             border: solid #d4d4d4 1px;
             border-radius: 4px;
             padding: 5px;
         }
+        ul, #fadeIn {
+            display: none;
+        }
     </style>
 </head>
 <body>
+
+<div id="borderID">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span id="hideEffect">x</span>
+</div>
+
+<h2 id="fadeIn">Would you like to register for this site?</h2>
+
 <h2>Fun Facts About National Parks:</h2>
 <dl>
     <dt>Mackinac National Park</dt>
@@ -200,7 +211,7 @@
             $('#frameThree').delay(800).queue(function(n){
                 $(this).html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">').animate('ease');
                 n();
-            })
+            });
 
             $('#frameTwo').delay(800).queue(function(n){
                 $(this).html('<img src="images/netflix-you.jpg" alt="Netflix Original, You">');
@@ -208,6 +219,19 @@
             })
 
         });
+
+        //below are the effects exercises
+        $('#hideEffect').click(function(event){
+            event.preventDefault();
+            $(' div ').hide();
+        });
+
+        $(' h3 ').click(function(event){
+            event.preventDefault();
+            $(this).next().slideToggle();
+        });
+
+        $('#fadeIn').delay(8000).fadeIn(8000);
 
     });
 </script>
