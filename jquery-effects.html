@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*#national-parks, #state-parks-texas {*/
+        /*    display: none;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+    <h1>Parks List</h1>
+    <h3 id="national-parks-toggle">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3 id="state-parks-texas-toggle">State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    //hide when clicked examples
+    // $('#national-parks-toggle').click(function() {
+    //     $('#national-parks').hide();
+    // });
+    // $('#state-parks-texas-toggle').click(function() {
+    //     $('#state-parks-texas').hide();
+    // });
+
+    //show when clicked example (also commented out the css to hard code hide first)
+    // $('#national-parks-toggle').click(function() {
+    //     $('#national-parks').show();
+    // });
+    // $('#state-parks-texas-toggle').click(function() {
+    //     $('#state-parks-texas').show();
+    // });
+
+    // $('#national-parks-toggle').click(function() {
+    //     $('#national-parks').toggle();
+    // });
+    // $('#state-parks-texas-toggle').click(function() {
+    //     $('#state-parks-texas').toggle();
+    // });
+
+    $('#national-parks-toggle').click(function() {
+        $('#national-parks').slideUp();
+    });
+
+    $('#state-parks-texas-toggle').click(function() {
+        $('#state-parks-texas').fadeToggle(2500);
+    });
+
+</script>
+</body>
+</html>
