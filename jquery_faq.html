@@ -53,10 +53,10 @@
 </head>
 <body>
 
-<div id="borderID">
-    <h1>Would you like to sign up for our newsletter?</h1>
-    <span id="hideEffect">x</span>
-</div>
+<!--<div id="borderID">-->
+<!--    <h1>Would you like to sign up for our newsletter?</h1>-->
+<!--    <span id="hideEffect">x</span>-->
+<!--</div>-->
 
 <h2 id="fadeIn">Would you like to register for this site?</h2>
 
@@ -221,18 +221,23 @@
         });
 
         //below are the effects exercises
-        $('#hideEffect').click(function(event){
-            event.preventDefault();
-            $(' div ').hide();
-        });
+        // $('#hideEffect').click(function(event){
+        //     event.preventDefault();
+        //     $(' div ').hide();
+        // });
 
         $(' h3 ').click(function(event){
             event.preventDefault();
             $(this).next().slideToggle();
         });
 
-        $('#fadeIn').delay(8000).fadeIn(8000);
+        $('#fadeIn').delay(8000).fadeIn(1000);
 
+        //below are effects exercise bonus exercises
+        $('#hideEffect').click(function(event){
+            event.preventDefault();
+            $(' div ').hide();
+        });
     });
 </script>
 </body>
