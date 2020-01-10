@@ -265,7 +265,50 @@
         }
         console.log(getGoldReindeer(reindeerList));
 
+    //19. return the average hamster height from object array of hamsters
 
+        var hamsters = [
+            {
+                name: "Hamtaro",
+                heightInMM: 86,
+                fur: ['orange', 'white'],
+                gender: "male",
+                dateOfBirth: "August 6"
+            } , {
+                name: "Bijou",
+                heightInMM: 75,
+                fur: ['white'],
+                gender: "female",
+                dateOfBirth: "July 10"
+            } , {
+                name: "Oxnard",
+                heightInMM: 100,
+                fur: ['grey', 'white'],
+                gender: "male",
+                dateOfBirth: "May 3"
+            } , {
+                name: "Boss",
+                heightInMM: 120,
+                fur: ['brown', 'white'],
+                gender: "male",
+                dateOfBirth: "Spetember 21"
+            } , {
+                name: "Snoozer",
+                heightInMM: 85,
+                fur: ['brown', 'white', "pink"],
+                gender: "male",
+                dateOfBirth: "January 14"
+            }
+        ];
+
+        function hamsterHeight(arrayObjects){
+            var heightBucket = 0;
+            for(var i = 0; i < arrayObjects.length; i++){
+                heightBucket += arrayObjects[i].heightInMM;
+            }
+            return (heightBucket / arrayObjects.length);
+        }
+        console.log(hamsterHeight(hamsters)); //93.2 MM
 
 
 
