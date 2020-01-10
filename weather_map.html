@@ -71,6 +71,7 @@
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
 <script>
+    "use strict";
 
     var accessToken = mapboxToken;
 
@@ -144,13 +145,13 @@
                 $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
             }
 
-            if((data.daily.data[1].summary).toLowerCase() === "mostly cloudy" || (data.daily.data[1].summaryy).toLowerCase() === "cloudy"){
-                $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+            if((data.daily.data[1].summary).toLowerCase() === "mostly cloudy" || (data.daily.data[1].summary).toLowerCase() === "cloudy"){
+                $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
             } else if((data.daily.data[1].summary).toLowerCase() === "clear throughout the day."){
-                $('.tomorrowIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">')
+                $('.tomorrowIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
             }
 
-            //TODO: ASSIGN ICONS TO WEATHER SUMMARIES for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
+            //TODO: ASSIGN ICONS TO WEATHER SUMMARIES for clear-night, rain, snow, sleet, partly-cloudy-night.
             //TODO: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
             //TODO: ASSIGN GIFS TO SUMMARIES
             //TODO: US AN IF STATEMENT TO INSERT INTO JUMBOTRON
