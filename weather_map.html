@@ -96,7 +96,7 @@
             //THIS POPULATES TODAY'S WEATHER
             $('.todayClass').append('<div class="card-header">' + 'Today' + '<div>' + dateObject + '</div>' + '</div>' +
             '<div class="card-body">' +
-            '<h5 class="card-title">' + '<div class="iconClass">' + '</div>' + data.currently.temperature + '°' + '</h5>' +
+            '<h5 class="card-title">' + '<div class="todayIconClass">' + '</div>' + data.currently.temperature + '°' + '</h5>' +
             '<p class="card-text">' + data.currently.summary + '</p>' +
             '<p class="card-text">' + 'High: ' + data.daily.data[0].temperatureHigh + '°' + '/Low: ' + data.daily.data[0].temperatureLow + '°' + '</p>' +
             '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
@@ -107,35 +107,47 @@
             //THIS POPULATES TOMORROW'S WEATHER
             $('.tomorrowClass').append('<div class="card-header">' + 'Tomorrow' + '<div>' + tomorrowDateObject + '</div>' + '</div>' +
                 '<div class="card-body">' +
-                '<h5 class="card-title">' + '<div class="iconClass">' + '</div>' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
-                '<p class="card-text">' + data.currently.summary + '</p>' +
+                '<h5 class="card-title">' + '<div class="tomorrowIconClass">' + '</div>' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
+                '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
                 // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
                 // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
                 '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[1].windSpeed + ' mph' + '</p>' +
-                '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
+                // '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
                 '</div>');
 
             //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
             for(var i = 2; i <= 6; i++){
                 var otherDateObject = new Date(data.daily.data[i].time * 1000);
+                var weatherIcons5 = '';
+
+                if((data.daily.data[i].summary).toLowerCase() === "mostly cloudy" || (data.daily.data[i].summary).toLowerCase() === "overcast throughout the day."){
+                    weatherIcons5 = '<img src="images/overcast-icon.png" alt="Overcast Weather Icon">'
+                } else if((data.daily.data[i].summary).toLowerCase() === "clear throughout the day."){
+                    weatherIcons5 = '<img src="images/sunny-icon.png" alt="Overcast Weather Icon">'
+                }
+
                 // var appendCard =
                 $('#otherDayCards').append('<div class="card bg-light mb-3" style="max-width: 18rem;">' +
                     '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
                     '<div class="card-body">' +
-                    '<h5 class="card-title">' + '<div class="iconClass">' + '</div>' +
+                    '<h5 class="card-title">' + '<div id="iconClass">' + weatherIcons5 + '</div>' +
                     'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
-                    '<p class="card-text">' + data.currently.summary + '</p>' +
-                    // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
-                    // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
+                    '<p class="card-text">' + data.daily.data[i].summary + '</p>' + //TODO CHANGE THESE TO DAILY.DATA[i]
                     '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
-                    '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
+                    // '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
                     '</div>' +
                     '</div>');
 
             }
 
             if((data.currently.summary).toLowerCase() === "mostly cloudy" || (data.currently.summary).toLowerCase() === "cloudy"){
-                $('.iconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+                $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+            }
+
+            if((data.daily.data[1].summary).toLowerCase() === "mostly cloudy" || (data.daily.data[1].summaryy).toLowerCase() === "cloudy"){
+                $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+            } else if((data.daily.data[1].summary).toLowerCase() === "clear throughout the day."){
+                $('.tomorrowIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">')
             }
 
             //TODO: ASSIGN ICONS TO WEATHER SUMMARIES for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
