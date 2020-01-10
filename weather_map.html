@@ -8,25 +8,40 @@
     <title>Weather Map</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
+        body {
+            background-color: #cacacd;
+        }
         #weatherCards {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+            /*display: flex;*/
+            /*flex-direction: row;*/
+            /*justify-content: space-;*/
+            padding: 10px;
+        }
+        #otherDayCards {
+            /*display: flex;*/
+            /*flex-direction: row;*/
+            /*justify-content: space-around;*/
+            padding: 10px;
+        }
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
         }
     </style>
 </head>
 <body>
 
-<!--JUMBOTRON HTML-->
-<div class="jumbotron jumbotron-fluid">
+<!--    JUMBOTRON HTML-->
+<div class="jumbotron jumbotron-fluid mb-0 currentWeather">
     <div class="container">
-        <h1 class="display-4 text-center">Weather Map</h1>
+        <h1 class="display-4 text-center ">Weather Map</h1>
 <!--        <p class="lead">This is a weather map</p>-->
     </div>
 </div>
 
-<!--WEATHER CARDS-->
-<div id="weatherCards">
+<!--    WEATHER CARDS TODAY AND TOMORROW-->
+<div id="weatherCards" class="d-flex flex-row justify-content-center">
     <div class="card bg-light mb-3 todayClass text-center" style="max-width: 18rem;">
 <!--        <div class="card-header">Today</div>-->
 <!--        <div class="card-body">-->
@@ -35,36 +50,50 @@
 <!--        </div>-->
     </div>
 
-    <div class="card bg-light mb-3 tomorrowClass text-center" style="max-width: 18rem;">
+<!--    ALL OTHER WEATHER CARDS-->
+    <div class="card bg-light mb-3 tomorrowClass text-center " style="max-width: 18rem;">
 <!--        <div class="card-header">Tomorrow</div>-->
 <!--        <div class="card-body">-->
 <!--            <h5 class="card-title">Light card title</h5>-->
 <!--            <p class="card-text tomorrowClass"></p>-->
 <!--        </div>-->
     </div>
-
-    <div class="card bg-light mb-3 nextDayClass text-center" style="max-width: 18rem;">
-<!--        <div class="card-header">Sunday</div>-->
-<!--        <div class="card-body">-->
-<!--            <h5 class="card-title">Light card title</h5>-->
-<!--            <p class="card-text nextDayClass"></p>-->
-<!--        </div>-->
-    </div>
 </div>
 
+<!--    OTHER CARDS ARE APPENDED HERE-->
+
+    <div id="otherDayCards" class="d-flex flex-row justify-content-around"></div>
+
+<!--    MAP INSERTED HERE-->
+<div id='map'></div>
+
 <script src="js/jquery-2.2.4.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
 <script>
+
+    var accessToken = mapboxToken;
+
+    mapboxgl.accessToken = accessToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 13,
+        center: [-98.4916, 29.4252]
+    });
+
     $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/29.4241,-98.4936').done(function(data){
         console.log(data);
         var dateObject = new Date(data.currently.time * 1000); //the "* 1000" is necessary using darkSkyKey
-        var tomorrowDateObject = new Date(data.daily.data[1].time * 1000)
+        var tomorrowDateObject = new Date(data.daily.data[1].time * 1000);
+        var nextDateObject = new Date(data.daily.data[2].time * 1000);
         // var nextDateObject = new date(data.daily.data[2].time * 1000)
         // var tomorrowHigh = data.daily[1].temperatureHigh;
         console.log(dateObject); //need to get the date only
         console.log(tomorrowDateObject);
 
-        // for (var i = 0; i < data.length; i++){
+            //THIS POPULATES TODAY'S WEATHER
             $('.todayClass').append('<div class="card-header">' + 'Today' + '<div>' + dateObject + '</div>' + '</div>' +
             '<div class="card-body">' +
             '<h5 class="card-title">' + data.currently.temperature + '°' + '</h5>' +
@@ -75,26 +104,46 @@
             '<p class="card-text">' + data.hourly.summary + '</p>' +
             '</div>');
 
-        $('.tomorrowClass').append('<div class="card-header">' + 'Tomorrow' + '<div>' + Date(data.daily.data[3].time * 1000) + '</div>' + '</div>' +
-            '<div class="card-body">' +
-            '<h5 class="card-title">' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
-            '<p class="card-text">' + data.currently.summary + '</p>' +
-            // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
-            // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
-            '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[1].windSpeed + ' mph' + '</p>' +
-            '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
-            '</div>');
+            //THIS POPULATES TOMORROW'S WEATHER
+            $('.tomorrowClass').append('<div class="card-header">' + 'Tomorrow' + '<div>' + tomorrowDateObject + '</div>' + '</div>' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
+                '<p class="card-text">' + data.currently.summary + '</p>' +
+                // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
+                // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
+                '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[1].windSpeed + ' mph' + '</p>' +
+                '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
+                '</div>');
 
-        $('.nextDayClass').append('<div class="card-header">' + Date(data.daily.data[2].time * 1000) + '</div>' + '</div>' +
-            '<div class="card-body">' +
-            '<h5 class="card-title">' + 'High: ' + data.daily.data[2].temperatureHigh + '°' + '/Low: ' + data.daily.data[2].temperatureLow + '°' + '</h5>' +
-            '<p class="card-text">' + data.currently.summary + '</p>' +
-            // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
-            // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
-            '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[2].windSpeed + ' mph' + '</p>' +
-            '<p class="card-text">' + data.daily.data[2].summary + '</p>' +
-            '</div>')
-        // }
+            //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
+            for(var i = 2; i <= 6; i++ ){
+                var otherDateObject = new Date(data.daily.data[i].time * 1000);
+                // var appendCard =
+                $('#otherDayCards').append('<div class="card bg-light mb-3" style="max-width: 18rem;">' +
+                    '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
+                    '<div class="card-body">' +
+                    '<h5 class="card-title">' + 'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
+                    '<p class="card-text">' + data.currently.summary + '</p>' +
+                    // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
+                    // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
+                    '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
+                    '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
+                    '</div>' +
+                    '</div>');
+
+            }
+
+            //TODO: ASSIGN ICONS TO WEATHER SUMMARIES
+            //TODO: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
+            //TODO: ASSIGN GIFS TO SUMMARIES
+            //TODO: US AN IF STATEMENT TO INSERT INTO JUMBOTRON
+            //TODO: F TO C
+            //TODO: PUT MARKER ON MAP
+            //TODO: ALLOW USER TO SET AND SAVE LOCATION?
+            //TODO: SEARCH WEATHER BY CITY NAME
+            //TODO: SEARCH WEATHER BY MOVING MARKER
+            //TODO: REMOVE VANILLA CSS
+
 
     })
 </script>
