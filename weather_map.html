@@ -96,7 +96,7 @@
             //THIS POPULATES TODAY'S WEATHER
             $('.todayClass').append('<div class="card-header">' + 'Today' + '<div>' + dateObject + '</div>' + '</div>' +
             '<div class="card-body">' +
-            '<h5 class="card-title">' + data.currently.temperature + '°' + '</h5>' +
+            '<h5 class="card-title">' + '<div class="iconClass">' + '</div>' + data.currently.temperature + '°' + '</h5>' +
             '<p class="card-text">' + data.currently.summary + '</p>' +
             '<p class="card-text">' + 'High: ' + data.daily.data[0].temperatureHigh + '°' + '/Low: ' + data.daily.data[0].temperatureLow + '°' + '</p>' +
             '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
@@ -107,7 +107,7 @@
             //THIS POPULATES TOMORROW'S WEATHER
             $('.tomorrowClass').append('<div class="card-header">' + 'Tomorrow' + '<div>' + tomorrowDateObject + '</div>' + '</div>' +
                 '<div class="card-body">' +
-                '<h5 class="card-title">' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
+                '<h5 class="card-title">' + '<div class="iconClass">' + '</div>' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
                 '<p class="card-text">' + data.currently.summary + '</p>' +
                 // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
                 // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
@@ -116,13 +116,14 @@
                 '</div>');
 
             //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
-            for(var i = 2; i <= 6; i++ ){
+            for(var i = 2; i <= 6; i++){
                 var otherDateObject = new Date(data.daily.data[i].time * 1000);
                 // var appendCard =
                 $('#otherDayCards').append('<div class="card bg-light mb-3" style="max-width: 18rem;">' +
                     '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
                     '<div class="card-body">' +
-                    '<h5 class="card-title">' + 'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
+                    '<h5 class="card-title">' + '<div class="iconClass">' + '</div>' +
+                    'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
                     '<p class="card-text">' + data.currently.summary + '</p>' +
                     // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
                     // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
@@ -133,7 +134,11 @@
 
             }
 
-            //TODO: ASSIGN ICONS TO WEATHER SUMMARIES
+            if((data.currently.summary).toLowerCase() === "mostly cloudy" || (data.currently.summary).toLowerCase() === "cloudy"){
+                $('.iconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+            }
+
+            //TODO: ASSIGN ICONS TO WEATHER SUMMARIES for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
             //TODO: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
             //TODO: ASSIGN GIFS TO SUMMARIES
             //TODO: US AN IF STATEMENT TO INSERT INTO JUMBOTRON
