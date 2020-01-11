@@ -121,19 +121,39 @@
                 var otherDateObject = new Date(data.daily.data[i].time * 1000);
                 var weatherIcons5 = '';
 
-                if((data.daily.data[i].summary).toLowerCase() === "mostly cloudy" || (data.daily.data[i].summary).toLowerCase() === "overcast throughout the day."){
+                if((data.daily.data[i].summary).toLowerCase() === "mostly cloudy" || ((data.daily.data[i].summary).toLowerCase()).includes("overcast")){
                     weatherIcons5 = '<img src="images/overcast-icon.png" alt="Overcast Weather Icon">'
-                } else if((data.daily.data[i].summary).toLowerCase() === "clear throughout the day."){
-                    weatherIcons5 = '<img src="images/sunny-icon.png" alt="Overcast Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("day")){
+                    weatherIcons5 = '<img src="images/sunny-icon.png" alt="Clear Day Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("night")){
+                    weatherIcons5 = '<img src="images/clear-night-icon.png" alt="Clear Night Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("fog")){
+                    weatherIcons5 = '<img src="images/fog-icon.png" alt="Overcast Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("drizzle")){
+                    weatherIcons5 = '<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("thunder")){
+                    weatherIcons5 = '<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("rain")){
+                    weatherIcons5 = '<img src="images/rain-icon.png" alt="Rain Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[i].summary).toLowerCase()).includes("day")){
+                    weatherIcons5 = '<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[i].summary).toLowerCase()).includes("night")){
+                    weatherIcons5 = '<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("wind")){
+                    weatherIcons5 = '<img src="images/wind-icon.png" alt="Windy Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("snow")){
+                    weatherIcons5 = '<img src="images/snow-icon.png" alt="Snow Weather Icon">'
+                } else if(((data.daily.data[i].summary).toLowerCase()).includes("hail") || ((data.daily.data[i].summary).toLowerCase()).includes("sleet")){
+                    weatherIcons5 = '<img src="images/hail-icon.png" alt="Hail or Sleet Weather Icon">'
                 }
 
                 // var appendCard =
-                $('#otherDayCards').append('<div class="card bg-light mb-3" style="max-width: 18rem;">' +
+                $('#otherDayCards').append('<div class="card bg-light mb-3 text-center" style="max-width: 18rem;">' +
                     '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">' + '<div id="iconClass">' + weatherIcons5 + '</div>' +
                     'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
-                    '<p class="card-text">' + data.daily.data[i].summary + '</p>' + //TODO CHANGE THESE TO DAILY.DATA[i]
+                    '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
                     '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
                     // '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
                     '</div>' +
@@ -141,19 +161,73 @@
 
             }
 
-            if((data.currently.summary).toLowerCase() === "mostly cloudy" || (data.currently.summary).toLowerCase() === "cloudy"){
+            //TODAYS ICON IF STATEMENT
+            if(((data.currently.summary).toLowerCase()).includes("overcast") || (data.currently.summary).toLowerCase() === "cloudy"){
                 $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+            } else if(((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")){
+                $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")){
+                $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")){
+                $('.todayIconClass').html('<img src="images/clear-night-icon.png" alt="Partly Cloudy Day Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")){
+                $('.todayIconClass').html('<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Night Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("drizzle")){
+                $('.todayIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("thunder")){
+                $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("rain")){
+                $('.todayIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("snow")){
+                $('.todayIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("sleet") || ((data.currently.summary).toLowerCase()).includes("hail")){
+                $('.todayIconClass').html('<img src="images/hail-icon.png" alt="Partly Cloudy Night Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("tornado") || ((data.currently.summary).toLowerCase()).includes("hurricane")){
+                $('.todayIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("wind")){
+                $('.todayIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("morning")){
+                $('.todayIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("night")){
+                $('.todayIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Icon">');
+            } else if(((data.currently.summary).toLowerCase()).includes("thunder")){
+                $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
             }
 
-            if((data.daily.data[1].summary).toLowerCase() === "mostly cloudy" || (data.daily.data[1].summary).toLowerCase() === "cloudy"){
+        //TOMORROWS ICON IF STATEMENT
+            if(((data.daily.data[1].summary).toLowerCase()).includes("overcast") || ((data.daily.data[1].summary).toLowerCase()).includes("cloudy")){
                 $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
-            } else if((data.daily.data[1].summary).toLowerCase() === "clear throughout the day."){
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("day")){
                 $('.tomorrowIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("night")){
+                $('.tomorrowIconClass').html('<img src="images/clear-night-icon.png" alt="Clear Night Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[1].summary).toLowerCase()).includes("day")){
+                $('.tomorrowIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[1].summary).toLowerCase()).includes("night")){
+                $('.tomorrowIconClass').html('<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Night Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("drizzle")){
+                $('.tomorrowIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("thunder")){
+                $('.tomorrowIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("rain")){
+                $('.tomorrowIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("snow")){
+                $('.tomorrowIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("tornado") || ((data.daily.data[1].summary).toLowerCase()).includes("hurricane")){
+                $('.tomorrowIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("wind")){
+                $('.tomorrowIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("fog") && ((data.daily.data[1].summary).toLowerCase()).includes("morning")){
+                $('.tomorrowIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("fog") && ((data.daily.data[1].summary).toLowerCase()).includes("night")){
+                $('.tomorrowIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Weather Icon">');
+            } else if(((data.daily.data[1].summary).toLowerCase()).includes("sleet") || ((data.daily.data[1].summary).toLowerCase()).includes("hail")){
+                $('.tomorrowIconClass').html('<img src="images/hail-icon.png" alt="Sleet or Hail Weather Icon">');
             }
 
-            //TODO: ASSIGN ICONS TO WEATHER SUMMARIES for clear-night, rain, snow, sleet, partly-cloudy-night.
-            //TODO: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
-            //TODO: ASSIGN GIFS TO SUMMARIES
+        //TODO: ASSIGN ICONS TO the ICONS NOT SUMMARIES
+            //TODOne: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
+            //TODO: ASSIGN GIFS TO currently icon for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
             //TODO: US AN IF STATEMENT TO INSERT INTO JUMBOTRON
             //TODO: F TO C
             //TODO: PUT MARKER ON MAP
@@ -161,6 +235,7 @@
             //TODO: SEARCH WEATHER BY CITY NAME
             //TODO: SEARCH WEATHER BY MOVING MARKER
             //TODO: REMOVE VANILLA CSS
+            //TODO: DOUBLE CHECK ORDER OF IF STATEMENTS (LIKE THUNDER SHOULD COME BEFORE RAIN PROBABLY)
 
 
     })
