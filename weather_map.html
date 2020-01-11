@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
         body {
-            background-color: #cacacd;
+            background-color: #97cbeb;
         }
         #weatherCards {
             /*display: flex;*/
@@ -161,40 +161,56 @@
 
             }
 
-            //TODAYS ICON IF STATEMENT
+            //TODAYS ICON AND JUMBOTRON IF STATEMENT
             if(((data.currently.summary).toLowerCase()).includes("overcast") || (data.currently.summary).toLowerCase() === "cloudy"){
-                $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">')
+                $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/overcast.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")){
                 $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
-            } else if(((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")){
-                $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
+
+                //test spot:
+                $('.currentWeather').css('background-image', "url('images/fog.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
+
+                // $('.currentWeather').css('background-image', "url('images/sunny-image.jpg')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
+            } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") || ((data.currently.summary).toLowerCase()).includes("day")){
+                $('.todayIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/partly-cloudy-day-gif.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
             } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")){
-                $('.todayIconClass').html('<img src="images/clear-night-icon.png" alt="Partly Cloudy Day Weather Icon">');
-            } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")){
-                $('.todayIconClass').html('<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Night Weather Icon">');
+                $('.todayIconClass').html('<img src="images/clear-night-icon.png" alt="Partly Cloudy Night Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/partly-cloudy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            } else if(((data.currently.summary).toLowerCase()).includes("clear") && ((data.currently.summary).toLowerCase()).includes("night")){
+                $('.todayIconClass').html('<img src="images/partly-cloudy-night.png" alt="Clear Night Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/clear-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("drizzle")){
                 $('.todayIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("thunder")){
                 $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/thunder.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("rain")){
                 $('.todayIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("snow")){
                 $('.todayIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/snow.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("sleet") || ((data.currently.summary).toLowerCase()).includes("hail")){
                 $('.todayIconClass').html('<img src="images/hail-icon.png" alt="Partly Cloudy Night Weather Icon">');
+                //HAIL OR SLEET JUMBOTRON
             } else if(((data.currently.summary).toLowerCase()).includes("tornado") || ((data.currently.summary).toLowerCase()).includes("hurricane")){
                 $('.todayIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
+                // TORNADO OR HURRICANE
             } else if(((data.currently.summary).toLowerCase()).includes("wind")){
                 $('.todayIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
+                $('.currentWeather').css('background-image', "url('images/windy-tree.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("morning")){
                 $('.todayIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Icon">');
+                // FOGGY
             } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("night")){
                 $('.todayIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Icon">');
-            } else if(((data.currently.summary).toLowerCase()).includes("thunder")){
-                $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
+                //FOGGY
             }
 
-        //TOMORROWS ICON IF STATEMENT
+            //TOMORROWS ICON IF STATEMENT
             if(((data.daily.data[1].summary).toLowerCase()).includes("overcast") || ((data.daily.data[1].summary).toLowerCase()).includes("cloudy")){
                 $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
             } else if(((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("day")){
@@ -225,6 +241,9 @@
                 $('.tomorrowIconClass').html('<img src="images/hail-icon.png" alt="Sleet or Hail Weather Icon">');
             }
 
+            //Currently gif/video background for jumbotron
+
+
         //TODO: ASSIGN ICONS TO the ICONS NOT SUMMARIES
             //TODOne: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
             //TODO: ASSIGN GIFS TO currently icon for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
@@ -236,6 +255,7 @@
             //TODO: SEARCH WEATHER BY MOVING MARKER
             //TODO: REMOVE VANILLA CSS
             //TODO: DOUBLE CHECK ORDER OF IF STATEMENTS (LIKE THUNDER SHOULD COME BEFORE RAIN PROBABLY)
+            //TODO: ADD HIGH TEMP ICON SET TO .TEMPERATUREHIGH
 
 
     })
