@@ -52,8 +52,9 @@
     </div>
 </div>
 
-<!--    WEATHER CARDS TODAY AND TOMORROW-->
+<!--WEATHER CARDS HERE-->
 <div id="weatherCards" class="d-flex flex-row justify-content-center pl-5 pr-5 mb-3 mt-3">
+<!--    TODAY WEATHER CARD HTML ADDED WITH JQUERY HERE-->
     <div class="card bg-light todayClass text-center" style="max-width: 18rem;">
         <!--        <div class="card-header">Today</div>-->
         <!--        <div class="card-body">-->
@@ -62,7 +63,7 @@
         <!--        </div>-->
     </div>
 
-    <!--    ALL OTHER WEATHER CARDS-->
+<!--  TOMORROW WEATHER CARD HTML ADDED WITH JQUERY HERE-->
     <div class="card bg-light tomorrowClass text-center " style="max-width: 18rem;">
         <!--        <div class="card-header">Tomorrow</div>-->
         <!--        <div class="card-body">-->
@@ -81,7 +82,7 @@
     <!--    OTHER CARDS ARE APPENDED HERE-->
 </div>
 
-<!--JQUERY CALLS-->
+
 <!--BOOSTRAP BELOW-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -92,17 +93,16 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<!--JQUERY CALLS-->
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
-<!--MAPBOX BELOW-->
-<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
-<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
+
+
 
 <script>
-
-
     "use strict";
 
+    //MAIN JQUERY AJAX FUNCTION HERE ----------------------------------------------------------------------------------
     function getWeather(darkSkyKey, coordinates) {
         $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/' + coordinates.lat + ',' + coordinates.lng)
             .done(function (data) {
@@ -129,6 +129,8 @@
         .setLngLat([-98.4916, 29.4252])
         .addTo(map);
 
+
+    //TODAYS WEATHER CARD, ICONS AND JUMBOTRON -----------------------------------------------------------------------
     function renderTodayWX(data) {
         //THIS POPULATES TODAY'S WEATHER
         var dateObject = new Date(data.currently.time * 1000);
@@ -200,6 +202,8 @@
         }
     }
 
+
+    //TOMORROW WEATHER CARD HERE---------------------------------------------------------------------------------------
     function renderTommorrowWX(data) {
         //THIS POPULATES TOMORROW'S WEATHER
         var tomorrowDateObject = new Date(data.daily.data[1].time * 1000);
@@ -245,12 +249,26 @@
         }
     }
 
+    // REST OF WEEK WEATHER FUNCTION HERE -----------------------------------------------------------------------------
     function renderRestOfWkWX(data) {
-        //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
+
         for (var i = 2; i <= 6; i++) {
             var otherDateObject = new Date(data.daily.data[i].time * 1000);
             var weatherIcons5 = '';
 
+            //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
+            $('#otherDayCards').append('<div class="card bg-light mb-3 text-center" style="max-width: 18rem;">' +
+                '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
+                '<div class="card-body">' +
+                '<h5 class="card-title">' + '<div id="iconClass">' + weatherIcons5 + '</div>' +
+                'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
+                '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
+                '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
+                // '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
+                '</div>' +
+                '</div>');
+
+            //OTHER DAYS IF STATEMENTS FOR ICONS
             if ((data.daily.data[i].summary).toLowerCase() === "mostly cloudy" || ((data.daily.data[i].summary).toLowerCase()).includes("overcast")) {
                 weatherIcons5 = '<img src="images/overcast-icon.png" alt="Overcast Weather Icon">'
             } else if (((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("day")) {
@@ -276,44 +294,25 @@
             } else if (((data.daily.data[i].summary).toLowerCase()).includes("hail") || ((data.daily.data[i].summary).toLowerCase()).includes("sleet")) {
                 weatherIcons5 = '<img src="images/hail-icon.png" alt="Hail or Sleet Weather Icon">'
             }
-
-            // var appendCard =
-            $('#otherDayCards').html('<div class="card bg-light mb-3 text-center" style="max-width: 18rem;">' +
-                '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
-                '<div class="card-body">' +
-                '<h5 class="card-title">' + '<div id="iconClass">' + weatherIcons5 + '</div>' +
-                'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
-                '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
-                '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
-                // '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
-                '</div>' +
-                '</div>');
-
         }
     }
 
 
-    //NOT DEFAULT
+    //MARKER FUNCTION HERE --------------------------------------------------------------------------------------------
     function moveMarker() {
-
-        //MAPBOX
         var lngLat = marker.getLngLat();
-        console.log(lngLat);
-        // var locationSearch = "/" + lngLat.lat + "," + lngLat.lng;
         var coordinates = {
             lat: lngLat.lat,
             lng: lngLat.lng
         };
 
         console.log(coordinates);
-        console.log(lngLat.lat);
-        console.log(lngLat.lng);
 
         getWeather(darkSkyKey, coordinates);
 
-
+        //this allows me to clear the appended otherDayCards for the new appended cards
+        $('#otherDayCards').empty();
     }
-
 
     getWeather(darkSkyKey, {lat: 29.424349, lng: -98.491142});
     marker.on('dragend', moveMarker);
