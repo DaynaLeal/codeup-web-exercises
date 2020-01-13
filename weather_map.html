@@ -7,7 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Map</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!--    //mapbox-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+
     <style>
+        /*from mapbox*/
+        #map { position: relative; top: 0; bottom: 0; width: 90% }
+
         body {
             background-color: #97cbeb;
         }
@@ -41,7 +49,7 @@
 </div>
 
 <!--    WEATHER CARDS TODAY AND TOMORROW-->
-<div id="weatherCards" class="d-flex flex-row justify-content-center">
+<div id="weatherCards" class="d-flex flex-row justify-content-center pl-5 pr-5">
     <div class="card bg-light mb-3 todayClass text-center" style="max-width: 18rem;">
 <!--        <div class="card-header">Today</div>-->
 <!--        <div class="card-body">-->
@@ -58,32 +66,27 @@
 <!--            <p class="card-text tomorrowClass"></p>-->
 <!--        </div>-->
     </div>
+
+<!--    <div class="ml-auto">-->
+<!--        <h3>Search weather by location</h3>-->
+<!--        <input id="user_input">-->
+<!--        <button id="clickme">Submit</button>-->
+<!--    </div>-->
 </div>
 
-<!--    OTHER CARDS ARE APPENDED HERE-->
+<!--    OTHER CARDS-->
+<div id="otherDayCards" class="d-flex flex-row justify-content-around">
+    <!--    OTHER CARDS ARE APPENDED HERE-->
+</div>
 
-    <div id="otherDayCards" class="d-flex flex-row justify-content-around"></div>
-
-<!--    MAP INSERTED HERE-->
-<div id='map'></div>
 
 <script src="js/jquery-2.2.4.js"></script>
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
+
 <script>
     "use strict";
+    var locationSearch = "/" + "29.4252" + "," + "-98.4916";
 
-    var locationSearch = ('/' + '29.4241' + ',' + '-98.4936');
-    var accessToken = mapboxToken;
-
-    mapboxgl.accessToken = accessToken;
-
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 13,
-        center: [-98.4916, 29.4252]
-    });
 
     $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + locationSearch).done(function(data){
         console.log(data);
@@ -166,12 +169,9 @@
             if(((data.currently.summary).toLowerCase()).includes("overcast") || (data.currently.summary).toLowerCase() === "cloudy"){
                 $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/overcast.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")){
                 $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
-
-                //test spot:
-
-
                 $('.currentWeather').css('background-image', "url('images/sunny-image.jpg')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
             } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") || ((data.currently.summary).toLowerCase()).includes("day")){
                 $('.todayIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
@@ -179,36 +179,47 @@
             } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")){
                 $('.todayIconClass').html('<img src="images/clear-night-icon.png" alt="Partly Cloudy Night Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/partly-cloudy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("clear") && ((data.currently.summary).toLowerCase()).includes("night")){
                 $('.todayIconClass').html('<img src="images/partly-cloudy-night.png" alt="Clear Night Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/clear-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("drizzle")){
                 $('.todayIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("thunder")){
                 $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/thunder.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("rain")){
                 $('.todayIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("snow")){
                 $('.todayIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/snow.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("sleet") || ((data.currently.summary).toLowerCase()).includes("hail")){
                 $('.todayIconClass').html('<img src="images/hail-icon.png" alt="Partly Cloudy Night Weather Icon">');
                 //HAIL OR SLEET JUMBOTRON
+
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("tornado") || ((data.currently.summary).toLowerCase()).includes("hurricane")){
                 $('.todayIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
                 // TORNADO OR HURRICANE
+
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("wind")){
                 $('.todayIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
                 $('.currentWeather').css('background-image', "url('images/windy-tree.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("morning")){
                 $('.todayIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Icon">');
                 $('.currentWeather').css('background-image', "url('images/fog.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
+                $('body').css('background-color', 'gray');
             } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("night")){
                 $('.todayIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Icon">');
                 $('.currentWeather').css('background-image', "url('images/foggy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+                $('body').css('background-color', 'gray');
             }
 
             //TOMORROWS ICON IF STATEMENT
@@ -261,6 +272,39 @@
 
     })
 </script>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
+<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<div id="map" class=""></div>
+
+<script>
+    //MAPBOX
+    var accessToken = mapboxToken;
+
+    mapboxgl.accessToken = accessToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 13,
+        center: [-98.4916, 29.4252]
+    });
+
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        })
+    );
+</script>
+
 <!--BOOSTRAP BELOW-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
