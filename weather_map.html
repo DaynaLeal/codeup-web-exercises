@@ -12,6 +12,8 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
 
+<!--    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>-->
+
     <style>
         /*from mapbox*/
         #map { position: relative; height: 485px; width: 600px }
@@ -67,7 +69,7 @@
 <!--        </div>-->
     </div>
 
-    <div id="map" class="flex-fill align-self-stretch">
+    <div id="map" >
 <!--        <h4>Search for Weather</h4>-->
     </div>
 </div>
@@ -83,6 +85,8 @@
 
 
 <!--MAPBOX BELOW-->
+<!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
+
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
 <link
         rel="stylesheet"
@@ -92,7 +96,6 @@
 <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-
 
 <script>
     //MAPBOX
@@ -113,11 +116,33 @@
             mapboxgl: mapboxgl
         })
     );
-
+    /***
+     * geocode is a method to search for coordinates based on a physical address and return
+     * @param {string} search is the address to search for the geocoded coordinates
+     * @param {string} token is your API token for MapBox
+     * @returns {Promise} a promise containing the latitude and longitude as a two element array
+     *
+     * EXAMPLE:
+     *
+     *  geocode("San Antonio", API_TOKEN_HERE).then(function(results) {
+     *      // do something with results
+     *  })
+     *
+     */
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function (res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function (data) {
+                return data.features[0].center;
+            });
+    }
 </script>
-
-
 <script>
+
     "use strict";
     var locationSearch = "/" + "29.4252" + "," + "-98.4916";
 
