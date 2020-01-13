@@ -6,71 +6,73 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Map</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<!--    //mapbox-->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
-
-<!--    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>-->
+    <!--    //mapbox-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
 
     <style>
         /*from mapbox*/
-        #map { position: relative; height: 485px; width: 600px }
+        #map {
+            position: relative;
+            height: 485px;
+            width: 600px
+        }
 
         body {
             background-color: #97cbeb;
         }
+
         #weatherCards {
             /*display: flex;*/
             /*flex-direction: row;*/
             /*justify-content: space-;*/
             padding: 10px;
         }
+
         #otherDayCards {
             /*display: flex;*/
             /*flex-direction: row;*/
             /*justify-content: space-around;*/
             padding: 10px;
         }
-        /*#map {*/
-        /*    !* the width and height may be set to any size *!*/
-        /*    width: 100%;*/
-        /*    height: 700px;*/
-        /*}*/
     </style>
 </head>
+
+
 <body>
 
 <!--    JUMBOTRON HTML-->
 <div class="jumbotron jumbotron-fluid mb-0 currentWeather">
     <div class="container">
         <h1 class="display-4 text-center ">Weather Map</h1>
-<!--        <p class="lead">This is a weather map</p>-->
+        <!--        <p class="lead">This is a weather map</p>-->
     </div>
 </div>
 
 <!--    WEATHER CARDS TODAY AND TOMORROW-->
 <div id="weatherCards" class="d-flex flex-row justify-content-center pl-5 pr-5 mb-3 mt-3">
     <div class="card bg-light todayClass text-center" style="max-width: 18rem;">
-<!--        <div class="card-header">Today</div>-->
-<!--        <div class="card-body">-->
-<!--            <h5 class="card-title">Light card title</h5>-->
-<!--            <p class="card-text">text</p>-->
-<!--        </div>-->
+        <!--        <div class="card-header">Today</div>-->
+        <!--        <div class="card-body">-->
+        <!--            <h5 class="card-title">Light card title</h5>-->
+        <!--            <p class="card-text">text</p>-->
+        <!--        </div>-->
     </div>
 
-<!--    ALL OTHER WEATHER CARDS-->
+    <!--    ALL OTHER WEATHER CARDS-->
     <div class="card bg-light tomorrowClass text-center " style="max-width: 18rem;">
-<!--        <div class="card-header">Tomorrow</div>-->
-<!--        <div class="card-body">-->
-<!--            <h5 class="card-title">Light card title</h5>-->
-<!--            <p class="card-text tomorrowClass"></p>-->
-<!--        </div>-->
+        <!--        <div class="card-header">Tomorrow</div>-->
+        <!--        <div class="card-body">-->
+        <!--            <h5 class="card-title">Light card title</h5>-->
+        <!--            <p class="card-text tomorrowClass"></p>-->
+        <!--        </div>-->
     </div>
 
-    <div id="map" >
-<!--        <h4>Search for Weather</h4>-->
+    <div id="map">
+        <!--        <h4>Search for Weather</h4>-->
     </div>
 </div>
 
@@ -80,28 +82,38 @@
 </div>
 
 <!--JQUERY CALLS-->
+<!--BOOSTRAP BELOW-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 <script src="js/jquery-2.2.4.js"></script>
 <script src="js/keys.js"></script>
-
-
 <!--MAPBOX BELOW-->
 <!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
-
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
-<link
-        rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
-        type="text/css"
-/>
-<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<!--<script src="js/mapbox-geocoder-utils.js"></script>-->
 
 <script>
-    //MAPBOX
-    var accessToken = mapboxToken;
 
-    mapboxgl.accessToken = accessToken;
+
+    "use strict";
+
+    function getWeather(darkSkyKey, coordinates) {
+        $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/' + coordinates.lat + ',' + coordinates.lng)
+            .done(function (data) {
+                console.log(data);
+                renderTodayWX(data);
+                renderTommorrowWX(data);
+                renderRestOfWkWX(data);
+        });
+    }
+
+    mapboxgl.accessToken = mapboxToken;
 
     var map = new mapboxgl.Map({
         container: 'map',
@@ -110,55 +122,17 @@
         center: [-98.4916, 29.4252]
     });
 
-    map.addControl(
-        new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
-        })
-    );
-    /***
-     * geocode is a method to search for coordinates based on a physical address and return
-     * @param {string} search is the address to search for the geocoded coordinates
-     * @param {string} token is your API token for MapBox
-     * @returns {Promise} a promise containing the latitude and longitude as a two element array
-     *
-     * EXAMPLE:
-     *
-     *  geocode("San Antonio", API_TOKEN_HERE).then(function(results) {
-     *      // do something with results
-     *  })
-     *
-     */
-    function geocode(search, token) {
-        var baseUrl = 'https://api.mapbox.com';
-        var endPoint = '/geocoding/v5/mapbox.places/';
-        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
-            .then(function (res) {
-                return res.json();
-                // to get all the data from the request, comment out the following three lines...
-            }).then(function (data) {
-                return data.features[0].center;
-            });
-    }
-</script>
-<script>
+    //marker
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.4916, 29.4252])
+        .addTo(map);
 
-    "use strict";
-    var locationSearch = "/" + "29.4252" + "," + "-98.4916";
-
-
-    $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + locationSearch).done(function(data){
-        console.log(data);
-        var dateObject = new Date(data.currently.time * 1000); //the "* 1000" is necessary using darkSkyKey
-        var tomorrowDateObject = new Date(data.daily.data[1].time * 1000);
-        var nextDateObject = new Date(data.daily.data[2].time * 1000);
-        // var nextDateObject = new date(data.daily.data[2].time * 1000)
-        // var tomorrowHigh = data.daily[1].temperatureHigh;
-        console.log(dateObject); //need to get the date only
-        console.log(tomorrowDateObject);
-
-            //THIS POPULATES TODAY'S WEATHER
-            $('.todayClass').append('<div class="card-header">' + 'Today' + '<div>' + dateObject + '</div>' + '</div>' +
+    function renderTodayWX(data) {
+        //THIS POPULATES TODAY'S WEATHER
+        var dateObject = new Date(data.currently.time * 1000);
+        $('.todayClass').html('<div class="card-header">' + 'Today' + '<div>' + dateObject + '</div>' + '</div>' +
             '<div class="card-body">' +
             '<h5 class="card-title">' + '<div class="todayIconClass">' + '</div>' + data.currently.temperature + '°' + '</h5>' +
             '<p class="card-text">' + data.currently.summary + '</p>' +
@@ -168,173 +142,197 @@
             '<p class="card-text">' + data.hourly.summary + '</p>' +
             '</div>');
 
-            //THIS POPULATES TOMORROW'S WEATHER
-            $('.tomorrowClass').append('<div class="card-header">' + 'Tomorrow' + '<div>' + tomorrowDateObject + '</div>' + '</div>' +
+        //TODAYS ICON AND JUMBOTRON IF STATEMENT
+        if (((data.currently.summary).toLowerCase()).includes("overcast") || (data.currently.summary).toLowerCase() === "cloudy") {
+            $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/overcast.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', '#3c3c42');
+        } else if (((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")) {
+            $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/sunny-image.jpg')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
+        } else if (((data.currently.summary).toLowerCase()).includes("partly cloudy") || ((data.currently.summary).toLowerCase()).includes("day")) {
+            $('.todayIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/partly-cloudy-day-gif.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
+        } else if (((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")) {
+            $('.todayIconClass').html('<img src="images/clear-night-icon.png" alt="Partly Cloudy Night Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/partly-cloudy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("clear") && ((data.currently.summary).toLowerCase()).includes("night")) {
+            $('.todayIconClass').html('<img src="images/partly-cloudy-night.png" alt="Clear Night Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/clear-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("drizzle")) {
+            $('.todayIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("thunder")) {
+            $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/thunder.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("rain")) {
+            $('.todayIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("snow")) {
+            $('.todayIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/snow.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+        } else if (((data.currently.summary).toLowerCase()).includes("sleet") || ((data.currently.summary).toLowerCase()).includes("hail")) {
+            $('.todayIconClass').html('<img src="images/hail-icon.png" alt="Partly Cloudy Night Weather Icon">');
+            //HAIL OR SLEET JUMBOTRON
+
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("tornado") || ((data.currently.summary).toLowerCase()).includes("hurricane")) {
+            $('.todayIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
+            // TORNADO OR HURRICANE
+
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("wind")) {
+            $('.todayIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
+            $('.currentWeather').css('background-image', "url('images/windy-tree.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+        } else if (((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("morning")) {
+            $('.todayIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Icon">');
+            $('.currentWeather').css('background-image', "url('images/fog.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
+            $('body').css('background-color', 'gray');
+        } else if (((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("night")) {
+            $('.todayIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Icon">');
+            $('.currentWeather').css('background-image', "url('images/foggy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
+            $('body').css('background-color', 'gray');
+        }
+    }
+
+    function renderTommorrowWX(data) {
+        //THIS POPULATES TOMORROW'S WEATHER
+        var tomorrowDateObject = new Date(data.daily.data[1].time * 1000);
+        $('.tomorrowClass').html('<div class="card-header">' + 'Tomorrow' + '<div>' + tomorrowDateObject + '</div>' + '</div>' +
+            '<div class="card-body">' +
+            '<h5 class="card-title">' + '<div class="tomorrowIconClass">' + '</div>' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
+            '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
+            // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
+            // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
+            '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[1].windSpeed + ' mph' + '</p>' +
+            // '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
+            '</div>');
+
+        //TOMORROWS ICON IF STATEMENT
+        if (((data.daily.data[1].summary).toLowerCase()).includes("overcast") || ((data.daily.data[1].summary).toLowerCase()).includes("cloudy")) {
+            $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("day")) {
+            $('.tomorrowIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("night")) {
+            $('.tomorrowIconClass').html('<img src="images/clear-night-icon.png" alt="Clear Night Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[1].summary).toLowerCase()).includes("day")) {
+            $('.tomorrowIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[1].summary).toLowerCase()).includes("night")) {
+            $('.tomorrowIconClass').html('<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Night Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("drizzle")) {
+            $('.tomorrowIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("thunder")) {
+            $('.tomorrowIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("rain")) {
+            $('.tomorrowIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("snow")) {
+            $('.tomorrowIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("tornado") || ((data.daily.data[1].summary).toLowerCase()).includes("hurricane")) {
+            $('.tomorrowIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("wind")) {
+            $('.tomorrowIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("fog") && ((data.daily.data[1].summary).toLowerCase()).includes("morning")) {
+            $('.tomorrowIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("fog") && ((data.daily.data[1].summary).toLowerCase()).includes("night")) {
+            $('.tomorrowIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Weather Icon">');
+        } else if (((data.daily.data[1].summary).toLowerCase()).includes("sleet") || ((data.daily.data[1].summary).toLowerCase()).includes("hail")) {
+            $('.tomorrowIconClass').html('<img src="images/hail-icon.png" alt="Sleet or Hail Weather Icon">');
+        }
+    }
+
+    function renderRestOfWkWX(data) {
+        //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
+        for (var i = 2; i <= 6; i++) {
+            var otherDateObject = new Date(data.daily.data[i].time * 1000);
+            var weatherIcons5 = '';
+
+            if ((data.daily.data[i].summary).toLowerCase() === "mostly cloudy" || ((data.daily.data[i].summary).toLowerCase()).includes("overcast")) {
+                weatherIcons5 = '<img src="images/overcast-icon.png" alt="Overcast Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("day")) {
+                weatherIcons5 = '<img src="images/sunny-icon.png" alt="Clear Day Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("night")) {
+                weatherIcons5 = '<img src="images/clear-night-icon.png" alt="Clear Night Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("fog")) {
+                weatherIcons5 = '<img src="images/fog-icon.png" alt="Overcast Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("drizzle")) {
+                weatherIcons5 = '<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("thunder")) {
+                weatherIcons5 = '<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("rain")) {
+                weatherIcons5 = '<img src="images/rain-icon.png" alt="Rain Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[i].summary).toLowerCase()).includes("day")) {
+                weatherIcons5 = '<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[i].summary).toLowerCase()).includes("night")) {
+                weatherIcons5 = '<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("wind")) {
+                weatherIcons5 = '<img src="images/wind-icon.png" alt="Windy Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("snow")) {
+                weatherIcons5 = '<img src="images/snow-icon.png" alt="Snow Weather Icon">'
+            } else if (((data.daily.data[i].summary).toLowerCase()).includes("hail") || ((data.daily.data[i].summary).toLowerCase()).includes("sleet")) {
+                weatherIcons5 = '<img src="images/hail-icon.png" alt="Hail or Sleet Weather Icon">'
+            }
+
+            // var appendCard =
+            $('#otherDayCards').html('<div class="card bg-light mb-3 text-center" style="max-width: 18rem;">' +
+                '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
                 '<div class="card-body">' +
-                '<h5 class="card-title">' + '<div class="tomorrowIconClass">' + '</div>' + 'High: ' + data.daily.data[1].temperatureHigh + '°' + '/Low: ' + data.daily.data[1].temperatureLow + '°' + '</h5>' +
-                '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
-                // '<p class="card-text">' + data.daily.temperatureHigh + '/' + data.daily.temperatureLow + '</p>' + //not working yet
-                // '<p class="card-text">' + 'Feels Like: ' + data.currently.apparentTemperature + '°' + '</p>' +
-                '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[1].windSpeed + ' mph' + '</p>' +
-                // '<p class="card-text">' + data.daily.data[1].summary + '</p>' +
+                '<h5 class="card-title">' + '<div id="iconClass">' + weatherIcons5 + '</div>' +
+                'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
+                '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
+                '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
+                // '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
+                '</div>' +
                 '</div>');
 
-            //THIS POPULATES THE WEATHER FOR THE FOLLOWING 5 DAYS OF THE WEEK
-            for(var i = 2; i <= 6; i++){
-                var otherDateObject = new Date(data.daily.data[i].time * 1000);
-                var weatherIcons5 = '';
-
-                if((data.daily.data[i].summary).toLowerCase() === "mostly cloudy" || ((data.daily.data[i].summary).toLowerCase()).includes("overcast")){
-                    weatherIcons5 = '<img src="images/overcast-icon.png" alt="Overcast Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("day")){
-                    weatherIcons5 = '<img src="images/sunny-icon.png" alt="Clear Day Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("clear") && ((data.daily.data[i].summary).toLowerCase()).includes("night")){
-                    weatherIcons5 = '<img src="images/clear-night-icon.png" alt="Clear Night Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("fog")){
-                    weatherIcons5 = '<img src="images/fog-icon.png" alt="Overcast Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("drizzle")){
-                    weatherIcons5 = '<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("thunder")){
-                    weatherIcons5 = '<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("rain")){
-                    weatherIcons5 = '<img src="images/rain-icon.png" alt="Rain Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[i].summary).toLowerCase()).includes("day")){
-                    weatherIcons5 = '<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[i].summary).toLowerCase()).includes("night")){
-                    weatherIcons5 = '<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("wind")){
-                    weatherIcons5 = '<img src="images/wind-icon.png" alt="Windy Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("snow")){
-                    weatherIcons5 = '<img src="images/snow-icon.png" alt="Snow Weather Icon">'
-                } else if(((data.daily.data[i].summary).toLowerCase()).includes("hail") || ((data.daily.data[i].summary).toLowerCase()).includes("sleet")){
-                    weatherIcons5 = '<img src="images/hail-icon.png" alt="Hail or Sleet Weather Icon">'
-                }
-
-                // var appendCard =
-                $('#otherDayCards').append('<div class="card bg-light mb-3 text-center" style="max-width: 18rem;">' +
-                    '<div class="card-header">' + '<div>' + otherDateObject + '</div>' + '</div>' +
-                    '<div class="card-body">' +
-                    '<h5 class="card-title">' + '<div id="iconClass">' + weatherIcons5 + '</div>' +
-                    'High: ' + data.daily.data[i].temperatureHigh + '°' + '/Low: ' + data.daily.data[i].temperatureLow + '°' + '</h5>' +
-                    '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
-                    '<p class="card-text">' + 'Wind Speed: ' + data.daily.data[i].windSpeed + ' mph' + '</p>' +
-                    // '<p class="card-text">' + data.daily.data[i].summary + '</p>' +
-                    '</div>' +
-                    '</div>');
-
-            }
-
-            //TODAYS ICON AND JUMBOTRON IF STATEMENT
-            if(((data.currently.summary).toLowerCase()).includes("overcast") || (data.currently.summary).toLowerCase() === "cloudy"){
-                $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/overcast.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', '#3c3c42');
-            } else if(((data.currently.summary).toLowerCase()).includes("clear") || ((data.currently.summary).toLowerCase()).includes("day")){
-                $('.todayIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/sunny-image.jpg')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
-            } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") || ((data.currently.summary).toLowerCase()).includes("day")){
-                $('.todayIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/partly-cloudy-day-gif.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
-            } else if(((data.currently.summary).toLowerCase()).includes("partly cloudy") && ((data.currently.summary).toLowerCase()).includes("night")){
-                $('.todayIconClass').html('<img src="images/clear-night-icon.png" alt="Partly Cloudy Night Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/partly-cloudy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("clear") && ((data.currently.summary).toLowerCase()).includes("night")){
-                $('.todayIconClass').html('<img src="images/partly-cloudy-night.png" alt="Clear Night Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/clear-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("drizzle")){
-                $('.todayIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("thunder")){
-                $('.todayIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/thunder.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("rain")){
-                $('.todayIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/rain.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("snow")){
-                $('.todayIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/snow.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-            } else if(((data.currently.summary).toLowerCase()).includes("sleet") || ((data.currently.summary).toLowerCase()).includes("hail")){
-                $('.todayIconClass').html('<img src="images/hail-icon.png" alt="Partly Cloudy Night Weather Icon">');
-                //HAIL OR SLEET JUMBOTRON
-
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("tornado") || ((data.currently.summary).toLowerCase()).includes("hurricane")){
-                $('.todayIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
-                // TORNADO OR HURRICANE
-
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("wind")){
-                $('.todayIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
-                $('.currentWeather').css('background-image', "url('images/windy-tree.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-            } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("morning")){
-                $('.todayIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Icon">');
-                $('.currentWeather').css('background-image', "url('images/fog.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover');
-                $('body').css('background-color', 'gray');
-            } else if(((data.currently.summary).toLowerCase()).includes("fog") && ((data.currently.summary).toLowerCase()).includes("night")){
-                $('.todayIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Icon">');
-                $('.currentWeather').css('background-image', "url('images/foggy-night.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
-                $('body').css('background-color', 'gray');
-            }
-
-            //TOMORROWS ICON IF STATEMENT
-            if(((data.daily.data[1].summary).toLowerCase()).includes("overcast") || ((data.daily.data[1].summary).toLowerCase()).includes("cloudy")){
-                $('.tomorrowIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("day")){
-                $('.tomorrowIconClass').html('<img src="images/sunny-icon.png" alt="Sunny Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("clear") && ((data.daily.data[1].summary).toLowerCase()).includes("night")){
-                $('.tomorrowIconClass').html('<img src="images/clear-night-icon.png" alt="Clear Night Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[1].summary).toLowerCase()).includes("day")){
-                $('.tomorrowIconClass').html('<img src="images/partly-cloudy-day-icon.png" alt="Partly Cloudy Day Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("partly cloudy") && ((data.daily.data[1].summary).toLowerCase()).includes("night")){
-                $('.tomorrowIconClass').html('<img src="images/partly-cloudy-night.png" alt="Partly Cloudy Night Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("drizzle")){
-                $('.tomorrowIconClass').html('<img src="images/drizzle-icon.png" alt="Drizzle Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("thunder")){
-                $('.tomorrowIconClass').html('<img src="images/thunderstorm-icon.png" alt="Thunderstorm Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("rain")){
-                $('.tomorrowIconClass').html('<img src="images/rain-icon.png" alt="Rain Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("snow")){
-                $('.tomorrowIconClass').html('<img src="images/snow-icon.png" alt="Snow Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("tornado") || ((data.daily.data[1].summary).toLowerCase()).includes("hurricane")){
-                $('.tomorrowIconClass').html('<img src="images/tornado-icon.png" alt="Tornado or Hurricane Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("wind")){
-                $('.tomorrowIconClass').html('<img src="images/wind-icon.png" alt="Windy Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("fog") && ((data.daily.data[1].summary).toLowerCase()).includes("morning")){
-                $('.tomorrowIconClass').html('<img src="images/fog-icon.png" alt="Foggy Morning Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("fog") && ((data.daily.data[1].summary).toLowerCase()).includes("night")){
-                $('.tomorrowIconClass').html('<img src="images/foggy-night.png" alt="Foggy Night Weather Icon">');
-            } else if(((data.daily.data[1].summary).toLowerCase()).includes("sleet") || ((data.daily.data[1].summary).toLowerCase()).includes("hail")){
-                $('.tomorrowIconClass').html('<img src="images/hail-icon.png" alt="Sleet or Hail Weather Icon">');
-            }
-
-            //Currently gif/video background for jumbotron
+        }
+    }
 
 
-        //TODO: ASSIGN ICONS TO the ICONS NOT SUMMARIES
-            //TODOne: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
-            //TODO: ASSIGN GIFS TO currently icon for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
-            //TODO: US AN IF STATEMENT TO INSERT INTO JUMBOTRON
-            //TODO: F TO C
-            //TODO: PUT MARKER ON MAP
-            //TODO: ALLOW USER TO SET AND SAVE LOCATION?
-            //TODO: SEARCH WEATHER BY CITY NAME
-            //TODO: SEARCH WEATHER BY MOVING MARKER
-            //TODO: REMOVE VANILLA CSS
-            //TODO: DOUBLE CHECK ORDER OF IF STATEMENTS (LIKE THUNDER SHOULD COME BEFORE RAIN PROBABLY)
-            //TODO: ADD HIGH TEMP ICON SET TO .TEMPERATUREHIGH
+    //NOT DEFAULT
+    function moveMarker() {
+
+        //MAPBOX
+        var lngLat = marker.getLngLat();
+        console.log(lngLat);
+        // var locationSearch = "/" + lngLat.lat + "," + lngLat.lng;
+        var coordinates = {
+            lat: lngLat.lat,
+            lng: lngLat.lng
+        };
+
+        console.log(coordinates);
+        console.log(lngLat.lat);
+        console.log(lngLat.lng);
+
+        getWeather(darkSkyKey, coordinates);
 
 
-    })
+    }
+
+
+    getWeather(darkSkyKey, {lat: 29.424349, lng: -98.491142});
+    marker.on('dragend', moveMarker);
+
+    //TODO: ASSIGN ICONS TO the ICONS NOT SUMMARIES
+    //TODOne: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
+    //TODO: ASSIGN GIFS TO currently icon for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
+    //TODO: US AN IF STATEMENT TO INSERT INTO JUMBOTRON
+    //TODO: F TO C
+    //TODO: PUT MARKER ON MAP
+    //TODO: ALLOW USER TO SET AND SAVE LOCATION?
+    //TODO: SEARCH WEATHER BY CITY NAME
+    //TODO: SEARCH WEATHER BY MOVING MARKER
+    //TODO: REMOVE VANILLA CSS
+    //TODO: DOUBLE CHECK ORDER OF IF STATEMENTS (LIKE THUNDER SHOULD COME BEFORE RAIN PROBABLY)
+    //TODO: ADD HIGH TEMP ICON SET TO .TEMPERATUREHIGH
+
 </script>
 
-<!--BOOSTRAP BELOW-->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
