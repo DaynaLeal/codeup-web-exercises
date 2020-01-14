@@ -11,11 +11,11 @@
 <!--Open up dom-review.html and follow the instructions:-->
 
 <!--TODOne: Allow the user to type in their favorite food into the input and append it to the list once the button is clicked.-->
-<!--TODO: When the heading 'Change Me' is double clicked, change its background-color to purple.-->
-<!--TODO: Allow the user to input their cohort name. Once Update button is clicked, the text should should update with the name of the cohort.-->
+<!--TODOne: When the heading 'Change Me' is double clicked, change its background-color to purple.-->
+<!--TODOne: Allow the user to input their cohort name. Once Update button is clicked, the text should should update with the name of the cohort.-->
 <!--My Cohort: Deimos-->
-<!--TODO: When 'Highlight' button is clicked, change the background color of the cohort name to yellow.-->
-<!--TODO:Write some JavaScript that changes the background-color of the container to pink after 3 seconds.-->
+<!--TODOne: When 'Highlight' button is clicked, change the background color of the cohort name to yellow.-->
+<!--TODOne:Write some JavaScript that changes the background-color of the container to pink after 3 seconds.-->
 
 
 <div class="container">
@@ -51,6 +51,23 @@
     $('#change-me').dblclick(function(event){
         $(this).css('background-color', '#8c5b8c')
     });
+
+    $('#change-cohort').click(function(event){
+       $('#my-cohort').html($('#cohort-name').val())
+    });
+
+    $('#highlight').click(function(event){
+        $('#my-cohort').css('background-color', 'yellow')
+    });
+
+    //below is all for the last one
+    function pinkContainer(){
+        $('.container').css('background-color', 'pink')
+    }
+    function timeout(){
+        setTimeout(pinkContainer, 3000);
+    }
+    timeout();
 </script>
 </body>
 </html>
