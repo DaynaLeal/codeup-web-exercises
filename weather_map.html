@@ -147,7 +147,7 @@
             '</div>');
 
         //TODAYS ICON AND JUMBOTRON IF STATEMENT
-        if (((data.currently.summary).toLowerCase()).includes("overcast") || (data.currently.summary).toLowerCase() === "cloudy") {
+        if (((data.currently.summary).toLowerCase()).includes("overcast") || ((data.currently.summary).toLowerCase()).includes("cloudy")) {
             $('.todayIconClass').html('<img src="images/overcast-icon.png" alt="Overcast Weather Icon">');
             $('.currentWeather').css('background-image', "url('images/overcast.gif')").css('background-repeat', 'no-repeat').css('background-size', 'cover').css('color', 'white');
             $('body').css('background-color', '#3c3c42');
