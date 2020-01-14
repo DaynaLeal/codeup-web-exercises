@@ -17,8 +17,9 @@
         /*from mapbox*/
         #map {
             position: relative;
-            height: 485px;
-            width: 600px
+            /*flex:2;*/
+            height: 100%;
+            width: 50%
         }
 
         body {
@@ -30,6 +31,7 @@
             /*flex-direction: row;*/
             /*justify-content: space-;*/
             padding: 10px;
+            height: 500px;
         }
 
         #otherDayCards {
@@ -53,7 +55,7 @@
 </div>
 
 <!--WEATHER CARDS HERE-->
-<div id="weatherCards" class="d-flex flex-row justify-content-center pl-5 pr-5 mb-3 mt-3">
+<div id="weatherCards" class="d-flex flex-row pl-5 pr-5 mb-3 mt-3">
 <!--    TODAY WEATHER CARD HTML ADDED WITH JQUERY HERE-->
     <div class="card bg-light todayClass text-center" style="max-width: 18rem;">
         <!--        <div class="card-header">Today</div>-->
