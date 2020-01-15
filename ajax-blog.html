@@ -64,11 +64,10 @@
             console.log(data);
 
             for (var i = 0; i < data.length; i++){
-                $('#posts').append('<h2>' + data[i].title + '</h2>' +
+                $('#posts').append('<hr>' + '<h2>' + data[i].title + '</h2>' +
                 '<p>' + data[i].content + '</p>' +
                 '<p>' + data[i].categories + '</p>' +
-                '<p>' + data[i].date + '</p>' +
-                '<hr>')
+                '<p>' + data[i].date + '</p>')
             }
 
         });
