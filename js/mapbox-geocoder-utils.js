@@ -24,6 +24,7 @@ function geocode(search, token) {
             return data.features[0].center;
         });
 }
+console.log(geocode("San Antonio", mapboxToken));
 
 
 /***

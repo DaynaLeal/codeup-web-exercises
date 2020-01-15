@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+
     <!--    //mapbox-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
@@ -52,6 +53,21 @@
         <h1 class="display-4 text-center ">Weather Map</h1>
         <!--        <p class="lead">This is a weather map</p>-->
     </div>
+</div>
+
+<div class="input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">First and last name</span>
+    </div>
+    <input type="text" aria-label="First name" class="form-control">
+    <input type="text" aria-label="Last name" class="form-control">
+</div>
+
+<div class="input-group mb-3">
+    <div class="input-group-append">
+        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 </div>
 
 <!--WEATHER CARDS HERE-->
@@ -324,6 +340,42 @@
     getWeather(darkSkyKey, {lat: 29.424349, lng: -98.491142});
     marker.on('dragend', moveMarker);
 
+
+    //geocode-------------------------------------------------------------------------------------------------------
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            })
+            .then(function(data) {
+                return data.features[0].center;
+            });
+    }
+    // console.log(geocode("San Antonio", mapboxToken));
+
+    function searchBarFunction(info, token, map) {
+        var userInput = 
+        geocode("16111 San Pedro Ave, San Antonio, TX 78232", mapboxToken).then(function (result) {
+            console.log(result);
+            //recenter the map
+            map.setCenter(result); //4. yes, this is how to recenter programmatically
+            //set a popup
+            // var popup = new mapboxgl.Popup()
+            //     .setHTML(tangStreet.popupHTML);
+            // //set a marker
+            // var marker = new mapboxgl.Marker()
+            //     .setLngLat(result)
+            //     .addTo(map)
+            //     .setPopup(popup);
+            // popup.addTo(map) //call popup
+        });
+    }
+    console.log(favRestaurantMarkerGeocode("16111 San Pedro Ave, San Antonio, TX 78232", mapboxToken, map));
+    
+    
     //TODO: ASSIGN ICONS TO the ICONS NOT SUMMARIES
     //TODOne: INSERT INTO CARDS WITH SOME TYPE OF FOR LOOP
     //TODO: ASSIGN GIFS TO currently icon for clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, partly-cloudy-night.
