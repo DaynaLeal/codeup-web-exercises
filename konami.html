@@ -2,13 +2,80 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --main-text-color: #7f0000;
+        }
+        body {
+            background-color: black;
+        }
+        h1, h3 {
+            color: var(--main-text-color);
+        }
+        .lockedImage {
+            filter: grayscale(100%) brightness(40%);
+        }
+        .btn {
+            background-color: var(--main-text-color);
+        }
+    </style>
 </head>
 <body>
-<h1 id="headerTitle">Konami Code</h1>
-<!--<p>Konami Code: "^ ^ ↓ ↓ < > < > b a enter"</p>-->
-<p class="longForm">Konami Code: "up up down down left right left right b a enter"</p>
-<p class="longForm">Konami Code: "3838404037393739666513"</p>
+<!--<h1 id="headerTitle">Konami Code</h1>-->
+<!--&lt;!&ndash;<p>Konami Code: "^ ^ ↓ ↓ < > < > b a enter"</p>&ndash;&gt;-->
+<!--<p class="longForm">Konami Code: "up up down down left right left right b a enter"</p>-->
+<!--<p class="longForm">Konami Code: "3838404037393739666513"</p>-->
+
+    <div class="container">
+        <div class="headerContainer mt-3 mb-3 d-flex flex-row text-center">
+            <h1 class="text-center">Choose your Player!</h1>
+            <button type="button" class="btn ml-auto">Hint</button>
+        </div>
+
+
+        <div class="cardsDiv d-flex flex-row flex-wrap">
+<!--contra guy-->
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="images/contra.gif" class="card-img-top" alt="Contra Gif">
+                <div class="card-body">
+                    <h3 class="card-title">Bill</h3>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="..." class="card-img-top lockedImage" alt="...">
+                <div class="card-body">
+                    <h3 class="card-title">Sonic</h3>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="js/jquery-2.2.4.js"></script>
+
 <script>
     $(document).ready(function() {
         "use strict";
@@ -34,9 +101,9 @@
             }
         });
 
-        $(' h1 ').css('color', '#284571');
-        $('*').css('background-color', 'gray');
-        $(' .longForm ').css('color', '#86414d');
+        // $(' h1 ').css('color', '#284571');
+        // $('*').css('background-color', 'gray');
+        // $(' .longForm ').css('color', '#86414d');
 
     });
 
