@@ -53,48 +53,48 @@
 
             </div>
 
-            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <div class="text-right m-2 lockIcon"><i class="fas fa-lock"></i></div>
+            <div class="card text-white bg-dark text-center m-3 firstEvent" style="width: 18rem;">
+                <div class="text-right m-2"><i class="fas fa-lock"></i></div>
                 <img src="images/sonic.gif" class="card-img-top m-2 lockedImage" alt="Sonic Gif" style="height: 200px; width: 150px">
                 <div class="card-body">
                     <h3 class="card-title">Sonic</h3>
                 </div>
             </div>
 
-            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <div class="text-right m-2 lockIcon"><i class="fas fa-lock"></i></div>
+            <div class="card text-white bg-dark text-center m-3 secondEvent" style="width: 18rem;">
+                <div class="text-right m-2"><i class="fas fa-lock"></i></div>
                 <img src="images/megaman.gif" class="card-img-top lockedImage m-2" alt="Megaman Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
                     <h3 class="card-title">Megaman</h3>
                 </div>
             </div>
 
-            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <div class="text-right m-2 lockIcon"><i class="fas fa-lock"></i></div>
+            <div class="card text-white bg-dark text-center m-3 thirdEvent" style="width: 18rem;">
+                <div class="text-right m-2"><i class="fas fa-lock"></i></div>
                 <img src="images/mario-color.gif" class="card-img-top lockedImage m-2" alt="Mario Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
                     <h3 class="card-title">Mario</h3>
                 </div>
             </div>
 
-            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <div class="text-right m-2 lockIcon"><i class="fas fa-lock"></i></div>
+            <div class="card text-white bg-dark text-center m-3 fourthEvent" style="width: 18rem;">
+                <div class="text-right m-2"><i class="fas fa-lock"></i></div>
                 <img src="images/mudkip.gif" class="card-img-top lockedImage m-2" alt="Mudkip Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
                     <h3 class="card-title">Mudkip</h3>
                 </div>
             </div>
 
-            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <div class="text-right m-2 lockIcon"><i class="fas fa-lock"></i></div>
+            <div class="card text-white bg-dark text-center m-3 fifthEvent" style="width: 18rem;">
+                <div class="text-right m-2"><i class="fas fa-lock"></i></div>
                 <img src="images/naruto.gif" class="card-img-top lockedImage m-2" alt="Naruto Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
                     <h3 class="card-title">Naruto</h3>
                 </div>
             </div>
 
-            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <div class="text-right m-2 lockIcon"><i class="fas fa-lock"></i></div>
+            <div class="card text-white bg-dark text-center m-3 sixthEvent" style="width: 18rem;">
+                <div class="text-right m-2"><i class="fas fa-lock"></i></div>
                 <img src="images/samus.gif" class="card-img-top lockedImage m-2" alt="Samus Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
                     <h3 class="card-title">Samus</h3>
@@ -125,6 +125,7 @@
             userInput = "";
         }
 
+        let numberOfEvents = 0;
         $(document).keyup(function (event) {
             // console.log(event.which);
             userInput += (event.which);
@@ -132,14 +133,71 @@
             console.log(userInput);
             console.log(konami);
             if (userInput === konami) {
-                reset();
-                alert("You have added 30 lives!");
-            }
-        });
+                numberOfEvents += 1;
+                switch (numberOfEvents) {
+                    case 1:
+                        $('.firstEvent').html(`<div class="text-right m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/sonic.gif" class="card-img-top m-2" alt="Sonic Gif" style="height: 200px; width: 150px">
+                                               <div class="card-body">
+                                               <h3 class="card-title">Sonic</h3>
+                                               </div>`);
+                        reset();
+                        break;
+                    case 2:
+                        $('.secondEvent').html(`<div class="text-right m-2"><i class="fas fa-lock-open"></i></div>
+                                                <img src="images/megaman.gif" class="card-img-top m-2" alt="Megaman Gif" style="height: 200px; width: 200px">
+                                                <div class="card-body">
+                                                <h3 class="card-title">Megaman</h3>
+                                                </div>`);
+                        reset();
+                        break;
+                    case 3:
+                        $('.thirdEvent').html(`<div class="text-right m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/mario-color.gif" class="card-img-top m-2" alt="Mario Gif" style="height: 200px; width: 200px">
+                                               <div class="card-body">
+                                               <h3 class="card-title">Mario</h3>
+                                               </div>`);
+                        reset();
+                        break;
+                    case 4:
+                        $('.fourthEvent').html(`<div class="text-right m-2"><i class="fas fa-lock-open"></i></div>
+                                                <img src="images/mudkip.gif" class="card-img-top m-2" alt="Mudkip Gif" style="height: 200px; width: 200px">
+                                                <div class="card-body">
+                                                <h3 class="card-title">Mudkip</h3>
+                                                </div>`);
+                        reset();
+                        break;
+                    case 5:
+                        $('.fifthEvent').html(`<div class="text-right m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/naruto.gif" class="card-img-top m-2" alt="Naruto Gif" style="height: 200px; width: 200px">
+                                               <div class="card-body">
+                                               <h3 class="card-title">Naruto</h3>
+                                               </div>`);
+                        reset();
+                        break;
+                    case 6:
+                        $('.sixthEvent').html(`<div class="text-right m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/samus.gif" class="card-img-top m-2" alt="Samus Gif" style="height: 200px; width: 200px">
+                                               <div class="card-body">
+                                               <h3 class="card-title">Samus</h3>
+                                               </div>`);
+                        reset();
+                        break;
+                    // case 4:
+                    //     $('.fourthEvent').html(``);
+                    //     reset();
+                    //     break;
+                    // case 4:
+                    //     $('.fourthEvent').html(``);
+                    //     reset();
+                    //     break;
 
-        // $(' h1 ').css('color', '#284571');
-        // $('*').css('background-color', 'gray');
-        // $(' .longForm ').css('color', '#86414d');
+                }}
+
+
+
+
+        });
 
     });
 
