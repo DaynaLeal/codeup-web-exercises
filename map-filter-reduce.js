@@ -99,3 +99,16 @@ let greeting = users.reduce((runningGreeting, user) => {
 }, 'Your instructors are: ');
 greeting = greeting.substring(0, greeting.length-2) + '.';
 console.log(greeting);
+
+//BONUS use .reduce to get the unique list of languages from the list of users
+let uniqueLang = users
+    .reduce((languages, usersLang) => {
+        usersLang.languages.forEach(function (language) {
+            if (languages.includes(language)){
+            } else {
+                languages.push(language);
+            }
+        });
+        return languages
+    }, []);
+
