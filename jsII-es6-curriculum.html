@@ -196,9 +196,26 @@
     console.log(totalYearsExperience / users.length);  //(35 / 5) = 7
 
     //5  Use .reduce to get the longest email from the list of users.
-    // let longestEmail = users.reduce()
+    let longestEmail = users.reduce((max, user) => {
+        Math.max.apply(Math, users.map(function (user) { user.email }));
+    }, ` `);
+    console.log(longestEmail);
+//--------------------------------
+//     let maxCallback = ( acc, cur ) => Math.max( acc.x, cur.x )
+//     let maxCallback2 = ( max, cur ) => Math.max( max, cur )
+//
+// // reduce() without initialValue
+//         [ { x: 22 }, { x: 42 } ].reduce( maxCallback ) // 42
+//         [ { x: 22 }            ].reduce( maxCallback ) // { x: 22 }
+//         [                      ].reduce( maxCallback ) // TypeError
+//
+// // map/reduce; better solution, also works for empty or larger arrays
+//         [ { x: 22 }, { x: 42 } ].map( el => el.x )
+//         .reduce( maxCallback2, -Infinity )
 
+    //
 
+//--------------------------------
     //6  Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
     let instructorString = users.reduce((total, user) => {
         total += `${user.name} `;

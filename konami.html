@@ -22,6 +22,7 @@
             userInput = "";
         }
 
+        let numberOfEvents = 0;
         $(document).keyup(function (event) {
             // console.log(event.which);
             userInput += (event.which);
@@ -30,6 +31,12 @@
             console.log(konami);
             if (userInput === konami) {
                 reset();
+                numberOfEvents += 1;
+
+                switch (numberOfEvents) {
+                    case 1:
+
+                }
                 alert("You have added 30 lives!");
             }
         });
