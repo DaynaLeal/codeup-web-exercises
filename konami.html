@@ -3,6 +3,7 @@
 <head>
     <title>Konami Code</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -10,15 +11,18 @@
         }
         body {
             background-color: black;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
         }
-        h1, h3 {
-            color: var(--main-text-color);
-        }
+        /*h1, h3 {*/
+        /*    color: var(--main-text-color);*/
+        /*}*/
         .lockedImage {
             filter: grayscale(100%) brightness(40%);
         }
         .btn {
             background-color: var(--main-text-color);
+            color: white;
         }
     </style>
 </head>
@@ -38,7 +42,7 @@
         <div class="cardsDiv d-flex flex-row flex-wrap">
 <!--contra guy-->
             <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <img src="images/contra.gif" class="card-img-top" alt="Contra Gif" style="height: 200px; width: 200px">
+                <img src="images/contra.gif" class="card-img-top m-2" alt="Contra Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
                     <h3 class="card-title">Bill</h3>
                 </div>
@@ -46,24 +50,44 @@
             </div>
 
             <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-
+                <img src="images/sonic.gif" class="card-img-top m-2 lockedImage" alt="Sonic Gif" style="height: 200px; width: 150px">
                 <div class="card-body">
                     <h3 class="card-title">Sonic</h3>
                 </div>
-                <img src="images/sonic.gif" class="card-img-top m-1 lockedImage" alt="Sonic Gif" style="height: 150px; width: 150px">
             </div>
 
             <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="images/megaman.gif" class="card-img-top lockedImage m-2" alt="Megaman Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-title">Megaman</h3>
                 </div>
             </div>
 
             <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="images/mario-color.gif" class="card-img-top lockedImage m-2" alt="Mario Gif" style="height: 200px; width: 200px">
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h3 class="card-title">Mario</h3>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="images/mudkip.gif" class="card-img-top lockedImage m-2" alt="Mudkip Gif" style="height: 200px; width: 200px">
+                <div class="card-body">
+                    <h3 class="card-title">Mudkip</h3>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="images/naruto.gif" class="card-img-top lockedImage m-2" alt="Naruto Gif" style="height: 200px; width: 200px">
+                <div class="card-body">
+                    <h3 class="card-title">Naruto</h3>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark text-center m-3" style="width: 18rem;">
+                <img src="images/samus.gif" class="card-img-top lockedImage m-2" alt="Samus Gif" style="height: 200px; width: 200px">
+                <div class="card-body">
+                    <h3 class="card-title">Samus</h3>
                 </div>
             </div>
 
