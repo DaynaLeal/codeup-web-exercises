@@ -10,12 +10,7 @@
 
     <style>
         :root {
-            --main-text-color: #7f0000;
-        }
-        body {
-            background-color: black;
-            font-family: 'Press Start 2P', cursive;
-            color: white;
+            --main-red-color: #7f0000;
         }
         /*h1, h3 {*/
         /*    color: var(--main-text-color);*/
@@ -23,25 +18,134 @@
         .lockedImage {
             filter: grayscale(100%) brightness(40%);
         }
-        .btn {
-            background-color: var(--main-text-color);
+        .customButton {
+            background-color: var(--main-red-color);
             color: white;
         }
+        .customMessage {
+            position: absolute;
+            z-index: 1;
+            width: 80%;
+            left: 60px;
+            top: 40%;
+        }
+
+
+
+        html {
+            display: flex;
+            min-height: 100%;
+            min-height: 100vh;
+        }
+
+        body {
+            background-color: black;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            /*flex: 1;*/
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: center;*/
+        }
+
+        /*.checkbox {*/
+        /*    appearance: none;*/
+        /*    -webkit-appearance: none;*/
+        /*    -moz-appearance: none;*/
+        /*    cursor: pointer;*/
+        /*    color: var(--main-red-color);*/
+        /*    --message: "Hint";*/
+        /*    --bg: transparent;*/
+        /*    !*position: fixed;*!*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    margin: 1em;*/
+        /*}*/
+        /*.checkbox:checked {*/
+        /*    --bg: unset;*/
+        /*    --message: "Close";*/
+        /*}*/
+        /*.checkbox:before, .checkbox:after {*/
+        /*    content: "";*/
+        /*    display: inline-block;*/
+        /*    vertical-align: middle;*/
+        /*}*/
+        /*.checkbox:before {*/
+        /*    padding: .5em;*/
+        /*    background: var(--main-red-color);*/
+        /*    border: 1px solid;*/
+        /*}*/
+        /*.checkbox:after {*/
+        /*    content: var(--message);*/
+        /*    color: #fff;*/
+        /*    margin-left: .5em;*/
+        /*}*/
+
+        .message_container {
+            filter: drop-shadow(0 0 8px var(--main-red-color));
+        }
+        .message_container .message {
+            background: #000;
+            --aug-border: 2px;
+            --aug-border-bg: var(--main-red-color);
+            width: calc(100% - 20px);
+            max-width: 640px;
+            margin: 0 auto;
+            /*overflow: hidden;*/
+            transition: all .5s;
+        }
+        .message_container .message .title {
+            display: inline-block;
+            padding: .5em 2em;
+            font-weight: bold;
+            letter-spacing: .1em;
+            text-align: center;
+            text-transform: uppercase;
+            --aug-inset: .25em;
+            --aug-inset-bg: #ff0;
+            --aug-br: .75em;
+        }
+        .message_container .message p {
+            color: #fff;
+            padding: 1em;
+            margin: 0;
+            display: block;
+            line-height: 1.4em;
+            text-align: justify;
+            max-height: 10em;
+        }
+
+        .checkbox ~ .message_container > .message {
+            max-height: 0;
+            opacity: 0;
+        }
+        /*.checkbox:checked ~ .message_container > .message {*/
+        /*    max-height: 300px;*/
+        /*    opacity: 1;*/
+        /*}*/
     </style>
 </head>
 <body>
-<!--<h1 id="headerTitle">Konami Code</h1>-->
-<!--&lt;!&ndash;<p>Konami Code: "^ ^ ↓ ↓ < > < > b a enter"</p>&ndash;&gt;-->
-<!--<p class="longForm">Konami Code: "up up down down left right left right b a enter"</p>-->
-<!--<p class="longForm">Konami Code: "3838404037393739666513"</p>-->
+<div class="container customContainer d-flex flex-column justify-content-center">
+
+    <div class="headerContainer container mt-3 mb-0 d-flex flex-row text-center">
+        <h1 class="text-center">Choose your Player!</h1>
+
+<!--        <div class="hintAppend">-->
+<!--            <input class="checkbox" type="checkbox" aria-label="Tick the checkbox to open/close the prompt"/>-->
+
+<!--        </div>-->
+            <button type="button" class="btn ml-auto customButton">Hint</button>
+    </div>
+
+    <div class="message_container z-1 customMessage">
+        <div class="message" augmented-ui="exe tl-clip br-clip">
+            <div class="title" augmented-ui="exe tl-clip br-clip">Enter the Konami Code to unlock players</div>
+            <p>The Konami Code is: up, up, down, down, left, right, left, right, b, a, enter.</p>
+        </div>
+    </div>
 
     <div class="container">
-        <div class="headerContainer mt-3 mb-0 d-flex flex-row text-center">
-            <h1 class="text-center">Choose your Player!</h1>
-<!--            <button type="button" class="btn ml-auto">Hint</button>-->
-            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">H</a>
-        </div>
-
 
         <div class="cardsDiv d-flex flex-row justify-content-center flex-wrap">
 <!--contra guy-->
@@ -106,7 +210,7 @@
 
         </div>
     </div>
-
+</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -115,7 +219,31 @@
 
 <script>
     $(document).ready(function() {
+    //     $('[data-toggle="popover"]').popover();
+    // });
         "use strict";
+
+        $('.customMessage').hide();
+        let clickOnce = 0;
+        $('.customButton').click(function(){
+            clickOnce += 1;
+            if(clickOnce % 2 !== 0){
+                $('.customMessage').show();
+            } else {
+                $('.customMessage').hide();
+            }
+
+        });
+        // $('.checkbox').click(function(){
+        //    $(this).append(`<div class="message" augmented-ui="exe tl-clip br-clip">
+        //             <div class="title" augmented-ui="exe tl-clip br-clip">Enter the Konami Code to unlock players</div>
+        //             <p>The Konami Code is: up, up, down, down, left, right, left, right, b, a, enter.</p>
+        //         </div>`)
+        // });
+
+        // $('[data-toggle=popover]').popover({
+        //     trigger: 'focus'
+        // });
 
         var userInput = "";
         var konami = "3838404037393739666513";
@@ -199,6 +327,7 @@
 
 
         });
+
 
     });
 
