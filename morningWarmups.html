@@ -291,7 +291,7 @@
                 heightInMM: 120,
                 fur: ['brown', 'white'],
                 gender: "male",
-                dateOfBirth: "Spetember 21"
+                dateOfBirth: "September 21"
             } , {
                 name: "Snoozer",
                 heightInMM: 85,
@@ -309,6 +309,18 @@
             return (heightBucket / arrayObjects.length);
         }
         console.log(hamsterHeight(hamsters)); //93.2 MM
+
+        //20. write a function called isAnagram that takes in two strings and returns true if they are anagrams of each other
+        let isAnagram = (word1, word2) => {
+            letters1 = word1.toLowerCase().split('').sort();
+            letters2 = word2.toLowerCase().split('').sort();
+
+            return letters1.join() === letters2.join();
+        };
+        console.log(isAnagram("listen", "silent"));
+        console.log(isAnagram('hello', 'claim'));
+        console.log(isAnagram('God', 'dog'));
+
 
 
 
