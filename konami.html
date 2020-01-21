@@ -12,9 +12,6 @@
         :root {
             --main-red-color: #7f0000;
         }
-        /*h1, h3 {*/
-        /*    color: var(--main-text-color);*/
-        /*}*/
         .lockedImage {
             filter: grayscale(100%) brightness(40%);
         }
@@ -29,15 +26,11 @@
             left: 60px;
             top: 40%;
         }
-
-
-
         html {
             display: flex;
             min-height: 100%;
             min-height: 100vh;
         }
-
         body {
             background-color: black;
             font-family: 'Press Start 2P', cursive;
@@ -47,40 +40,6 @@
             /*align-items: center;*/
             /*justify-content: center;*/
         }
-
-        /*.checkbox {*/
-        /*    appearance: none;*/
-        /*    -webkit-appearance: none;*/
-        /*    -moz-appearance: none;*/
-        /*    cursor: pointer;*/
-        /*    color: var(--main-red-color);*/
-        /*    --message: "Hint";*/
-        /*    --bg: transparent;*/
-        /*    !*position: fixed;*!*/
-        /*    top: 0;*/
-        /*    left: 0;*/
-        /*    margin: 1em;*/
-        /*}*/
-        /*.checkbox:checked {*/
-        /*    --bg: unset;*/
-        /*    --message: "Close";*/
-        /*}*/
-        /*.checkbox:before, .checkbox:after {*/
-        /*    content: "";*/
-        /*    display: inline-block;*/
-        /*    vertical-align: middle;*/
-        /*}*/
-        /*.checkbox:before {*/
-        /*    padding: .5em;*/
-        /*    background: var(--main-red-color);*/
-        /*    border: 1px solid;*/
-        /*}*/
-        /*.checkbox:after {*/
-        /*    content: var(--message);*/
-        /*    color: #fff;*/
-        /*    margin-left: .5em;*/
-        /*}*/
-
         .message_container {
             filter: drop-shadow(0 0 8px var(--main-red-color));
         }
@@ -114,15 +73,10 @@
             text-align: justify;
             max-height: 10em;
         }
-
         .checkbox ~ .message_container > .message {
             max-height: 0;
             opacity: 0;
         }
-        /*.checkbox:checked ~ .message_container > .message {*/
-        /*    max-height: 300px;*/
-        /*    opacity: 1;*/
-        /*}*/
     </style>
 </head>
 <body>
@@ -138,12 +92,16 @@
             <button type="button" class="btn ml-auto customButton">Hint</button>
     </div>
 
+
+
     <div class="message_container z-1 customMessage">
         <div class="message" augmented-ui="exe tl-clip br-clip">
             <div class="title" augmented-ui="exe tl-clip br-clip">Enter the Konami Code to unlock players</div>
             <p>The Konami Code is: up, up, down, down, left, right, left, right, b, a, enter.</p>
         </div>
     </div>
+
+
 
     <div class="container">
 
@@ -219,8 +177,6 @@
 
 <script>
     $(document).ready(function() {
-    //     $('[data-toggle="popover"]').popover();
-    // });
         "use strict";
 
         $('.customMessage').hide();
@@ -232,7 +188,6 @@
             } else {
                 $('.customMessage').hide();
             }
-
         });
         // $('.checkbox').click(function(){
         //    $(this).append(`<div class="message" augmented-ui="exe tl-clip br-clip">
@@ -248,7 +203,6 @@
         var userInput = "";
         var konami = "3838404037393739666513";
         // var konami = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter"; //use this with event.key instead of .which
-
 
         function reset() {
             userInput = "";
