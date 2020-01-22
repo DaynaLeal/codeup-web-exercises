@@ -25,14 +25,57 @@ wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
 //Create a function that accepts a GitHub username, and returns a promise that resolves with the date of the last commit that user made. Reference the github api documentation to achieve this.
 // fetch('https://api.github.com/users/:username/events', {headers: {'Authorization': gitAccessToken}});
 
-function lastCommit(userName){
-    return new Promise(((resolve, reject) => {
-        resolve (fetch('https://api.github.com/users/:' + userName + '/events', {headers:
-                {'Accept': 'application/vnd.github.v3+json'},
-                {'Authorization': 'token gitAccessToken'}}))
-    }))
-}
+//failed attempt to access git API
+// function lastCommit(userName){
+//     return new Promise(((resolve, reject) => {
+//         resolve (fetch('https://api.github.com/users/:' + userName + '/events', {headers:
+//                 {'Accept': 'application/vnd.github.v3+json'},
+//                 {'Authorization': 'token gitAccessToken'}}))
+//     }))
+// }
+// lastCommit('DaynaLeal');
+
+
+//seemingly unrelated part of the run-through
+// fetch('https://api.github.com/users')
+//     .then(resp => {
+//         console.log(resp);
+//         return resp.json();
+//     })
+//     .then(user => {
+//         console.log(user);
+//         return users.map(user => user.login);
+//     })
+//     // .then(data => console.log(data))
+//     // .then(users => users.map(user => user.login))
+//     .then(usernames => console.log(usernames));
+//     // .then(usernames => users.forEach((username) => {
+//         //do something with each username
+// // }))
+//     // .catch(error => console.error(error))
+
+//run-through
+const lastCommit = (username) => {
+    fetch(`https://api.github.com/users/${username}/events`, {headers: {"Authorization": `token ${githubPAT}`}})
+        .then(resp => resp.json())
+        .then(data => data.find(event => event.type === "PushEvent"))
+        .then(event => event.created_at)
+        .then(date => console.log(date));
+};
+lastCommit("danielfryar");
 lastCommit('DaynaLeal');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
