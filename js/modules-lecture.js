@@ -9,7 +9,7 @@ export const subtract = (inputOne, inputTwo) => {
 }
 
 //method 1
-// module.exports = {hello1, add, subtract}; //use this with require
+module.exports = {hello1, add, subtract}; //use this with require
 
 //method 2 was adding export in front of the variable/function declarations
 
