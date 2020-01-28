@@ -1,6 +1,7 @@
 (function(){
+
    "use strict";
-master
+
 
     /**
      * TODO:
@@ -8,7 +9,6 @@ master
      * 'names'.
      */
 
-master
     var names = ["Briana", "Chris", "Charlie", "Hung"];
 
 
@@ -17,7 +17,6 @@ master
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-
 
     console.log(names.length);
 master
@@ -28,7 +27,6 @@ master
      * accessing each element's index.
      */
 
-master
     console.log(names[0]);
     console.log(names[1]);
     console.log(names[2]);
@@ -41,7 +39,6 @@ master
      * array.
      */
 
- master
     for (var i = 0; i < names.length; i++) {
         console.log(names[i]);
     }
@@ -51,7 +48,7 @@ master
      * Refactor your above code to use a `forEach` loop
      */
 
- master
+
     names.forEach(function (name) {
         console.log("here is a name: " + name);
     });
@@ -65,7 +62,7 @@ master
 //     });
 
 
-master
+
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -80,7 +77,7 @@ master
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-master
+
     function first(array){
         return "here is the first name: " + array[0];
     }
@@ -94,5 +91,5 @@ master
     console.log(second(names));
     console.log(last(names));
 
- master
+
 })();
