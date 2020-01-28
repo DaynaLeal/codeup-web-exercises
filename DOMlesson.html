@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Lecture</title>
+</head>
+<body>
+    <h1 id="header">Happy Holidays!</h1>
+    <h3>Wish List</h3>
+    <ul>
+        <li>Dual Screen</li>
+        <li class="even">Shoes</li>
+        <li>New car</li>
+        <li class="even">Cat</li>
+    </ul>
+
+    <h3>Christmas List</h3>
+    <ul>
+        <li class="kids">Davanee</li>
+        <li class="kids">Camila</li>
+        <li class="sibling">Cassandra</li>
+        <li class="sibling">Jaime</li>
+        <li class="sibling">Vaughnell</li>
+        <li class="parent">Mom</li>
+        <li class="parent">Dad</li>
+    </ul>
+
+    <button id="button">Click me!</button>
+
+    <script>
+        "use strict";
+        console.log(document); //documents HTML representation of js in the console
+        var header = document.getElementById("header");
+        console.log(header); //only shows HTML representation of js in the console for the id="header" line
+
+        //not sure why this example didnt work for me but the example after works
+        // var evens = document.getElementById("even");
+        // console.log(evens);
+        //
+        // evens.forEach(function(even){
+        //     console.log(even);
+        // }); //this was an example not meant to work for some reason
+        //
+        // for (var i = 0; i < evens.length; i++){
+        //     console.log(evens[i]);
+        //         evens[i].innerHTML = "Money"; //replaces HTML with "evens" to "Money"
+        //         evens[i].innerText = "<em>Money</em>"; //replaces elements with "evens" to "Money"
+        // }
+
+        var lis = document.getElementsByTagName("li");
+        console.log(lis);
+        for (var i = 0; i < lis.length; i++){
+            console.log(lis[i]);
+        }
+
+        var kidGift = document.getElementsByClassName("kids");
+        console.log(kidGift);
+        for (var i = 0; i < kidGift.length; i++){
+            console.log(kidGift[i]);
+        }
+
+        var siblingGift = document.getElementsByClassName("sibling");
+        console.log(siblingGift);
+        for (var i = 0; i < kidGift.length; i++){
+
+            console.log(kidGift[i]);
+        }
+
+        //dom events lecture below
+        var clicks = 0;
+        var button = document.getElementById('button');
+        // button.addEventListener("click", function(){alert("button was clicked")});
+        button.addEventListener("click", function(){
+            clicks++;
+            console.log("button was clicked " + clicks + " times.")
+        });
+    </script>
+
+</body>
+</html>
