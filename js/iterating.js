@@ -1,23 +1,35 @@
+
 (function(){
-    "use strict";
+  master    "use strict";
 
     /**
      * TODO:
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
+objects
+    var names = ["Briana", "Chris", "Charlie", "Hung"];
+
 
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
      * array.
      */
+ objects
+    console.log(names.length);
 
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+objects
+    console.log(names[0]);
+    console.log(names[1]);
+    console.log(names[2]);
+    console.log(names[3]);
+
 
     /**
      * TODO:
@@ -25,10 +37,29 @@
      * array.
      */
 
+objects
+    for (var i = 0; i < names.length; i++) {
+        console.log(names[i]);
+    }
+
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
+
+objects
+    names.forEach(function (name) {
+        console.log("here is a name: " + name);
+    });
+
+
+// EXAMPLE:
+//var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+// loop through the array and log the values
+//     shapes.forEach(function(shape) {
+//         console.log('Here is a lovely shape: ' + shape + '.');
+//     });
+
 
     /**
      * TODO:
@@ -43,5 +74,19 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+objects
+    function first(array){
+        return "here is the first name: " + array[0];
+    }
+    function second(array){
+        return "here is the second name: " + array[1];
+    }
+    function last(array){
+        return "here is the last name: " + array[array.length-1];
+    }
+    console.log(first(names));
+    console.log(second(names));
+    console.log(last(names));
 
 })();
