@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    $.ajax('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyKey + '/29.4241,-98.4936').done(function(data){
+        console.log(data);
+        var dateObject = new Date(data.currently.time * 1000); //the "* 1000" is necessary using darkSkyKey
+        console.log(dateObject.toString());
+    })
+</script>
+</body>
+</html>

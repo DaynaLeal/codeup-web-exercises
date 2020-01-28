@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Traversing Curriculum</title>
+</head>
+<body>
+<!--    <h3>List of Languages</h3>-->
+<!--    <ul>-->
+<!--        <li>Linux</li>-->
+<!--        <li>Apache</li>-->
+<!--        <li>MySQL</li>-->
+<!--        <li>PHP</li>-->
+<!--        <li>Javascript</li>-->
+<!--    </ul>-->
+
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
+
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+
+    $(document).ready(function(){
+
+        // $('li').each(function(index) {
+        //     if (index % 2 !== 0) {
+        //         $(this).css('background-color', '#FF0');
+        //     }
+        // });
+        //
+        // $('li').first().css('background-color', 'green');
+        // $('li').last().css('background-color', 'pink');
+
+        //to make all li elements bold
+        // $('li').css('font-weight', 'bold');
+
+        //to make all child elements of element with id="national-parks"
+        // $('#national-parks').children().css('font-weight', 'bold');
+
+        //to highlight parent element v the li elements
+        // $('li').css('background-color', '#FF0');
+        // $('li').parent().css('background-color', '#0F0'); //given to the bullet-points since the parent is ul element
+
+        //to act on the following (non-child) element, here this affected the entire ul
+        $('#national-parks-heading').next().css('background-color', 'salmon');
+    });
+
+
+</script>
+</body>
+</html>

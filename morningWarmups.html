@@ -16,10 +16,10 @@
          */
 
         //2. Write a JS function that will return a name November 7, 2019
-        function sayHello(name) {
-            return "Hello, " + name + "!";
-        }
-        console.log(sayHello("Europa"));
+        // function sayHello(name) {
+        //     return "Hello, " + name + "!";
+        // }
+        // console.log(sayHello("Europa"));
 
         //3. Write a function that will return the sum of two numbers November 8, 2019
         function addition (a, b) {
@@ -160,9 +160,264 @@
         console.log(contains(["5", "6", "7"], "6"));
         console.log(contains(["5", "6", "7"], "8"));
 
+        //17. handwritten object
+
+        //18. // Loop through the following  array of Reindeer objects and return an array of Reindeer objects that are "gold" reindeer (handwritten)
+
+        var reindeerList = [
+            {
+                name: "Dot",
+                age: 5,
+                isGold: false
+            },
+            {
+                name: "Dasher",
+                age: 8,
+                isGold: true
+            },
+            {
+                name: "Patch",
+                age: 2,
+                isGold: false
+            },
+            {
+                name: "Rocket",
+                age: 6,
+                isGold: false
+            },
+            {
+                name: "Dancer",
+                age: 9,
+                isGold: true
+            },
+            {
+                name: "Prancer",
+                age: 5,
+                isGold: true
+            },
+            {
+                name: "Groot",
+                age: 9,
+                isGold: false
+            },
+            {
+                name: "Vixen",
+                age: 9,
+                isGold: true
+            },
+            {
+                name: "Comet",
+                age: 11,
+                isGold: true
+            },
+            {
+                name: "Archie",
+                age: 3,
+                isGold: false
+            },
+            {
+                name: "Cupid",
+                age: 13,
+                isGold: true
+            },
+            {
+                name: "Donder",
+                age: 16,
+                isGold: true
+            },
+            {
+                name: "Boots",
+                age: 16,
+                isGold: false
+            },
+            {
+                name: "Blizten",
+                age: 16,
+                isGold: true
+            }
+        ];
+
+        // for loop version
+        // function getGoldReindeer(reindeerArray){
+        //     var goldBucket = [];
+        //
+        //     for(var i = 0; i < reindeerArray.length; i++){
+        //         console.log(reindeerArray[i].isGold);
+        //         if(reindeerArray[i].isGold === true){
+        //             goldBucket.push(reindeerArray[i]);
+        //         }
+        //     }
+        //
+        //     return goldBucket;
+        // }
+        // console.log(getGoldReindeer(reindeerList));
+
+        function getGoldReindeer(reindeerArray){
+            var goldBucket = [];
+
+            reindeerArray.forEach(function(reindeer){
+                if(reindeer.isGold === true){
+                    goldBucket.push(reindeer);
+                }
+            });
+
+            return goldBucket;
+        }
+        console.log(getGoldReindeer(reindeerList));
+
+    //19. return the average hamster height from object array of hamsters
+
+        var hamsters = [
+            {
+                name: "Hamtaro",
+                heightInMM: 86,
+                fur: ['orange', 'white'],
+                gender: "male",
+                dateOfBirth: "August 6"
+            } , {
+                name: "Bijou",
+                heightInMM: 75,
+                fur: ['white'],
+                gender: "female",
+                dateOfBirth: "July 10"
+            } , {
+                name: "Oxnard",
+                heightInMM: 100,
+                fur: ['grey', 'white'],
+                gender: "male",
+                dateOfBirth: "May 3"
+            } , {
+                name: "Boss",
+                heightInMM: 120,
+                fur: ['brown', 'white'],
+                gender: "male",
+                dateOfBirth: "September 21"
+            } , {
+                name: "Snoozer",
+                heightInMM: 85,
+                fur: ['brown', 'white', "pink"],
+                gender: "male",
+                dateOfBirth: "January 14"
+            }
+        ];
+
+        function hamsterHeight(arrayObjects){
+            var heightBucket = 0;
+            for(var i = 0; i < arrayObjects.length; i++){
+                heightBucket += arrayObjects[i].heightInMM;
+            }
+            return (heightBucket / arrayObjects.length);
+        }
+        console.log(hamsterHeight(hamsters)); //93.2 MM
+
+        //20. write a function called isAnagram that takes in two strings and returns true if they are anagrams of each other
+        //anagrams are words that contain the same letters
+        let isAnagram = (word1, word2) => {
+            letters1 = word1.toLowerCase().split('').sort();
+            letters2 = word2.toLowerCase().split('').sort();
+
+            return letters1.join() === letters2.join();
+        };
+        console.log(isAnagram("listen", "silent"));
+        console.log(isAnagram('hello', 'claim'));
+        console.log(isAnagram('God', 'dog'));
+
+        //21. using es6 syntax, (arrow functions, let declarations, template strings, for..of loop) write a function that accepts an array of movie objects
+        // if the movies rating is 5, output: <title> is fantastic
+        //if the rating is 1, output: <title> is terrible
+        //otherwise output the title of the movie
+        //use the array of movies from the project and run the code in node
+        //bonus: add messages for rating 2 and 4
+        //bonus: output the messages to html
+
+           let movies = [
+            {
+                "title": "Casablanca",
+                "rating": "5",
+                "year": "1942",
+                "genre": "Drama / Romance",
+                "id": 1
+            },
+            {
+                "title": "Star Wars: A New Hope",
+                "rating": "5",
+                "year": "1977",
+                "genre": "Sci-fi / Action / Fantasy",
+                "id": 2
+            },
+            {
+                "title": "new movie",
+                "rating": "5",
+                "id": 3
+            },
+            {
+                "title": "newer movie",
+                "rating": "3",
+                "id": 4
+            },
+            {
+                "title": "newest movie",
+                "rating": "2",
+                "id": 5
+            },
+            {
+                "title": "",
+                "rating": "5",
+                "id": 6
+            }
+        ]
 
 
+        let movieRatings = (movies) => {
+            for(let movie of movies){
+                if (movie.rating === "5"){
+                    return `${movie.title} is fantastic!`
+                } else if (movie.rating === "1"){
+                    return `${movie.title} is terrible!`
+                } else {
+                    return `${movie.title}`
+                }
+            }
+        }
+        console.log(movieRatings(movies))
 
+        // function sayHello(name) {
+        //     return 'Hello, ' + name + '!';
+        // }
+
+        // #1
+        // const sayHello = (name) => { 'Hello, ' + name + '!' }
+        // const sayHello = name => { 'Hello, ' + name + '!' }
+        // const sayHello = (name) => `Hello, ${name}!`
+        // console.log(sayHello('name'))
+
+        // let numbers = [1, 2, 3, 4, 5];
+        // console.log(numbers.map(n => n * 3));
+        // console.log(numbers)
+
+        // const isDivisibleBy3 = n => n % 3 === 0;
+        //
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        //
+        // console.log(numbers.filter(isDivisibleBy3));
+        // console.log(numbers);
+
+        // const p = new Promise((resolve, reject) => {
+        //     resolve(3)
+        // });
+        //
+        // p.then(result => console.log(result));
+        // p.catch(error => console.log('An error occured!'));
+
+        // const p = new Promise((resolve, reject) => {
+        //
+        //     return 3;
+        // });
+        //
+        // p.then(result => console.log(result));
+        // p.catch(error => console.log('An error occured!'));
+
+        //22.
 
 
     </script>

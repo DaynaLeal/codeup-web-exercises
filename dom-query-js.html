@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<button id="buttonMainHeader">Main Header</button>
+<button id="buttonSubHeader">Sub-Header</button>
+<button id="buttonListColors">List Items Color</button>
+<button id="buttonSubPara">Sub-Paragraph</button>
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Uncomment next line and get the main header element by id
+        //dom 1 exercise
+        // var mainHeader = document.getElementById("main-header");
+        // console.log(mainHeader);
+
+
+
+        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        //dom 1 exercise
+        // mainHeader.innerHTML = "JavaScript is Cool";
+
+        //dom events exercise
+        var clickHeader = document.getElementById("buttonMainHeader");
+        clickHeader.addEventListener("click", function(){
+            var mainHeader = document.getElementById("main-header");
+            mainHeader.innerHTML = "JavaScript is Cool";
+        });
+
+        // TODO: Uncomment the next line and get the sub header element by id
+        //dom 1 exercise
+        // var subHeader = document.getElementById("sub-header");
+        // console.log(subHeader);
+
+        // TODO: Set the text color of subHeader to blue
+        //dom 1 exercise
+        // subHeader.style.color = '#2196f3';
+        // subHeader.style['color'] = '#2196f3';
+        // subHeader.setAttribute("style", "color:blue")
+
+        //dom events exercise
+        var clickSub = document.getElementById("buttonSubHeader");
+        clickSub.addEventListener("click", function(){
+            var subHeader = document.getElementById("sub-header");
+            subHeader.style['color'] = '#2196f3';
+        });
+
+
+        // TODO: Uncomment the next line and get all list items
+        //dom 1 exercise
+        var listItems = document.getElementsByTagName('li');
+        console.log(listItems);
+
+        // TODO: Set text color on every other list item to grey
+        //dom 1 exercise longhand
+        // listItems[1].style['color'] = '#44555d';
+        // listItems[3].style['color'] = '#44555d';
+        // listItems[5].style['color'] = '#44555d';
+
+        //dom 1 exercise
+        // for (var i = 0; i < listItems.length; i++){
+        //     if(i % 2 === 0){
+        //         listItems[i].style['color'] = '#44555d';
+        //     }
+        // }
+
+
+        // TODO: Set text color of li with dbid = 1 to blue
+
+
+            //dom 1 exercise
+            // for (var i = 0; i < listItems.length; i++){
+            //     if(listItems[i].getAttribute("data-dbid") === "1"){
+            //         listItems[i].style['color'] = '#2196f3';
+            //     }
+            // }
+
+            //dom events exercise
+            var listColors = document.getElementById("buttonListColors");
+            listColors.addEventListener("click", function(){
+
+
+                for (var i = 0; i < listItems.length; i++){
+                    if(i % 2 === 0){
+                        listItems[i].style['color'] = '#44555d';
+                    }
+                }
+                for (var i = 0; i < listItems.length; i++){
+                    if(listItems[i].getAttribute("data-dbid") === "1"){
+                        listItems[i].style['color'] = '#2196f3';
+                    }
+                }
+
+
+            });
+
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        //dom 1 exercise
+        // var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        // console.log(subParagraphs);
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        //dom 1 exercise
+        // subParagraphs[0].innerText = "Mission Accomplished!"; //do it this way because sub-paragraphs is a list/array
+
+        //dom events exercise
+        // var changePara = document.getElementById("buttonSubPara");
+        // changePara.addEventListener("click", function(){
+        //     var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        //     subParagraphs[0].innerText = "Mission Accomplished!";
+        // });
+
+        //testing remover
+
+
+
+        // if(subParagraphs[0].innerText == lorem) {
+        //     subParagraphs[0].innerText = accomplished;
+        // } else {
+        //     subParagraphs[0].innerText = lorem;
+        // }
+
+        //this changes from lorem to accomplished when clicked once and changes back to lorem when clicked again
+        var changePara = document.getElementById("buttonSubPara");
+        var lorem = document.getElementsByClassName("sub-paragraph")[0].innerText;
+        var accomplished = "Mission Accomplished!";
+
+        changePara.addEventListener("click", function(){
+            var subParagraphs = document.getElementsByClassName('sub-paragraph');
+            if(subParagraphs[0].innerText == lorem) {
+                subParagraphs[0].innerText = accomplished;
+            } else {
+                subParagraphs[0].innerText = lorem;
+            }
+        });
+
+
+        // var clicks = 0;
+        // var button = document.getElementById('button');
+        // // button.addEventListener("click", function(){alert("button was clicked")});
+        // button.addEventListener("click", function(){
+        //     clicks++;
+        //     console.log("button was clicked " + clicks + " times.")
+        // });
+
+    })();
+</script>
+</body>
+</html>

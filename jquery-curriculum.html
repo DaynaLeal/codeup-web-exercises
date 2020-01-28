@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Curriculum Examples</title>
+</head>
+<body>
+
+
+
+<!--<h1>jQuery Intro</h1>-->
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+
+<!--<h1>Example Page</h1>-->
+<!--<div class="important">-->
+<!--    <h3>NOTICE</h3>-->
+<!--    <p>This is an important message!</p>-->
+<!--</div>-->
+<!--<div class="not-important">-->
+<!--    <h2 id="my-element">Lorem Ipsum</h2>-->
+<!--    <p>-->
+<!--        Lorem ipsum dolor sit amet, incididunt ut <span class="important">labore et dolore magna aliqua.</span>, quis ut aliquip ex ea commodo.-->
+<!--    </p>-->
+<!--</div>-->
+<!--<p class="important">This is also very important.</p>-->
+
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+
+
+
+<!--below is material for the keyboard events section-->
+<!--<p>Please type something into this form:</p>-->
+<!--<form>-->
+<!--    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>-->
+<!--</form>-->
+
+<!--below is material for the jQuery Attributes and CSS section-->
+<h1 id="codeup">Hello Codeup!</h1>
+<!--<h1 id="codeup2">Hello Codeup!!</h1>-->
+
+
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    //----------------below is following along with curriculum from jQuery Attributes and CSS--------------------------
+
+    //this returns h1 contents when the html for this element is clicked
+    // .html will return the only the HTML from the first matched element when used as a getter. This means that if the selector was for a class, only the first one would be returned, therefore you would need to use "this" or an id selector for specific return
+    // $('#codeup').click(function() {
+    //     var h1Contents = $('#codeup').html();
+    //     alert(h1Contents);
+    // });
+
+    //this allows us to only show content of one of the h1 elements
+    // $('#codeup').click(function() {
+    //     var h1Contents = $(this).html();
+    //     alert(h1Contents);
+    // });
+
+    //you dont need the variable:
+    // $('#codeup').click(function() {
+    //     alert($(this).html());
+    // });
+
+    //this changes the HTML from "Hello Codeup!" to "Codeup Rocks!"
+    // $('#codeup').click(function() {
+    //     $(this).html('Codeup Rocks!');
+    // });
+
+    //you can substitute .html for .text (in most situations)
+
+    //to find the width of an element
+    // console.log($('#codeup').css('width'));
+
+    //you can chain calls to the .css method by listing to change multiple properties
+    // $('#codeup').css('color', 'firebrick').css('background-color', 'papayawhip')
+
+    //this can also be written in an object or a variable
+    // $('#codeup').css({
+    //     'color': 'firebrick',
+    //     'background-color': 'papayawhip'
+    // });
+    // var highlightedStyles = {
+    //     'color': 'red',
+    //     'background-color': 'yellow',
+    //     'font-size': '28px'
+    // };
+    // $('#codeup').css(highlightedStyles);
+
+
+    //----------------below is following along with curriculum from jQuery Keyboard Events-----------------------------
+
+    // $('#textfield').keydown(function() {
+    //     alert('A key was pushed down!');
+    // });
+
+    // $('#textfield').keypress(function() {
+    //     alert('a key was pressed!');
+    // });
+
+    // $('#textfield').keyup(function() {
+    //     alert('a key was released!');
+    // });
+
+
+    //----------------below is following along with curriculum from jQuery Mouse Events--------------------------------
+    //this does the same as the named function below, both work
+    // var ele = document.getElementById('my-element');
+    // ele.addEventListener('click', function(e) {
+    //     alert('My element was clicked!');
+    // });
+
+    //this is equivalent to the anonymous function above, both work
+    // function clickHandler(e) {
+    //     alert('My element was clicked!');
+    // }
+    // var ele = document.getElementById('my-element');
+    // ele.addEventListener('click', clickHandler);
+
+    // $('#codeup').click(function() {
+    //     alert('h1 with id "codeup" was clicked');
+    // }); //this looks like a much easier way of writing the above two functions, and it does the same thing
+
+    // $('#codeup').dblclick(function(){
+    //     alert('h1 with id "codeup" was double clicked!')
+    // });
+
+    // $('#codeup').hover(
+    //     function() {
+    //         $(this).css('background-color', '#FF0');
+    //     },
+    //     function() { //this function turns it off, when commented out, the background color stays yellow
+    //         $(this).css('background-color', '#FFF');
+    //     }
+    // );
+    //----------------below is following along with curriculum from jQuery Selectors-----------------------------------
+    // var contents = $('#codeup').html();
+    // alert(contents);
+
+    // $('.important').css('background-color', 'yellow');
+    // $('p').css('font-size', '14px');
+
+    // $('.important, p').css('background-color', '#FF0');
+    // $('*').css('border', '1px solid #F00');
+
+
+    //---------------below is following along with curriculum from jQuery intro----------------------------------------
+    // window.onload = function() {
+    //     alert('The page has finished loading!');
+    // };
+    //
+    // console.log("jquery");
+    //
+    //
+    // $(document).ready(function() {
+    //     alert( 'The DOM has finished loading!' ); //this alerted before the window.onload alert. This is because of the ".ready()" with anonymous function which loads first
+    // });
+
+</script>
+</body>
+</html>
