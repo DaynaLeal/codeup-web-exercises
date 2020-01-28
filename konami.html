@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--    google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+<!--    font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+    <style>
+        :root {
+            --main-red-color: #7f0000;
+        }
+        .lockedImage {
+            filter: grayscale(100%) brightness(40%);
+        }
+        .customButton {
+            background-color: var(--main-red-color);
+            color: white;
+        }
+        .customMessage {
+            position: absolute;
+            z-index: 1;
+            width: 80%;
+            left: 60px;
+            top: 40%;
+        }
+        html {
+            display: flex;
+            min-height: 100%;
+            min-height: 100vh;
+        }
+        body {
+            background-color: black;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            /*flex: 1;*/
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: center;*/
+        }
+        .message_container {
+            filter: drop-shadow(0 0 8px var(--main-red-color));
+        }
+        .message_container .message {
+            background: #000;
+            --aug-border: 2px;
+            --aug-border-bg: var(--main-red-color);
+            width: calc(100% - 20px);
+            max-width: 640px;
+            margin: 0 auto;
+            /*overflow: hidden;*/
+            transition: all .5s;
+        }
+        .message_container .message .title {
+            display: inline-block;
+            padding: .5em 2em;
+            font-weight: bold;
+            letter-spacing: .1em;
+            text-align: center;
+            text-transform: uppercase;
+            --aug-inset: .25em;
+            --aug-inset-bg: #ff0;
+            --aug-br: .75em;
+        }
+        .message_container .message p {
+            color: #fff;
+            padding: 1em;
+            margin: 0;
+            display: block;
+            line-height: 1.4em;
+            text-align: justify;
+            max-height: 10em;
+        }
+        .checkbox ~ .message_container > .message {
+            max-height: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container customContainer d-flex flex-column justify-content-center">
+
+    <div class="headerContainer container mt-3 mb-0 d-flex flex-row text-center">
+        <h1 class="text-center">Choose your Player!</h1>
+
+<!--        <div class="hintAppend">-->
+<!--            <input class="checkbox" type="checkbox" aria-label="Tick the checkbox to open/close the prompt"/>-->
+
+<!--        </div>-->
+            <button type="button" class="btn ml-auto customButton">Hint</button>
+    </div>
+
+
+
+    <div class="message_container z-1 customMessage">
+        <div class="message" augmented-ui="exe tl-clip br-clip">
+            <div class="title" augmented-ui="exe tl-clip br-clip">Enter the Konami Code to unlock players</div>
+            <p>The Konami Code is: up, up, down, down, left, right, left, right, b, a, enter.</p>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="cardsDiv d-flex flex-row justify-content-center flex-wrap">
+<!--contra guy-->
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3" style="width: 12rem;">
+                <div class="align-self-end m-2 openLockIcon"><i class="fas fa-lock-open"></i></div>
+                <img src="images/contra.gif" class="card-img-top m-2" alt="Contra Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Bill</h6>
+                </div>
+
+            </div>
+
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3 firstEvent" style="width: 12rem;">
+                <div class="align-self-end m-2"><i class="fas fa-lock"></i></div>
+                <img src="images/sonic.gif" class="card-img-top m-2 lockedImage" alt="Sonic Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Sonic</h6>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3 secondEvent" style="width: 12rem;">
+                <div class="align-self-end m-2"><i class="fas fa-lock"></i></div>
+                <img src="images/megaman.gif" class="card-img-top lockedImage m-2" alt="Megaman Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Megaman</h6>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3 thirdEvent" style="width: 12rem;">
+                <div class="align-self-end m-2"><i class="fas fa-lock"></i></div>
+                <img src="images/mario-color.gif" class="card-img-top lockedImage m-2" alt="Mario Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Mario</h6>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3 fourthEvent" style="width: 12rem;">
+                <div class="align-self-end m-2"><i class="fas fa-lock"></i></div>
+                <img src="images/mudkip.gif" class="card-img-top lockedImage m-2" alt="Mudkip Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Mudkip</h6>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3 fifthEvent" style="width: 12rem;">
+                <div class="align-self-end m-2"><i class="fas fa-lock"></i></div>
+                <img src="images/naruto.gif" class="card-img-top lockedImage m-2" alt="Naruto Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Naruto</h6>
+                </div>
+            </div>
+
+            <div class="card text-white bg-dark d-flex flex-column align-items-center m-3 sixthEvent" style="width: 12rem;">
+                <div class="align-self-end m-2"><i class="fas fa-lock"></i></div>
+                <img src="images/samus.gif" class="card-img-top lockedImage m-2" alt="Samus Gif" style="height: 150px; width: 150px">
+                <div class="card-body m-0 p-1">
+                    <h6 class="card-title">Samus</h6>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+    $(document).ready(function() {
+        "use strict";
+
+        $('.customMessage').hide();
+        let clickOnce = 0;
+        $('.customButton').click(function(){
+            clickOnce += 1;
+            if(clickOnce % 2 !== 0){
+                $('.customMessage').show();
+            } else {
+                $('.customMessage').hide();
+            }
+        });
+        // $('.checkbox').click(function(){
+        //    $(this).append(`<div class="message" augmented-ui="exe tl-clip br-clip">
+        //             <div class="title" augmented-ui="exe tl-clip br-clip">Enter the Konami Code to unlock players</div>
+        //             <p>The Konami Code is: up, up, down, down, left, right, left, right, b, a, enter.</p>
+        //         </div>`)
+        // });
+
+        // $('[data-toggle=popover]').popover({
+        //     trigger: 'focus'
+        // });
+
+        var userInput = "";
+        var konami = "3838404037393739666513";
+        // var konami = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter"; //use this with event.key instead of .which
+
+        function reset() {
+            userInput = "";
+        }
+
+        let numberOfEvents = 0;
+        $(document).keyup(function (event) {
+            // console.log(event.which);
+            userInput += (event.which);
+            console.log(event.which);
+            console.log(userInput);
+            console.log(konami);
+            if (userInput.includes(konami)) {
+                numberOfEvents += 1;
+                switch (numberOfEvents) {
+                    case 1:
+                        $('.firstEvent').html(`<div class="align-self-end m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/sonic.gif" class="card-img-top m-2" alt="Sonic Gif" style="height: 150px; width: 150px">
+                                               <div class="card-body m-0 p-1">
+                                               <h6 class="card-title">Sonic</h6>
+                                               </div>`);
+                        reset();
+                        break;
+                    case 2:
+                        $('.secondEvent').html(`<div class="align-self-end m-2"><i class="fas fa-lock-open"></i></div>
+                                                <img src="images/megaman.gif" class="card-img-top m-2" alt="Megaman Gif" style="height: 150px; width: 150px">
+                                                <div class="card-body m-0 p-1">
+                                                <h6 class="card-title">Megaman</h6>
+                                                </div>`);
+                        reset();
+                        break;
+                    case 3:
+                        $('.thirdEvent').html(`<div class="align-self-end m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/mario-color.gif" class="card-img-top m-2" alt="Mario Gif" style="height: 150px; width: 150px">
+                                               <div class="card-body m-0 p-1">
+                                               <h6 class="card-title">Mario</h6>
+                                               </div>`);
+                        reset();
+                        break;
+                    case 4:
+                        $('.fourthEvent').html(`<div class="align-self-end m-2"><i class="fas fa-lock-open"></i></div>
+                                                <img src="images/mudkip.gif" class="card-img-top m-2" alt="Mudkip Gif" style="height: 150px; width: 150px">
+                                                <div class="card-body m-0 p-1">
+                                                <h6 class="card-title">Mudkip</h6>
+                                                </div>`);
+                        reset();
+                        break;
+                    case 5:
+                        $('.fifthEvent').html(`<div class="align-self-end m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/naruto.gif" class="card-img-top m-2" alt="Naruto Gif" style="height: 150px; width: 150px">
+                                               <div class="card-body m-0 p-1">
+                                               <h6 class="card-title">Naruto</h6>
+                                               </div>`);
+                        reset();
+                        break;
+                    case 6:
+                        $('.sixthEvent').html(`<div class="align-self-end m-2"><i class="fas fa-lock-open"></i></div>
+                                               <img src="images/samus.gif" class="card-img-top m-2" alt="Samus Gif" style="height: 150px; width: 150px">
+                                               <div class="card-body m-0 p-1">
+                                               <h6 class="card-title">Samus</h6>
+                                               </div>`);
+                        reset();
+                        break;
+                    // case 4:
+                    //     $('.fourthEvent').html(``);
+                    //     reset();
+                    //     break;
+                    // case 4:
+                    //     $('.fourthEvent').html(``);
+                    //     reset();
+                    //     break;
+
+                }}
+
+
+
+
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Essential Methods</title>
+
+<!--    bootstrap-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+
+    <style>
+        .invisible {
+            visibility: hidden;
+            /*color: red;*/
+        }
+        .highlight {
+            background-color: darkseagreen;
+        }
+
+        img {
+            height: 400px;
+            width: 500px;
+        }
+        .divFrame {
+            border: #a58861 solid 10px;
+        }
+        #frameOne {
+            height: 400px;
+            width: 500px;
+            /*background-image: url("images/mrs-maisel.jpg");*/
+        }
+        #frameTwo {
+            height: 400px;
+            width: 500px;
+        }
+        #frameThree {
+            height: 400px;
+            width: 500px;
+        }
+        #parentDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        a, #borderID {
+            border: solid #d4d4d4 1px;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        ul, #fadeIn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="borderID">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <span id="hideEffect">x</span>
+</div>
+
+<!--BOOTSTRAP ALERT-->
+<!--<div class="alert alert-warning alert-dismissible" role="alert">-->
+<!--    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--    <strong>Hello!</strong> Would you like to sign up for our newsletter?-->
+<!--</div>-->
+
+<h2 id="fadeIn">Would you like to register for this site?</h2>
+
+<h2>Fun Facts About National Parks:</h2>
+<dl>
+    <dt>Mackinac National Park</dt>
+    <dd>
+        This national park was established in 1875, as the second national park, and was returned to the state in 1895. It is now one of Michigan's State Parks.
+    </dd>
+
+    <dt>Yosemite National Park</dt>
+    <dd>
+        Three of the 10 highest waterfalls in the world are located in Yosemite National Park in California.
+    </dd>
+
+    <dt>Wrangell-St. Elias National Park</dt>
+    <dd>
+        Located in Alaska, Wrangell-St. Elias National Park is the largest national park, covering 13,000 square miles or 13.2 million acres.
+    </dd>
+
+    <dt>Hot Springs National Park</dt>
+    <dd>
+        Located in Arkansas, coming in at about 5,500 acres. This was actually the first federally protected piece of land in 1832. It was not named a national park until 1921.
+    </dd>
+
+    <dt>Great Smoky Mountains National Park</dt>
+    <dd>
+        This national park is the most visited national park with more than 9 million guests per year, followed by Grand Canyon National Park, which gets more than 4 million visits per year.
+    </dd>
+
+    <dt>Denali National Park</dt>
+    <dd>
+        This national park has the widest range of elevations, from 200 feet in Yentna River to 20,302 feet at the summit of Mount McKinley. The summit of Mount McKinley is also the highest point in any national park.
+    </dd>
+
+    <dt>Arches National Park</dt>
+    <dd>
+        This park is famous for having the largest concentration of stone arches in the world.
+    </dd>
+
+    <dt>Dry Tortugas National Park</dt>
+    <dd>
+        Located in Florida, this national park is known for its world-renowned concentration of turtles.
+    </dd>
+
+    <dt>Mesa Verde National Park</dt>
+    <dd>
+        This national park was the first to be recognized for “works of man,” an acknowledgement of the incredible cliff dwellings left behind by the Pueblo Indians.
+    </dd>
+
+    <dt>Mammoth Cave National Park</dt>
+    <dd>
+        Located in Kentucky, this national park has the longest cave system in the world with more than 3,454 mapped miles.
+    </dd>
+</dl>
+
+<a href="#" id="visibilty-toggle">Click here to hide the fun facts!</a>
+
+<h3>Yosemite National Park</h3>
+<ul>
+    <li>Located in California</li>
+    <li>Three of the 10 highest waterfalls in the world are located in Yosemite National Park.</li>
+    <li>Ribbon Falls in Yosemite is nine times taller than Niagara Falls.</li>
+    <li>Yosemite is one of the few places in the U.S. where you can see a rainbow at night.</li>
+</ul>
+<h3>Yellowstone National Park</h3>
+<ul>
+    <li>Located in Wyoming, Idaho, and Montana.</li>
+    <li>Yellowstone is just 10 miles away from Grand Teton National Park in northern Wyoming.</li>
+    <li>Home to the Yellowstone Caldera, which is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. </li>
+    <li>The oldest U.S. national park, founded in 1872.</li>
+</ul>
+<h3>Denali National Park</h3>
+<ul>
+    <li>Located in Alaska</li>
+    <li>Has the widest range of elevations, from 200 feet in Yentna River to 20,302 feet at the summit of Mount McKinley.</li>
+    <li>Mount McKinley is the highest point in the national parks at 20,302 feet.</li>
+    <li>Home to the wood frog wood, which freezes itself into a cryogenic state in wintertime. The frog’s heart stops beating, and lungs cease pumping until the frog thaws in the spring. Afterward, they continue along as if winter never existed.</li>
+</ul>
+
+<a href="#" id="lastHighlight">Click this to highlight the last list items</a>
+
+<h1>BONUS</h1>
+<h3>The last 3 shows I binge-watched were: </h3>
+<div id="parentDiv">
+    <div id="frameOne" class="divFrame"><img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel"></div>
+    <div id="frameTwo" class="divFrame"><img src="images/the-witcher.jpg" alt="Netflix Original, The Witcher"></div>
+    <div id="frameThree" class="divFrame"><img src="images/netflix-you.jpg" alt="Netflix Original, You"></div>
+</div>
+
+<a href="#" id="frameButton">Click here!</a>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function(){
+        "use strict";
+        //below are for the attributes and css exercises
+        // $(' dd ').addClass('invisible'); //to auto add the class without an event
+
+
+        // $('.invisible').css({
+        //     'visibility': 'hidden'
+        // });
+
+        $('#visibilty-toggle').click(function(event){
+            event.preventDefault();
+            $(' dd ').toggleClass('invisible');
+        });
+
+        //bonus
+        $(' dt ').click(function(event) {
+            event.preventDefault();
+            $(this).toggleClass('highlight');
+        });
+
+        //below is for the transversing exercises
+        $(' ul ').addClass('highlight-last');
+
+        $('#lastHighlight').click(function(event) {
+            event.preventDefault();
+            $(' ul li:last-child').css({
+                'background-color': 'yellow'
+                // 'font-weight': 'bold'
+            });
+        });
+
+        $(' h3 ').click(function(event){
+            event.preventDefault();
+            $(this).next().children().css('font-weight', 'bold');
+        });
+
+        $(' li ').click(function(event) {
+            event.preventDefault();
+            $(this).closest(" ul ").children(' li:first-of-type ').css('color', 'blue');
+        });
+
+        $('#frameButton').click(function(event){
+           event.preventDefault();
+
+           $('#frameOne').delay(200).queue(function(n){
+               $(this).html('<img src="images/the-witcher.jpg" alt="Netflix Original, The Witcher">');
+               n();
+           }).fadeIn(200);
+
+           $('#frameTwo').delay(200).queue(function(n){
+               $(this).html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">');
+               n();
+           }).fadeIn(200);
+
+
+
+            $('#frameThree').delay(800).queue(function(n){
+                $(this).html('<img src="images/mrs-maisel.jpg" alt="Prime Original, Marvelous Mrs. Maisel">').animate('ease');
+                n();
+            });
+
+            $('#frameTwo').delay(800).queue(function(n){
+                $(this).html('<img src="images/netflix-you.jpg" alt="Netflix Original, You">');
+                n();
+            })
+
+        });
+
+        //below are the effects exercises
+        // $('#hideEffect').click(function(event){
+        //     event.preventDefault();
+        //     $(' div ').hide();
+        // });
+
+        $(' h3 ').click(function(event){
+            event.preventDefault();
+            $(this).next().slideToggle();
+        });
+
+        $('#fadeIn').delay(8000).fadeIn(1000);
+
+        //below are effects exercise bonus exercises
+        $('#hideEffect').click(function(event){
+            event.preventDefault();
+            $(' div ').hide();
+        });
+    });
+
+
+</script>
+
+<!--BOOTSTRAP-->
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+</body>
+</html>

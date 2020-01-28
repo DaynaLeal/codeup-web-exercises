@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Second Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Second Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+
+<!-- Custom JS -->
+<script>
+    var accessToken = mapboxToken;
+
+    mapboxgl.accessToken = accessToken;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 13,
+        center: [-98.4916, 29.4252]
+    });
+
+
+    /***
+     * geocode is a method to search for coordinates based on a physical address and return
+     * @param {string} search is the address to search for the geocoded coordinates
+     * @param {string} token is your API token for MapBox
+     * @returns {Promise} a promise containing the latitude and longitude as a two element array
+     *
+     * EXAMPLE:
+     *
+     *  geocode("San Antonio", API_TOKEN_HERE).then(function(results) {
+     *      // do something with results
+     *  })
+     *
+     */
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function (res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function (data) {
+                return data.features[0].center;
+            });
+    }
+
+    //calling geocode with popup and marker
+
+    // var favoriteRestaurants = [
+    //     {
+    //         name: "Tang Street",
+    //         address: "16111 San Pedro Ave, San Antonio, TX 78232",
+    //         // coordinates: geocode(this.address, mapboxToken),
+    //         popupHTML: ('<p>1. Tang Street Chinese Restaurant<br><a href="http://www.tangst.com/" target="_blank">Website</a></p>')
+    //     },
+    //     {
+    //         name: "Grimaldi's Pizzeria",
+    //         address: "15900 La Cantera Pkwy Ste 25180, San Antonio, TX 78256",
+    //         // coordinates: geocode(this.address, mapboxToken),
+    //         popupHTML: ('<p>2. Grimaldi\'s Pizzeria<br><a href="https://www.grimaldispizzeria.com/locations/la-cantera/" target="_blank">Website</a></p>')
+    //     },
+    //     {
+    //         name: "Tang Street",
+    //         address: "16111 San Pedro Ave, San Antonio, TX 78232",
+    //         // coordinates: geocode(this.address, mapboxToken),
+    //         popupHTML: ('<p>1. Tang Street Chinese Restaurant<br><a href="http://www.tangst.com/" target="_blank">Website</a></p>')
+    //     }
+    // ]
+    // console.log(favoriteRestaurants[0].address);
+
+    var tangStreet = {
+        name: "Tang Street",
+        address: "16111 San Pedro Ave, San Antonio, TX 78232",
+        popupHTML: ('<p>1. Tang Street Chinese Restaurant<br><a href="http://www.tangst.com/" target="_blank">Website</a></p>')
+    }
+
+    var popup = new mapboxgl.Popup()
+        .setHTML(tangStreet.popupHTML);
+    //set a marker
+
+    //marker for fav restaurant
+    var markerTangStreet = new mapboxgl.Marker()
+        .setLngLat([-98.475648, 29.588623])
+        .addTo(map)
+        .setPopup(popup)
+
+
+    function favRestaurantMarkerGeocode(info, token, map) {
+        geocode("16111 San Pedro Ave, San Antonio, TX 78232", mapboxToken).then(function (result) {
+            console.log(result);
+            //recenter the map
+            map.setCenter(result); //4. yes, this is how to recenter programmatically
+            //set a popup
+            // var popup = new mapboxgl.Popup()
+            //     .setHTML(tangStreet.popupHTML);
+            // //set a marker
+            // var marker = new mapboxgl.Marker()
+            //     .setLngLat(result)
+            //     .addTo(map)
+            //     .setPopup(popup);
+            // popup.addTo(map) //call popup
+        });
+    }
+    console.log(favRestaurantMarkerGeocode("16111 San Pedro Ave, San Antonio, TX 78232", mapboxToken, map));
+
+    // for(var i = 0; i < favoriteRestaurants.length; i++) {
+    //     var popup = new mapboxgl.Popup()
+    //         .setHTML(favoriteRestaurants[i].popupHTML)
+    //     var marker = new mapboxgl.Marker()
+    //     // .setLngLat([-98.475648, 29.588623])
+    //         .setLngLat(favoriteRestaurants[i].coordinates)
+    //         .addTo(map)
+    //         .setPopup(popup)
+    // }
+
+    // for(var i = 0; i < favoriteRestaurants.length; i++) {
+    //     function favRestaurantMarkerGeocode(info, token, map) {
+    //         geocode(favoriteRestaurants[i].address, mapboxToken).then(function (result) {
+    //             console.log(result);
+    //             //recenter the map
+    //             // map.setCenter(result); //4. yes, this is how to recenter programmatically
+    //             //set a popup
+    //             // var popup = new mapboxgl.Popup()
+    //             //     .setHTML(tangStreet.popupHTML)
+    //             //set a marker
+    //             var marker = new mapboxgl.Marker()
+    //                 .setLngLat(result)
+    //                 .addTo(map)
+    //                 .setPopup(popup)
+    //             // popup.addTo(map) //call popup
+    //         });
+    //
+    //     }
+    // }
+    //
+    // console.log(favRestaurantMarkerGeocode(favoriteRestaurants[i].address, mapboxToken, map));
+
+    //from run-through
+    restArray.forEach(function (rest){
+        console.log(rest);
+        geocode(rest.address, mapboxToken).then(function(coordinates){
+            var popup = new mapboxgl.Popup()
+                .setHTML(rest.popupHTML);
+            var marker = new mapboxgl.Marker()
+                .setLngLat
+        })
+    })
+
+
+</script>
+</body>
+</html>
