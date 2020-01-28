@@ -8,7 +8,7 @@
     <h1>Javascript Pushups</h1>
     <h4>see console for results</h4>
     <script>
-        console.log("Hello World")
+        console.log("Hello World");
         /* can also be written as a function
         function (Hello World) {
             console.log("Hello World")
@@ -17,7 +17,7 @@
 
         //2. Write a JS function that will return a name November 7, 2019
         function sayHello(name) {
-            return "Hello, " + name + "!"
+            return "Hello, " + name + "!";
         }
         console.log(sayHello("Europa"));
 
@@ -128,6 +128,41 @@
         console.log(seeYouLater("alligator")); //returned See you later, alligator!
         console.log(seeYouLater("crocodile")); //returned After a while, crocodile!
         console.log(seeYouLater("cat")); //returned So long!
+
+        //15. write a js function that recieves another function as a parameter and executes it then call the fuction and pass in an anonymous function as an argument
+        function functionA(callbackFunction) {
+            callbackFunction();
+        }
+        functionA(function(message) {
+            alert("It works!")
+        });
+
+        //16. write a js function called contains that receives an array and another input and returns true if the other input is found in the array
+        //refactor your code with a loop
+
+        //without loops
+        // function contains(inputArray, otherParameter){
+        //     return (inputArray.includes(otherParameter));
+        // }
+        // console.log(contains(["5", "6", "7"], "6"));
+        // console.log(contains(["5", "6", "7"], "8"));
+
+        //with a loop
+        function contains(inputArray, otherParameter){
+            for(var i = 0; i < inputArray.length; i++){
+                if(inputArray[i] === otherParameter){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        console.log(contains(["5", "6", "7"], "6"));
+        console.log(contains(["5", "6", "7"], "8"));
+
+
+
+
 
 
     </script>
