@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Speed Reader</title>
+    <style>
+        #appendHere {
+            height: 500px;
+            width: 500px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="appendHere">
+
+</div>
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="../js/keys.js"></script>
+<script>
+
+    let testString = "This string will test the speed reader. This will be replaced once functionality is complete. Eventually, the user will be able to input their own text to be read."
+
+    function speedRead(str){
+        str.split(" ");
+        for(let i = 0; i < str.length; i++){
+            $('#appendHere').append(`<h6>${str[i]}</h6>`)
+        }
+    }
+    speedRead(testString);
+</script>
+</body>
+</html>
